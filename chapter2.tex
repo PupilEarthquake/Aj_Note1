@@ -1,0 +1,85 @@
+\chapter{Ring and Field}
+
+\section{Zoom Table}
+
+Abbreviated specification:
+\begin{itemize}
+    \item \textbf{ID}: Integral domain.
+    \item \textbf{CR}: Commutative ring.
+    \item \textbf{PID}: Principle ideal domain.
+    \item \textbf{UFD}: Unique factorization domain.
+    \item \textbf{EID}: Euclidean integral domain.
+\end{itemize}
+
+\begin{center}
+    \begin{tikzcd}
+        a\text{ is prime element} 
+        \arrow[rrr, "\bmrm{A1}. \ R\text{ is ID}", shift left] 
+        \arrow[dd, "\bmrm{A3}. \ R \text{ is ID}"', leftrightarrow] 
+        &  &  &
+        a \text{ is irreducible element} 
+        \arrow[lll, "\bmrm{A2}.", shift left]
+        \arrow[dd, "\bmrm{A5}. \ R \text{ is PID}", shift left] \\
+        &  &             \\
+        (a) \text{ is prime ideal}
+        & & & 
+        (a) \text{ is maximal ideal}
+        \arrow[lll, "\bmrm{A6}. \ R \text{ is CR}"]
+        \arrow[uu, "\bmrm{A4}. \ R \text{ is ID}", shift left]
+    \end{tikzcd}
+\end{center}
+Other conclusions:
+\begin{enumerate}
+    \item[\textbf{B1}.] $R$ is EID $\Rightarrow$ $R$ is PID.
+    \item[\textbf{B2}.] $R$ is PID $\Rightarrow$ $R$ is UFD.
+    \item[\textbf{B3}.] (i) $R$ is ID, (ii) every proper factor chain in $R$ is finite, (iii) every irreducible element is prime element $\Rightarrow$ $R$ is UFD. 
+    \item[\textbf{B4}.] (i) $R$ is ID, (ii) every $r \in R$ can be denoted as a multiplication of irreducible elements, (iii) every irreducible element is prime element $\Leftrightarrow$ $R$ is UFD.
+    \item[\textbf{B5}.] $R$ is UFD $\Rightarrow$ $\exists \gcd(a, b)$.
+\end{enumerate}
+
+
+
+
+
+
+
+\subsection{Proofs}
+
+% \textbf{A1}. Let $p$ be a prime element, suppose $a | p$, then $p | ab$. If $p | a$, we have $p \sim a$. On the other hand, if $p | b$, then $p = hpa$. Due to there is no zero divisor in ID, we conclude that $pa = 1$, which implies $a \sim 1$.
+
+
+% \textbf{A2}.
+% \begin{enumerate}
+%     \item[case1.] $R$ is ID, and every two elements in $R$ have the greatest common factor.
+% \end{enumerate}
+\begin{enumerate}
+    \item[\textbf{A1}.] Let $p$ be a prime element, suppose $a | p$, then $p | ab$. If $p | a$, we have $p \sim a$. On the other hand, if $p | b$, then $p = hpa$. Due to there is no zero divisor in ID, we conclude that $ha = 1$, which implies $a \sim 1$.
+    
+
+    \item[\textbf{A2}.]
+    \begin{enumerate}
+        \item[\textbf{case1}.] $R$ is ID, and every two elements in $R$ have the greatest common divisor. The proof proceeds as follows: Let $p$ be the irreducible element in $R$, and $p | bc$. Then $\gcd(p, b)$ is either the invertible element of $R$ or the equivalent element of $b$. If $\gcd(p, b) \sim 1$, then $\gcd(cp, cb) \sim c$ (\cite{Qiu_MA} p.146.). We have $p | \gcd(cp, cb) \land \gcd(cp, cb) | c$, thus $p | c$. If $\gcd(p, b) \sim p$, we immediatly get $p | b$.
+        \item[\textbf{case2}.] $R$ is PID. (The proof can be performed as the process that $R$ is PID $\Rightarrow$ $R$ is UFD $\Rightarrow$ $\exists \gcd(a, b)$. The following we provid another way of solution, see \cite{LWW_AJN} Lemma 6.2.9). Suppose $p$ is a prime element and $p|ab$, there exists $f$ such that $\langle p, a \rangle = (f)$. Therefore $(a) \subset (f)$ and $(p) \subset (f)$ hold, which is equivalent to $f|a$ and $f|p$. If $f \sim 1$, then $\langle a, p \rangle = R$, which implies there exists $u, v$ such that $ua + vp = 1$. Thus we have $uab + vpb = b$, hence $p | uab + vpb = b$. If $f \sim p$, we immediatly get $p | a$.
+    \end{enumerate}
+
+
+    \item[\textbf{A3}.] $a$ is a prime $\Leftrightarrow$ $a \neq 0 \land a \notin R^{\times} \land (a|bc \Rightarrow a|b \lor a|c ) \Leftrightarrow (a) \neq (0) \land (a) \neq R \land (bc \in (a) \rightarrow b \in (a) \lor c \in (a))$.
+    \item[\textbf{A4}.] By \textbf{A6}. \textbf{A3}. and \textbf{A1}.
+    \item[\textbf{A5}.] Suppose $(a) \subset I \subset R$. By prescribed condition that $R$ is PID, so we have $I = (b)$. Thus either $b \sim 1$ or $b \sim a$ holds.
+    \item[\textbf{A6}.] $(a)$ is maximal ideal $\Leftrightarrow$ $R/(a)$ is a filed $\Rightarrow$ $R/(a)$ is an ID $\Leftrightarrow$ $(a)$ is a prime element. 
+    
+
+    \item[\textbf{B1}.] EZ.
+    \item[\textbf{B2}.]
+    \begin{enumerate}
+        \item[\textbf{step1}.] $R$ is PID, then every ascending chain of ideals in $R$ stops. To be specific, suppose $(I_n)_{n \geq 0}$ is a series of ideals, which satisfies $I_1 \subset I_2 \subset \cdots$. There must exists $n \in \Z_{\geq 0}$ such that $I_n = I_{n+1} = \cdots$. The proof is as follows: Let $I = \bigcup_{n \geq 0} I_n$, it follows that $I$ is an ideal, thus $I = (h)$. It can be verified that $\exists n \in \Z_{\geq 0}$ that $h \in I_n$, and therefore $I \subset I_n$.
+        \item[\textbf{step2}.] If $R$ satisfies the ascending chain condition that every ascending chain of ideals in $R$ stops, then $\forall r \in R^*$ can be denoted as a multiplication of irreducible elements. If $r \in R^{\times}$, we agree that $r$ is a multiplication of 0 irreducible element. If $r \notin R^{\times}$, we let $r_0 = r$ and assume that $r$ has no irreducible factorization. It follows that $r$ is not irreducible, or $r = r$ is a irreducible factorization. Thus we have $r_0 = r_1 s_1$ where $r_1, s_1 \nsim r_0$, which implies that $(r_0) \subsetneq (r_1)$ and $(r_0) \subsetneq (s_1)$. By the assumption that $r$ has no irreducible factorization, we conclude that $r_1$ or $s_1$ remains the same property. Suppose $r_1$ has no irreducible factorization, and continue the process. Finally we end up with a strictly ascending chain of ideals $(r_0) \subsetneq (r_1) \subsetneq \cdots $, which contradicts the discussion in step1.
+        \item[\textbf{step3}.] By \textbf{A2}. we conclude that in PID every irreducible element is prime element. The uniqueness of decomposition can be easily verified by using Induction.
+    \end{enumerate}
+
+    
+    \item[\textbf{B3}.] Similar to \textbf{B2}.
+    \item[\textbf{B4}.] $(\Rightarrow)$ is similar to  \textbf{B2}. Next we prove the $(\Leftarrow)$ direction (\cite{LWW_AJN} Proposition 6.3.2). Suppose $R$ is UFD , $p \in R$ is irreducible, and $p | ab$ where $a = q_1 \cdots q_m, \ b = r_1\cdots r_n$. Therefore $\frac{ab}{p}$ can be decomposited as $s_1 \cdots s_t$. Thus $q_1 \cdots q_m r_1\cdots r_n = ab = s_1 \cdots s_t p$. By the uniqueness of decomposition, it follows that $p \sim q_i \lor p \sim r_i$. 
+    \item[\textbf{B5}.] Suppose $a = \prod_{i \geq 1} p_i^{n_i}, \ b = \prod_{i\geq 1} p_i^{m_i}$. Let $g_0 = \prod_{i \geq 1} p_i^{\min\{ n_i, m_i \}}$. Recall the definition of gcd in PID that $\langle a_1 , \cdots, a_n \rangle = \gcd(a_1, \cdots, a_n) R = gR$. It directs us toward the proof of $g_0 \sim g$. Pursuant to \cite{LWW_AJN} Proposition 2.7.3, we have $g_0|a \land g_0 | b \Leftrightarrow (\forall x \in \langle a, b \rangle \Rightarrow g_0 | a ) \Leftrightarrow g_0 | g$. To prove the reverse direction, notice that $g | a \land g | b$, which implies that $g = \prod_{i\geq 1} p_i^{t_i}$ and $t_i \leq \min\{ n_i, m_i \}$. We conclude that $g | g_0$.
+\end{enumerate}
+

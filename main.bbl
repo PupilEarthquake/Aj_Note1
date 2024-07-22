@@ -1,0 +1,66 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{anyt/global//global/global}
+  \entry{Qiu_MA}{book}{}
+    \name{author}{1}{}{%
+      {{hash=�}{%
+         family={丘维声},
+         familyi={�\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {北京大学出版社}%
+    }
+    \strng{namehash}{�1}
+    \strng{fullhash}{�1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{丘15}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{�}
+    \field{sortinithash}{�}
+    \field{title}{近世代数}
+    \field{year}{2015}
+  \endentry
+
+  \entry{LWW_AJN}{book}{}
+    \name{author}{1}{}{%
+      {{hash=�}{%
+         family={李文威},
+         familyi={�\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {北京大学出版社}%
+    }
+    \strng{namehash}{�1}
+    \strng{fullhash}{�1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{李24}
+    \field{labelyear}{2024}
+    \field{labeldatesource}{}
+    \field{sortinit}{�}
+    \field{sortinithash}{�}
+    \field{title}{代数学讲义}
+    \field{year}{2024}
+  \endentry
+\enddatalist
+\endinput

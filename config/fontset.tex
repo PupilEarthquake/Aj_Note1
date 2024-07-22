@@ -1,0 +1,41 @@
+\ProvidesFile{fontset.tex}[2025A]
+
+% Fandol系列字体仓库地址: https://github.com/Yixf-Self/fandol-font
+
+\setsansfont{TeX Gyre Heros} % 设置西文无衬线字体
+
+\setCJKmainfont[
+    BoldFont=FandolSong-Bold.otf,
+    ItalicFont=FandolKai-Regular.otf
+    ]{FandolSong-Regular.otf}
+
+\setCJKsansfont[
+    BoldFont=FandolHei-Bold.otf
+    ]{FandolHei-Regular.otf}
+
+\setCJKmonofont[
+    BoldFont=FandolHei-Bold.otf,
+    ]{FandolHei-Regular.otf}
+
+\setCJKfamilyfont{song}[
+    BoldFont=FandolSong-Bold.otf,
+    ItalicFont=FandolKai-Regular.otf
+    ]{FandolSong-Regular.otf}
+
+\setCJKfamilyfont{kai}[
+    BoldFont=FandolKai-Regular.otf,
+    ItalicFont=FandolKai-Regular.otf
+]{FandolKai-Regular.otf}
+
+\setCJKfamilyfont{hei}[
+    BoldFont=FandolHei-Bold.otf,
+    ItalicFont=FandolHei-Regular.otf
+]{FandolHei-Regular.otf}
+
+\setCJKfamilyfont{hei2}{Noto Sans CJK SC} % 标题黑体字体
+
+
+\newcommand\kaishu{\CJKfamily{kai}} % 该命令对后面所有文本起作用
+\newcommand\songti{\CJKfamily{song}}
+\newcommand\heiti{\CJKfamily{hei}}
+\newcommand\notoheiti{\CJKfamily{hei2}}

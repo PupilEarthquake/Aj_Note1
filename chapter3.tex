@@ -1,0 +1,355 @@
+\chapter{Vector Space}
+
+\section{Basis}
+
+$V$ is $F$\mbox{-}vector space, $S \subset V$:
+\begin{enumerate}
+    \item The linear combination of $S$ is $\lag S \rag := \{ \sum_{\alpha \in S} k_{\alpha} \alpha \}$.
+    \item The linear relationship can be viewed as a function $k \in F^S$. All linear relationships on set $S$ can be denoted as $\{ k \in F^S : \sum_{\alpha \in S} k_{\alpha} \alpha = 0 \}$.
+    \begin{enumerate}
+        \item[2.1] We say $S$ is linearly independent iff $\{ k \in F^S : \sum_{\alpha \in S} k_{\alpha} \alpha = 0 \} = \{ \calO \}$.
+    \end{enumerate}
+    \item $S$ is the base of $V$ iff (i) $S$ is linearly independent; (ii) $\lag S \rag = V$.
+    \begin{enumerate}
+        \item[3.1] $\forall v \in V$ can be uniquely denoted as $\sum_{\alpha \in S} k_{\alpha} \alpha$.
+    \end{enumerate}
+\end{enumerate}
+
+
+
+
+
+\begin{proposition}
+    The following propositions are equivalent:
+    \begin{enumerate}
+        \item $S$ is basis.
+        \item $S$ is maximal linearly independent set.
+        \item $S$ is minimal generating set.
+    \end{enumerate}
+\end{proposition}
+
+
+
+
+
+\begin{proposition}
+    The following propositions are equivalent:
+    \begin{enumerate}
+        \item $\{ w_1, \cdots, w_m \} \subset \lag v_1 ,\cdots, v_n \rag \land m > n$ $\Rightarrow$ $\{w_i\}_{i=1}^m$ is linearly dependent set.
+        \item  $\{ w_1, \cdots, w_m \} \subset \lag v_1 ,\cdots, v_n \rag$ $\land$ $\{ w_1, \cdots, w_m \}$ is linearly independent $\Rightarrow$ $m \leq n$.
+    \end{enumerate}
+\end{proposition}
+
+
+
+
+
+\begin{theorem}
+    The following propositions are true:
+    \begin{enumerate}
+        \item Any $F$\mbl vector space has basis.
+        \item Any basis of $V$ has the same cardinality.
+        \item $T: V \xmapsto[]{\sim} W$ is an isomophism, then $B$ is the basis of $V$ iff $T(B)$ is the basis of $W$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    Zorn's Lemma and Axiom Choise are equivalent propositions. We use Zorn's Lemma in this proof directly. 
+
+    (1) Let $S$ be a linearly independent set ($S = \emptyset$ is allowed). We define set $P$ as 
+    \[
+        P = \{ T \subset V: S \subset T \land T \ \text{is linearly independent set} \}
+    \]
+    $P$, together with the $\subset$, forms a partially ordered set. Suppose $T'$ is a chain contained in $P$, let $T_0 = \bigcup_{t \in T'} t$, it can be verified that $T_0$ is linearly independent set. Thus we have established that every chain in $P$ has an upper bound. Applying Zonr's Lemma we get $P$ has a maximal element, which is indeed the basis of $V$.
+
+    (2) Suppose $B, B'$ are two sets of basis for $V$. We first consider the case of $|B| < \aleph_0$. We denote $B$ as $\{ \beta_1, \cdots, \beta_n \}$. Then $|B'|$ must smaller than $n$ since $B' \subset \lag \beta_1, \cdots, \beta_n \rag$ and $B'$ is linearly independent. If not, asusming that $|B'| > n$. There exists $n+1$ elements in $B'$ that also belong to $\lag \beta_1, \cdots, \beta_n \rag$, which implies these elements are dependent, contradicting the facts that $B'$ is linearly independent set. Using the same method, we obtain that $|B| \leq |B'|$.
+
+    Now let $|B| \geq \aleph_0$, by the discussion above, we immediatly get $|B'| \geq \aleph_0$ as well. For any $\alpha \in B$, there exists a finite set $B'_{\alpha}$ that $\alpha \in \lag B'_{\alpha} \rag$. Let $A$ be $\bigcup_{\alpha \in B} B'_{\alpha}$. It can be verified that $V = \lag A \rag$. We asser that $A = B'$. If not, there exists $\alpha' \in B' \smallsetminus A$. Notice that $\alpha' \in \lag A \rag$, thus we have $\alpha' = \sum_{x \in A} k_x x$, where the equition $\alpha' - \sum_{x \in A} k_x x = 0$ is a nontrival linear relationship on set $B'$, contradicts the property of independence. According to proposition \ref{proposition 1.3.1}, we get:
+    $$
+        |B'| = \left| \bigcup_{\alpha \in B} B'_{\alpha} \right| \leq \left| \bigsqcup_{\alpha \in B} B'_{\alpha} \right| \leq \left| B \times \Z_{\geq 0} \right| = |B|
+    $$
+
+    (3) $(\Rightarrow)$: It is easy to verify that $T(S) \subset W$ is linearly independent and spans $W$. On the other hand, $T^{-1}$ is also a isomophism, then proof of the reverse direction is clear.
+\end{proof}
+
+
+
+
+\begin{proposition}
+    $B_i$ is set of basis of $V_i$. Let $\iota_i$ be the embedding mapping from $V_i$ to $\bigoplus^{\Ext}_{i\in I} V_i$. Then $\bigsqcup_{i\in I} \iota_i (B_i)$ is the basis of $\bigoplus^{\Ext}_{i\in I}$.
+\end{proposition}
+
+
+
+
+
+\begin{proposition}
+    $V = \lag v_1, \cdots, v_m \rag$, the following propositions are true.
+    \begin{enumerate}
+        \item $V$ has basis.
+        \item $\exists n \in Z_{\geq 0}$ such that $\dim V = n \leq m$.
+        \item Any linearly independent set can be extended to basis.
+        \item Any spaning set can be reduced to basis.
+    \end{enumerate}
+\end{proposition}
+
+
+
+
+
+
+
+
+\section{Direct Sum}
+
+\begin{definition}
+    Let $(V_i)_{i \in I}$ be a series of $F$ \mbl vector space:
+    \begin{enumerate}
+        \item $\prod_{i \in I} V_i := \left\{ \left[f: I \to \bigcup_{i \in I} V_i\right]: f(i) \in V_i \right\}$.
+        \item $\bigoplus^{\Ext}_{i \in I} V_i := \left\{ (v_i)_{i\in I} \in \prod_{i \in I} V_i : \text{finite many } v_i \neq 0 \right\}$
+    \end{enumerate}
+    If $V_i$ is the subspace of $V$:
+    \begin{enumerate}
+        \item $\sum_{i \in I} V_i := \left\{ \sum_{i \in I} v_i \in V: v_i \in V_i \land \text{finite many } v_i \neq 0 \right\}$
+    \end{enumerate}
+\end{definition}
+
+
+We define $\sigma$ as follows:
+\begin{align*}
+    \sigma: \bigoplus^{\Ext}_{i \in I} V_i & \to \sum_{i \in I} V_i \\
+    (v_i)_{i \in I} & \mapsto \sum_{i \in I} v_i
+\end{align*}
+It can be verified that $\sigma$ is a well defined linear mapping, and is surjective. When $\sigma$ is injective, the vector space in both sides are isomophic, in which case we use $\bigoplus_{i \in I} V_i$ to represent $\sum_{i \in I} V_i$. Additionally, the definition of external direct sum can be approached from two perspectives, as showed in the following formula:
+\[
+    \bigoplus^{\Ext}_{i \in I} V_i = \bigoplus_{i \in I} \iota_i (V_i)
+\]
+
+
+
+
+
+
+\begin{proposition}
+    The following propositions are equivalent:
+    \begin{enumerate}
+        \item $\sigma$ is injection.
+        \item $V_i \cap \sum_{j \in I \smallsetminus \{i\}} V_j = \{ 0 \}$.
+        \item Every $v \in \sum_{i \in I} V_i$ can be uniquely decomposited into the form $\sum_{i \in I} v_i$.
+        \item $0 \in \sum_{i \in I} V_i$ can be only decomposited into the form $0 + \cdots$
+        \item ($V_i$ is finite dimentional sapce and $I$ is finite set) $\dim(\sum_{i \in I} V_i) = \sum_{i \in I} \dim V_i$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \[
+        \begin{aligned}
+            \sigma \textrm{ is injection} & \Leftrightarrow \left( \sum_{i \in I} v_i = \sum_{i \in I} w_i \Rightarrow (v_i)_{i \in I} = (w_i)_{i \in I} \right) \\
+            & \Leftrightarrow \left( \sum_{i \in I} (v_i - w_i) = 0 \Rightarrow (v_i - w_i)_{i \in I} = 0\right) \\
+            & \Leftrightarrow \left( \sum_{i \in I} a_i = 0 \Rightarrow (a_i)_{i \in I} = 0\right)
+        \end{aligned} 
+   \]
+   We can extract the equivalence of the 1st, 3rd and 4th propositions from the above formula. Next, we prove the equivalence of the 1st and 2nd propositions. Assuming that $\sigma$ is injective, and that $\gamma \in V_i \cap \sum_{j \in I \smallsetminus \{i\}} V_j$. It follows that $\gamma - \sum_{j \in I \smallsetminus \{i\}} v_j = 0$, thus $\gamma = 0$. For re the reverse direction, suppose that $\sum_{i \in I} v_i = 0$, we want to demonstrate that $v_i = 0$. For any $i$, we have $v_i + \sum_{j \in I \smallsetminus \{i\}} v_j \in V_i \cap \sum_{j \in I \smallsetminus \{i\}} V_j$, which implies that $v_i = 0$.
+
+   In the case of $V_i$ is finite dimentional and $I$ is finite. We have
+    \begin{align*}
+        \sigma \textrm{ is injection} & \Leftrightarrow \bigoplus^{\Ext}_{i \in I} V_i \simeq  \sum_{i \in I} V_i  \\
+        & \Leftrightarrow \dim \left( \bigoplus^{\Ext}_{i \in I} V_i \right) = \dim \left( \sum_{i \in I} V_i  \right) \\
+        & \Leftrightarrow \sum_{i \in I } \dim V_i = \dim \left( \sum_{i \in I} V_i  \right)
+    \end{align*}
+\end{proof}
+
+
+
+
+
+
+When $\sigma$ is isomophism, we define the series of functions as follows:
+\begin{itemize}
+    \item $\iota_i: V_i \hookrightarrow \bigoplus^{\Ext}_{j \in I} V_j : v \mapsto (v_j)_{j \in I} $ where $(v_i = v,\ v_j = 0)$.
+    \item $\tilde{\iota}_i: V_i \hookrightarrow \bigoplus_{j \in I}V_j : v \mapsto v$.
+    \item $p_i : \bigoplus^{\Ext}_{j \in I} V_j \to V_i:  (v_j)_{j \in I} \mapsto v_i$.
+    \item $\tilde{p}_i = p_i \sigma^{-1} : \bigoplus_{j \in I}V_j \to V_i$
+\end{itemize}
+And the diagram commutes:
+
+\begin{center}
+    \begin{tikzcd}
+        &  \bigoplus^{\Ext}_{j \in I} V_j \arrow[rd, "p_i", two heads] \arrow[dd, "\sigma"', "\sim"] & \\
+        V_i  \arrow[ru, "\iota_i", hook]  \arrow[rd, "\tilde{\iota}_i"', hook] & &  V_i \\
+        & \bigoplus_{j \in I} V_j \arrow[ru, "\tilde{p}_i"', two heads] 
+    \end{tikzcd}
+\end{center}
+
+
+
+Henceforth, we'll uniformly use use $\iota_i$ (or $p_i$) to represent either $\iota_i$ or $\tilde{\iota}_i$ ($p_i$ or $\tilde{p}_i$) in the commutative diagram above. Therefore, the function $\iota_i$ (or $p_i$) will possesses two perspectives, and under the two perspectives, it will satisfies the following properties:
+
+\begin{corollary}
+    \hfill
+
+    \begin{enumerate}
+        \item $p_i \iota_i = \idd_{V_i}$.
+        \item $p_j \iota_i = \calO \ (i \neq j)$.
+        \item If $I $ is finite, then $\sum_{i \in I} \iota_i p_i = \idd_{\bigoplus V_i}$
+    \end{enumerate}
+\end{corollary}
+
+
+\begin{corollary}
+    $V$ is $F\mbl$vector scpace. $P_1, \cdots, P_s \in \End(V)$ which satisfies that 
+    \[
+        P_1 + \cdots + P_s = \idd,\ P_i P_j = \left\{
+        \begin{aligned}
+            & P_i & i=j \\
+            & \calO & i \neq j
+        \end{aligned}
+        \right.
+    \]
+    then the following propositions are ture:
+    \begin{enumerate}
+        \item $V = \bigoplus_{1 \leq i \leq s} \Im P_i$.
+        \item $P_i$ is the projection form $V$ to $\Im P_i$.
+    \end{enumerate}
+    In particular, if $P \in \End(V)$ that satisfies $P^2 = P$, $V$ has direct sum decomposition as:
+    \[
+        V = \Im P_i \oplus \Im (\idd - P_i)
+    \]
+\end{corollary}
+
+
+
+
+When $\sigma$ is isomophism and the objects in both ends of the linear mapping have direct sum decompositions, the diagram under `inner perspective' can be copied into `external perspective'. For instance, the following diagram demonstrates the copy of linear mapping $T$:
+
+\[
+    \begin{tikzcd}
+        \bigoplus_{j \in J} V_j  \arrow[r, "T"]  \arrow[d, "\sigma_{1}^{-1}"', "\sim"]
+        &
+        \bigoplus_{i \in I} W_i \arrow[d, "\sigma_{2}^{-1}", "\sim"']
+        \\
+        \bigoplus_{j \in J}^{\Ext} V_j \arrow[r, "T'"'] 
+        & \bigoplus_{i \in I}^{\Ext} W_i 
+    \end{tikzcd}
+\]
+where
+\[
+    T' : (v_j)_{j \in J} \mapsto \left( \sum_{j \in J} p_i^{W} T \iota_j^{V} v_j \right)_{i \in I}.
+\]
+Next, we get a closer look of the transformation of $T$.
+
+
+% If $U \subset V$ is a subspace, clearly $U = \bigoplus_{i\in I} (V_i \cap U) = \bigoplus_{i \in I} U_i$. $U_i$ is the subspace of $V$, so we can define it's external direct sum $\bigoplus^{\Ext}_{i\in I} U_i$, which can be verified is a subspace of $\bigoplus^{\Ext}_{i \in I} V_i$. 
+
+
+% $V$是线性空间, $V = \bigoplus_{i \in I} V_i$, $U \subset V$ 是 $V$的一个子空间. 那么$V / U$能否分解为某些$V/U$的子空间的直和?
+
+% 我的想法如下: 对任意$v + U \in V/U$, 其可表示为$\sum_{i \in I} (v_i + U) \in \sum_{i \in I} (V_i + U) / U$. 而$V_i + U / U$也是$V / U$的子空间. 进一步可以验证
+% \[
+%     V / U = \sum_{i \in I} (V_i + U) / U
+% \]
+% 剩下的只需证明两个不同子空间的交是零空间. 但是我无法证明$(V_i + U) / U \cap (V_j + U) / U = \{ 0 + U \}$.
+
+
+We first prove the following proposition under the `external perspective' that $\iota_i$ is the embedding $V_i \hookrightarrow \bigoplus^{\Ext}_{j \in J} V_j$ and $p_i$ is the corresponding projection.
+
+
+\begin{proposition}
+    There exists isomophism: 
+    % \begin{align*}
+    %     \Hom(\bigoplus^{\Ext}_{j \in J}V_j, \prod_{i \in I}W_i) &\xrightarrow[]{\sim} \bigoplus^{\Ext}_{(i, j) \in I \times J} \Hom(V_j, W_i) \\
+    \[
+        \begin{tikzcd}[row sep=small]
+            \Hom(\bigoplus^{\Ext}_{j \in J}V_j, \prod_{i \in I}W_i) \arrow[leftrightarrow, r, "\sim"]
+            & \bigoplus^{\Ext}_{(i, j) \in I \times J} \Hom(V_j, W_i) \\
+            T  \arrow[mapsto, r]
+            & (T_{i,j})_{(i, j)} := (p_i^{W} T \iota_j^{V})_{(i, j)} \\
+            \left[ f: (v_j)_{j \in J} \mapsto \left( \sum_{j \in J} T_{i, j} v_j \right)_{i \in I} \right]
+            & (T_{i,j})_{(i, j)} \arrow[mapsto, l]
+        \end{tikzcd}
+    \]
+    % \end{align*}
+    % \[ \begin{tikzcd}[row sep=small]
+	% 	\left\{ \text{子群 }  H_2 \subset G_2  \right\} \arrow[leftrightarrow, r, "1:1"] & \left\{ \text{子群 } H_1 \subset G_1 : H_1 \supset \Ker(\varphi)  \right\} \\
+	% 	\left\{ \text{正规子群 }  H_2 \lhd G_2  \right\} \arrow[phantom, u, "\subset" description, sloped] \arrow[leftrightarrow, r, "1:1"] & \left\{ \text{正规子群 } H_1 \lhd G_1 : H_1 \supset \Ker(\varphi)  \right\} \arrow[phantom, u, "\subset" description, sloped] \\
+	% 	H_2 \arrow[mapsto, r] & \varphi^{-1}(H_2) \\
+	% 	\varphi(H_1) & H_1 \arrow[mapsto, l] .
+	% \end{tikzcd} \]
+\end{proposition}
+
+In particular, let $V_j$ and $W_i$ be subspaces of $V, W$ respectively, and let $I, J$ be finite sets. We obtain that
+\[
+    \begin{tikzcd}
+        \Hom(\bigoplus^{\Ext}_{j \in J}V_j, \bigoplus^{\Ext}_{i \in I}W_i) \arrow[leftrightarrow, r, "\sim"]
+        & \bigoplus^{\Ext}_{(i, j) \in I \times J} \Hom(V_j, W_i)
+    \end{tikzcd}
+\]
+As depicted in the previous commutative diagram, this isomophism can be copied to `inner perspective', namely: 
+\[
+    % \begin{tikzcd}[row sep=small]
+    %     \Hom(\bigoplus^{\Ext}_{j \in J}V_j, \bigoplus^{\Ext}_{i \in I}W_i) \arrow[r, "\sim"] 
+    %     & \Hom(\bigoplus_{j \in J}V_j, \bigoplus_{i \in I}W_i) \\
+    %     T \arrow[mapsto, r]
+    %     & \sigma_2 T\sigma^{-1}_1
+    % \end{tikzcd}
+    % phantom 幽灵箭头, 即不可见的箭头
+    % description 可有可无
+    % sloped 使标签随箭头倾斜
+    \begin{tikzcd}
+        T \arrow[phantom, r, "\in" description, sloped] \arrow[mapsto, d]
+        & \Hom(\bigoplus^{\Ext}_{j \in J}V_j, \bigoplus^{\Ext}_{i \in I}W_i) \arrow[r, "\sim", "M"'] \arrow[d, "\sim", sloped]
+        & \bigoplus^{\Ext}_{(i, j) \in I \times J} \Hom(V_j, W_i) \\
+        \sigma_2 T \sigma_1^{-1} \arrow[phantom, r, "\in", sloped]
+        & \Hom(\bigoplus_{j \in J}V_j, \bigoplus_{i \in I}W_i) \arrow[ru, "\sim", sloped]
+        &
+    \end{tikzcd}
+\]
+
+Furthermore, under the condition of compatible index set size, we can also define the ``marix multiplication'' of $(S_{i, j})_{(i, j) \in I \times J}$ and $(T_{j, k})_{(j, k) \in J \times K}$, that is:
+\[
+    \begin{aligned}
+        \textstyle \odot : \bigoplus^{\Ext}_{(i, j) \in I \times J} \Hom(V_j, W_i) \times \bigoplus^{\Ext}_{(j, k) \in J \times K} \Hom(U_k, V_j) &\to \bigoplus^{\Ext}_{(i, K) \in I \times K} \Hom(U_k, W_i) \\
+        ((S_{i, j})_{(i, j) \in I \times J}, (T_{j, k})_{(j, k) \in J \times K}) & \mapsto \left( \sum_{j \in J} S_{i, j} T_{j, k} \right)_{(i, k) \in I \times K}
+    \end{aligned}
+\]
+
+
+\begin{proposition}
+The isomophism $M$ preserves multiplication:
+\[
+    M(\circ(S, T)) = \odot(M(S), M(T))
+\]
+\end{proposition}
+\begin{proof}
+    $$
+        \begin{aligned}
+            (S\circ T)_{i, k} &= p_i^W ST \iota^U_k \\
+            &= p_i^W S \left( \sum_{j \in J} \iota_j^V p_j^V \right) T \iota^U_k \\
+            & = \sum_{j \in J} S_{i, j} T_{j, k}
+        \end{aligned}
+    $$
+\end{proof}
+
+
+
+Finlly, we use the above isomophism to derive the definition of block matrixs and their multiplication. Let the index sets, $I, J$ be finite. The conditions are listed as follows:
+\begin{itemize}
+    \item $V = \bigoplus_{1 \leq j \leq s} V_j,\ W = \bigoplus_{1 \leq i \leq r} W_i$.
+    \item $V_j = \lag \bs{V}{j} \rag$ and $\bs{V}{j} = \{ v_{j,1}, \cdots, v_{j, n_j} \}$.
+    \item $W_i = \lag \bs{W}{i} \rag$ and $\bs{W}{i} = \{ w_{i,1}, \cdots, w_{i, m_i} \}$.
+    \item $n_1 + \cdots + n_s = n$ and $m_1 + \cdots + m_r = m$.
+    \item $\bs{V}{1}, \cdots, \bs{V}{s}$ arranged in order form a basis $\bs{V}{}$ for $V$, and similarly for $W$, yielding a basis $\bs{W}{}$. 
+\end{itemize}
+We define mapping $\varphi$ as:
+\[
+    \begin{tikzcd}[row sep=small]
+        \bigoplus_{\substack{1 \leq i \leq r \\ 1 \leq j \leq s}}\Mat_{m_i \times n_j}(F) \arrow[r, "\varphi"]
+        & \Mat_{m \times n}(F) \\
+        (A_{i, j})_{\substack{1 \leq i \leq r \\ 1 \leq j \leq s}} \arrow[mapsto, r]
+        & \begin{bmatrix}
+            A_{1, 1} & \cdots & A_{1, s} \\
+            \vdots & & \vdots \\
+            A_{r, 1} & \cdots & A_{r, s}
+        \end{bmatrix}
+    \end{tikzcd}
+\]

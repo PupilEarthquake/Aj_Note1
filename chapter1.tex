@@ -1,0 +1,343 @@
+\chapter{Set Theory}
+
+\section{Ordinal}
+
+\begin{proposition}
+  If $\alpha$ is an ordinal, then $\alpha \notin \alpha$.
+\end{proposition}
+
+\begin{proof}
+  $\alpha$ is an ordinal if it is a transitive set and is well-ordered with respect to $\in$. Assume that $\alpha \in \alpha$ holds, then $\alpha$ is an element of itself. This lead to the contradiction $\alpha < \alpha$, which violate the property of tot-ordering that states $\alpha \leq \alpha \wedge \alpha \leq \alpha \Rightarrow \alpha = \alpha$.
+\end{proof}
+
+
+% AI 
+% $\alpha$ is considered an ordinal if it meets the criteria of being a transitive set and being well-ordered with respect to $\in$. Assuming that $\alpha \in \alpha$ holds, then $\alpha$ is an element of itself. This leads to the contradiction $\alpha < \alpha$, which violates the property of total ordering that states $\alpha \leq \alpha \wedge \alpha \leq \alpha$ implies $\alpha = \alpha.
+
+
+
+
+
+\begin{corollary}
+  If $\alpha$ is an ordinal, $\alpha + 1 := \alpha \cup \{ \alpha \}$ is actually $\alpha \sqcup \{ \alpha \}$.
+\end{corollary}
+
+
+
+
+
+
+\begin{lemma}
+  \label{lemma 1.1.3}
+  % 这个lemma表明类On具有全序.
+  (This lemma suggests that $\On$ possesses a total-ordering.)
+  % This lemma suggests that $\On$ possesses a total ordering.
+  \begin{enumerate}
+    \item $\alpha$ is ordinal and $\beta \in \alpha$, then $\beta$ is an ordinal.
+    \item For any ordinals $\alpha, \beta$, if $\alpha \subsetneq \beta$, $\alpha \in \beta$.
+    \item For any ordinals $\alpha, \beta$, $\beta \subset \alpha \vee \alpha \subset \beta$.
+  \end{enumerate}
+\end{lemma}
+\begin{proof}
+  (2): Let $\gamma$ be the minimal element of $(\beta \smallsetminus \alpha, \leq)$. It is clear that $\gamma \in \beta \smallsetminus \alpha$. We assert that $\alpha = \{ x \in \beta : x < \gamma \}$, where the latter is nothing more than $\gamma$. Here is the proof: Firstly, suppose $y \in \{ x \in \beta : x < \gamma \} = \gamma$. If $y \notin \alpha$, then $y < \gamma \wedge y \in \beta \smallsetminus \alpha$, thus making $y$ the minimal element and contradicts our assumption. Therefore we established that $\gamma \subset \alpha$. Secondly, notice that $\gamma, \ \alpha$ are elements that comply with the well-ordering of $\beta$, and $\gamma \notin \alpha$, thus $\gamma \geq \alpha$. 
+  % Let $\gamma$ be the minimal element of $(\beta \smallsetminus \alpha, \leq)$. It is clear that $\gamma \in \beta \smallsetminus \alpha$. We assert that $\alpha = \{ x \in \beta : x < \gamma\}$, which is essentially equivalent to $\gamma$. Here is the proof: Firstly, suppose $y$ belongs to $\{ x  \in  \beta : x <  \gamma\} =  \gamma$. If $y$ does not belong to $\alpha$, then $y <  \gamma$ and $y$ belongs to $\beta  \smallsetminus  	α$, thus making $y$ the minimal element. Therefore, we have established that  	$\gamma ⊆ α$. Secondly, it should be noted that both  	$\gamma$ and  	$\alpha$ are elements that comply with the well-ordering of  	β and   	γ ∉ α. Consequently, we can conclude that   	γ ≥ α.
+  %下面只考虑alpha < gamma 的情况 
+  We only consider the case of $\alpha < \gamma$: due to the transitivity, $\forall x \in \alpha ,\ x\in \alpha \wedge \alpha \in \gamma \Rightarrow x \in \alpha \subset \gamma \Rightarrow x \in \gamma$, therefore $\alpha \subset \gamma$.
+  % We only consider the case where $\alpha < \gamma$: due to transitivity, for all $x \in \alpha$, if $x \in \alpha$ and $\alpha \in \gamma$, then $x \in \alpha \subset \gamma \Rightarrow x \in \gamma$, therefore $\alpha \subset \gamma.
+
+  (3): Let $\gamma = \alpha \cap \beta$, 
+  % 我们断言gamma=alpha 和 gamma = beta 必居其一
+  we assert that either $\gamma = \alpha$ or $\gamma = \beta$ must be true since $\gamma \in \alpha \wedge \gamma \in \beta \Rightarrow \gamma \in \gamma$.
+\end{proof}
+
+
+
+
+
+
+
+
+\begin{corollary}
+    \label{corollary 1.1.4}
+    Suppose $C$ is a class of ordinals, then $\bigcap C$ is an ordinal, and $\bigcap C \in C$. % 这个推论表明任何序数组成的类有极小元, 因此On具有良序
+    (This corollary implies that every class of ordinals has a minimal element, and therefore $\On$ is well-ordered.)
+\end{corollary}
+
+\begin{proof}
+  % 根据分离公理模式可知cap C是一个集合
+  (step1) Firstly, we prove that $\bigcap C \in C$ is an ordinal. Let $\gamma$ be $\bigcap C$. According to the Axiom schema of separation, $\bigcap C$ is a set. Choosing a $c_0 \in C$, then we have:
+  \begin{align*}
+    \textrm{for any arbitrary}\ x \in \gamma &\Leftrightarrow x \in c  \ (\forall c \in C) \\
+    & \Rightarrow \gamma \subset c_0  \\
+    & \Rightarrow \gamma \ \textrm{is well ordered}
+  \end{align*}
+  As for the transitivity, the proof is as follows:
+  \begin{align*}
+    \textrm{for any arbitrary}\ x \in \gamma &\Leftrightarrow x \in c \ (\forall c \in C) \\
+    & \Rightarrow x \subset c \ (\forall c \in C) \\
+    & \Rightarrow x \subset \gamma
+  \end{align*}
+  
+  % Let $\gamma$ be $\bigcap C$, then $\gamma \in c \ \forall c \in C$, where each $c$ is an ordinal, a transitive set, thus $\gamma \subset c \ \exists c \in C$, one can see that $\gamma$ is well-ordered. 
+  
+  % $\forall \beta \in \gamma$, to prove $\beta \subset \gamma$, it is equivalent to show $\forall x \in \beta \Rightarrow x \in \gamma$, notice that $\exists c \in C (\beta \in \gamma \in c)$, by transitivation, $\forall x \in \beta \Rightarrow x \in \beta \wedge \beta \in \gamma \Rightarrow x \in \gamma$. 
+
+  (step2) Next, we prove that $\bigcap C \in C$. Assume that $\gamma \notin C$, $\forall x \in \gamma \Rightarrow x \in c \ (\forall x \in C)$, thus $\gamma \subset c \ \forall c \in C$, we also have $\gamma \neq c \ (\forall c \in C)$ because $\gamma \notin C$. Combine these two conclusions clause (2) of \ref{lemma 1.1.3}, we get $\gamma \in c \ (\forall c \in C)$. This implies $\gamma \in \bigcap C = \gamma$, which is impossible.
+\end{proof}
+
+
+
+
+
+
+\begin{corollary}
+  $\alpha \sqcup \{ \alpha \} = \inf \{ \beta: \beta > \alpha \}:= \bigcap \{ \beta: \beta > \alpha \}$.
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \forall x \in \alpha \sqcup \{ \alpha \} &\Rightarrow x \in \alpha \vee x = \alpha \\
+    & \Rightarrow (\forall \beta > \alpha \Rightarrow \beta > x) \\
+    & \Rightarrow x \in \bigcap \{ \beta: \beta > \alpha \}
+  \end{align*}
+
+  To prove the reverse containment, pursuant to lemma \ref{lemma 1.1.3} we have $\forall x \in \On \wedge x \notin \alpha \sqcup \{ \alpha \} \Rightarrow a \in x \Rightarrow x \in \{\beta: \beta > \alpha \}$. We now verify that $x \notin \bigcap \{ \beta: \beta > \alpha \}$. Let $\gamma$ be $\bigcap \{ \beta: \beta > \alpha \}$, and assume that $x \in \gamma$. If $x = \gamma$, it makes $x = \gamma \in \gamma$. If $x \neq \gamma$, 
+  % 根据推论1.1.4的讨论得知, gamma是C中的极小元, 且x是C中不等于gamma的元素, 故gamma < x
+  as discussed in \ref{corollary 1.1.4}, let $\gamma$ be the minimal element of set $ \{ \beta: \beta > \alpha \}$.Suppose $x$ is an element belongs to the same class but distinct from $\gamma$. The only posibility is that $\gamma \in x$, which leads to the contradiction.
+
+  % 在基础数学的语境下，对您提供的段落进行规范和专业的改写如下：
+  % As established in Corollary 1.1.4, let \(\gamma\) denote the minimal element of the set \(\{\beta : \beta > \alpha\}\). Suppose \(x\) is an element of the same equivalence class as \(\gamma\) but distinct from \(\gamma\). The only possibility that remains consistent with the given conditions is that \(\gamma\) is an element of \(x\), i.e., \(\gamma \in x\). However, this inclusion leads to a contradiction.
+
+\end{proof}
+
+
+
+
+
+\begin{corollary}
+  $S$ is a set of ordinals, then $\sup S := \bigcup S$ is also an ordinal.
+\end{corollary}
+
+\begin{proof}
+  In accordance with the Axiom schema of repalcement, $\bigcup S$ is indeed a set. 
+
+  We now prove that $\bigcup S$ is well-ordered. For any arbitrary $x_1,\ x_2 \in \bigcup S$, there exists $\alpha_1,\ \alpha_2 \in S$, so that $x_1 \in \alpha_1, \ x_2 \in \alpha_2$. 
+  % a_1, a_2 作为两个序数有序关系, 所以x_1, x_2 必然同时属于两个序数之一, 因此也具有良序关系.
+  $\alpha_1,\ \alpha_2$ are two ordinals that satisfy the ordering of $\On$, so $x_1, \ x_2$ must belong to at least one of these two ordinals. Therefore $x_1, \ x_2$ are comparable under the ordering of ordinals. Thus, $\bigcup S$ is tot-ordered. Suppose $P \subset \bigcup S \wedge P \neq \emptyset $, then $P = \bigcup_{\alpha \in S} (\alpha \cap P)$. There must exists an $\alpha$ such that $\alpha \cap P \neq \emptyset$. Let $m$ be the minimal element of it. We assert that $m$ is the minimal element of $P$, if not, suppose $\min(P) = m_0$, then $m_0 < m < \alpha \cap P$, which implies $m_0$ is a smaller element than $m$ in $\alpha \cap P$.
+  
+
+  Next we prove that $\bigcup S$ is transitive. For any $x \in \bigcup S$, there exists $\alpha \in S $ such that $x \in \alpha$, thus $x \subset \alpha$. Moreover, it's easy to verify that $x \subset \bigcup S$.
+\end{proof}
+
+
+
+
+
+\begin{proposition}
+  $\alpha$ is not a successor if and only if $\forall x \in \alpha \Rightarrow x+1 \in \alpha$.
+\end{proposition}
+
+
+
+
+
+\section{Transfinite Recursion}
+
+% 就我现学的知识而言, 超限归纳法是为了解决这样的问题. 如果下面三个条件满足, (1)序数0满足条件P, (2)对任意a<theta, a满足条件P可推出a+1满足条件P. (3)对极限序数a < theta, 如果对任意b<a, b都满足P, 从而推出a也满足P. 则P对theta中所有序数都成立. 
+% 这看起来很像常见的数学归纳法. 实际上归纳法是它的一个特例, 当我们取theta为无穷序数(最小的极限序数)时超限归纳法就成为数学归纳法, 此时就不用考虑条件(3). 另一方面, 超限归纳法允许我们考察更加广泛的情况, 比如我们需要采用此方法来说明两个定义在On上的函数在满足某些条件时相等, 可以想见通常的数学归纳法在On上是远远不够用的. 我们即将在超限递归原理的证明中看到它的应用.
+
+In terms of what I've been learned, 
+%Transfinite Induction is proposed to solve questions like this, if the following conditions are true:
+Transfinite Induction is a well-established principle utilized to address problems of this nature, provided the following conditions are met:
+\begin{itemize}
+  \item the ordinal $0$ satisfies property $P$;
+  \item if $\alpha < \theta$ (or $\On$) satisfies $P$, then $\alpha + 1$ alse satisfies $P$;
+  \item if $\alpha$ is a limit ordinal, and for all $\beta < \alpha$, $\beta$ satisfies $P$, then $\alpha$ satisfies $P$;
+\end{itemize}
+Under the conditions, it can be concluded that the property $P$ holds for all ordinals that belong to $\theta$ (or $\On$).
+
+% This look a lot like the usual Induction. In fact, the Induction is a spacial case of it. When we let $\theta$ be the 
+% smallest limit ordinal $\omega$, there's no need to consider the third condition above, and Transfinite Induction becomes Induction. On another hand, the Transfinite Induction allows us to consider a broader picture. For example, we'll use it to prove that two funtions agree on $\On$ while satisfying some properties. One can imagine that the Induction is far from sufficient in this case. Incidentially, we'll see its application amid the proof of Transfinite Recursion.
+
+This closely resembles the usual Induction, with the latter being a specific instance within the broder framework of Transfinite Induction. Specificly, when $\theta$ is set to be the smallest limit ordinal $\omega$, the third condition mentioned earlier becomes redundant, and Transfinite Induction reduces to standerd Induction. However, Transfinite Induction offers a more comprehensive perspective, enableing us to extend our reasoning to broder contexts. For instance, it will be used to demonstrate that two funtions agree on $\On$, assuming they satisfy certain prescribed properties, where standerd Induction is inadequate. Furthermore, Transfinite Induction finds its application in the proof of Transfinite Recursion.
+
+\begin{theorem}[Transfinite Induction]
+  Suppose $C$ is a class of ordinals, and the following conditions are true.
+  \begin{enumerate}
+    \item $0 \in C$.
+    \item $\alpha \in C \Rightarrow \alpha + 1 \in C$.
+    \item Suppose $\alpha$ is a limit ordinal, and $(\forall \beta < \alpha \Rightarrow \beta \in C) \Rightarrow \alpha \in C$.
+  \end{enumerate}
+  Then $C = \On$. This assertion remains valid when considering only ordinals less than a given ordinal $\theta$
+  % 如果仅考虑小于theta的序数, 断言依然成立
+  % This assertion remains valid when considering only ordinals less than or equal to a given ordinal θ.
+\end{theorem}
+
+\begin{proof}
+  % 证明被分为几种情况
+  We only consider the case on a given ordinal $\theta$. Suppose $C \neq \theta$, and let $\gamma = \min(\theta \smallsetminus C)$. We have $\gamma \notin C$ and $\gamma \neq 0$, and the remainder of proof can be devided into several cases.
+  \begin{enumerate}
+    \item[case 1.] $\gamma$ is a successor, so $\exists \beta \in \theta (\gamma = \beta + 1)$.
+    \begin{enumerate}
+      \item[case 1a.] $\beta \in C$, by definition we have $\gamma = \beta + 1 \in C$.
+      \item[case 1b.] $\beta \notin C$, then $\gamma < \beta < \gamma$. 
+    \end{enumerate}
+    \item[case 2.] $\gamma$ is a limit ordinal.
+    \begin{enumerate}
+      \item[case 2a.] $\forall \beta < \gamma\ (\beta \in C)$, by definition we have $\gamma \in C$.
+      \item[case 2b.] $\exists \beta < \gamma \wedge \beta \notin C$, then $\gamma < \beta < \gamma$. 
+    \end{enumerate}
+  \end{enumerate}
+\end{proof}
+
+
+% 如果我们想定义一个序数\theta 上的函数a, 一种手段是递归地定义. 首先给定a(0) = a_0 \in V, 对于\alpha > 0, 根据已有的{a(x)}_{x<\alpha}来确定a(\alpha), 表示为a(\alpha) = G({a(x)}). 这个G是事先给定的V -> V的函数. 而序数上的函数a类似于一种序列, 也称其为\theta-列.
+
+% 作为例子, 在良序定理中我们会这样构造一个On到某个集合S的函数. 给定一个非空集合, P(S) \ {empty} 非空, 遵循选择公理
+% xxx 非空
+% 从而存在一个函数
+% g xx -> xx
+% 现在我们先任意指定一个a_0 \in S, 再任选两个\omega_0 \neq \omega_1 \notin S, 并定义G如下
+% G ...
+% 最后我们规定 a(\alpha) = G(...)
+% 看上去我们已经定义出了一个On上的函数, 但是我的观点是目前为止我们的工作并不充分, 因为我们仅仅给出了a(0)的值, 以及更新它的值的方法. 
+
+% 现在回到原点, 如果G给定, a_0 给定定, 这样递归定义的函数a是否存在且唯一? 这个问题将我们导向超穷递归原理.
+
+
+% If we want to define a funtion whose domain is ordian $\theta$, one possible method can be described as follows. Firstly we let $a(0)$ be $a_0 \in \bmrm{V}$. Secondly, for $\alpha > 0$ and $\alpha < \theta$, we determin $a(\alpha)$ based on existing $\{ a(x) \}_{x < \alpha}$, which can be denote as $a(\alpha) = G(\{ a(x) \}_{x < \alpha})$, where $G$ is a defined funtion from $\bmrm{V} \to \bm{\mathrm{V}}$.
+To define a funtion whose domain is the ordinal $\theta$, a formal approach can be outline as follows. Initially, we assign $a(0)$ to be an element $a_0$ in $\bmrm{V}$. Subsequently, for any ordinal $\alpha$ satisfying $0< \alpha < \theta$, we determine $a(\alpha)$ by rely on the previously established vlues $\{ a(x) \}_{x < \alpha}$, which can be expressed as $a(\alpha) = G(\{ a(x) \}_{x < \alpha})$, where $G$ is a funtion mapping from $\bmrm{V}$ to $\bmrm{V}$.
+
+
+% For instance, there is a funtion from $\bmrm{On}$ to a nonempty set $S$ that be established in the proof of Zermelo Theorem. Giving a nonempty set $S$, then so is $P(S) \smallsetminus \{ \emptyset \}$. Pursuant to the Axiom Choise, we have
+For example, there exists a funtion from $\On$ to a nonempty set that is constructed in the proof of Zermelo's Theorem. Given an non-empty set $S$, it follows that $P(S) \smallsetminus \{\emptyset\}$ is also non-empty. According to the Axiom of Choise, we have
+\[
+  \prod_{A \in P(S) \smallsetminus \{ \emptyset \}} A \neq \emptyset
+\]
+which implies the existance of funtion
+\begin{align*}
+  g: P(S) \smallsetminus \{ \emptyset \} & \to S \\
+  A & \mapsto x \ (\text{an element belongs to}\ A)
+\end{align*}
+Next, we specify an arbitrary $a_0 \in S$, and choose distinct elements $\Omega_0, \ \Omega_1 \notin S$ with $\Omega_0 \neq \Omega_1$. We define $G$ as follows
+\[
+  G(X) =
+  \left\{
+    \begin{aligned}
+      & a_0 & X = \emptyset \\
+      & g(S \smallsetminus X) & X = \{a_{x}\}_{x < \alpha} \subsetneq S \ (\alpha \in \bmrm{On})\\
+      & \Omega_0 & X = S \lor X = S \sqcup \{ \Omega_0 \} \\
+      & \Omega_1 & \text{else}
+    \end{aligned}
+  \right.
+\]
+Finally, we recursively define the funtion $a$ by
+\[
+    a(\alpha) = G(\{a(x)\}_{x < \alpha})
+\]
+Seems like we've defined a funtion from $\bmrm{On} \to S\sqcup \{ \Omega_0 \}$. However, in my opinion, our endeavors so far has not been adequate, 
+% because we have merely gived $a$ it's first value and a method to update its values.
+because we have merely assigned an initial value to $a$ and provided a procedure for updating it's subsequent values.
+
+Now back to the start. Does the funtion $a$ exists (and even unique) 
+%if it's first value $a(0)$ and funtion $G$ are already konw? This question lead us to the Transfinite Recursion.
+given sole konwledge of it's initial value $a(0)$ an the funtion $G$ that prescribe its updates? This inquiry directs us toward the principle of Transfinite Recursion, which addresses precisely usch questions regarding the construcion of funtions over the ordinals.
+
+
+
+
+
+
+
+
+\begin{theorem}[Transfinite Recursion]
+  For any ordinal $\theta$, there exists a unique $\theta \mbox{-} sequence \ a$ such that for all ordinals $\alpha < \theta$, we have $a(\alpha) = G(a|_{\alpha})$. In particular, there exists a unique function $a: \On \to \bm{\mathrm{V}}$ so that for any ordinal $\alpha, \ a(\alpha) = G(a|_{\alpha})$.
+\end{theorem}
+
+\begin{proof}
+  % 我们仅考虑theta上的情况, 首先证明theta列的唯一性. 假设a和a'都满足a(\alpha) = G({...}). 此时我们要使用超限归纳法来证明. 定义一个序数组成的类C={c: a(c)=a'(c)}, 然后我们依次验证C满足超限归纳法的三个条件. 首先, 由于默认a在空集上的限制是空集, 故 {a(x)}_{x \in \emptyset} = 0, 于是a(0) = G(0) = a'(0), 这暗示0 \in C. 第二, 无论\alpah是后继还是极限序数, 只要forall x < \alpha 都有 x \in C, 即{a(x)}_{x < \alpha} = {a'(x)}_{...}, 我们就有a(\alpha) =G({...})=a'(\alpha), 因此超限归纳法的第2,3个条件为真. 结论是C=\theta.
+
+  % We only consider the case on a given ordinal $\theta$, we firstly demonstrate the uniqueness of the $\theta \mbox{-} sequence$. Suppose that both $a$ and $a'$ satisfies 
+  We consider the case involving a given ordinal $\theta$, and initially demonstrate the uniqueness of the $\theta \mbox{-}sequence$. Suppose both $\theta \mbox{-}sequence$ $a$ and $a'$ satisfy the recursive definitions
+  \begin{equation*}
+    a(\alpha) = G(\{ a(x) \}_{x < \alpha}), \ a'(\alpha) = G(\{ a'(x) \}_{x < \alpha})
+  \end{equation*}
+  %Recall the Transfinite Induction, we requre a class that consisting of ordinals $C=\{ \alpha < \theta: a(\alpha) = a'(\alpha) \}$. Then we verifu that $C$ satisfies three conditions of Transfinite Induction. 
+  To prove uniqueness, we invoke the Transfinite Induction. We define a class $C$ of ordinals as $C=\{ \alpha < \theta: a(\alpha) = a'(\alpha) \}$. We then verify that $C$ satisfies the three condition of Transfinite Induction.
+  Firstly, notice that $a(0) = G(0) = a'(0)$ since any function constrained on an emptyset is $\emptyset$. This implies that $0 \in C$. 
+  %Secondly, Regardless of wether $\alpha$ is a successor or limit ordinal, as well as $\forall x < \alpha \Rightarrow x \in C$ that is equivalent to $\{ a(x) \}_{x < \alpha} = \{ a'(x) \}_{x < \alpha}$, the $a(\alpha) = G(\{ a(x) \}_{x < \alpha}) = G(\{ a'(x) \}_{x < \alpha}) = a'(\alpha)$ holds. Thus the second and third condition of Transfinite Induction is true. Consequently, $C = \theta$.
+  Secondly, suppose that for all $x < \alpha$, we have $x \in C$, i.e., $a(x) = a'(x)$ for all $x < \alpha$. Whether $\alpha$ is a successor or a limit ordinal, the equality $\{ a(x) \}_{x < \alpha} = \{ a'(x) \}_{x < \alpha}$ holds. Consequently
+  \begin{equation*}
+    a(\alpha) = G(\{ a(x) \}_{x < \alpha}) = G(\{ a'(x) \}_{x < \alpha}) = a'(\alpha)
+  \end{equation*}
+  Thus the Inductive step is satisfied for both successor and limit ordinals. Finally, by the Transfinite Induction, we conclude that $C = \theta$.
+  % 接下来要证明a的存在性. 我们如法炮制, 定义C={\xi < \theta, \xi - sequence a[xi]: xi to V exists}. 首先如果xi=0, a[\xi]=0, 从而0 \in C. 假设\beta > 0(无论是不是极限序数), 且对所有xi < \beta, a[xi]存在, 我们来证明a[\beta]存在.
+  % 我们断言如果\zeta < \eta, 且a[\zeta]和a[\eta]存在, 则a[\eta]|_{\alpha} = a[\alpha]. 证明如下:
+  % \[...\]
+  % 然后我们令 a[\beta](\xi) := G(a[\xi]), 可见a[\beta](0) = G(0), 并且根据以上断言, 有
+  % \[...\]
+  % 从而\beta \in C. 由超限归纳法得C = \theta.
+
+  % Next, we prove the existance of $a$. The method is quite alike the proof of uniqueness. Define $C$ be the class of ordinals that 
+  Next, we establish the existance of $a$ by adopting a methodlogy analogous to the proof of uniqueness. We define $C$ as the class of ordinals satisfing the condition:
+  \begin{equation*}
+    C = \{ \xi < \theta: \text{the}\ \xi \mbox{-} sequence \ a[\xi] \ \text{exists} \}
+  \end{equation*}
+  % Clearly, $a[\xi] = 0$ while $\xi = 0$. Thus $0 \in C$. Suppose $0 < \beta < \theta$ and for all $\xi < \beta$ the funtion $a[\xi]$ exists. We need to demonstrate that $a[\beta]$ exists, the proof can be argued as follows.
+  Evidently, $a[0]$ exists and is trivilly set to be $0$, thus $0 \in C$. Assume that $0 < \beta < \theta$ and that for all $\xi < \beta$, the function $a[\xi]$ exists. We process to demonstrate the existance of $a[\beta]$.
+
+  We assert that if $\zeta < \eta$, and $a[\zeta], \ a[\eta]$ exists, then $a[\eta]|_{\zeta} = a[\zeta]$. The basis for this assertion is
+  \begin{align*}
+    & a[\zeta]|_{\eta}(x) = G(\{ a[\zeta]|_{\eta} (t) \}_{t < x}) \\
+    & a[\eta] (x) = G(\{ a[\eta](t) \}_{t< x})
+  \end{align*}
+  % In accordance with the proof of uniqueness, the assertion is true.
+  By the uniqueness mentioned above, we conclude that this assertion is true.
+
+  Subsequently, we let $a[\beta](\xi) := G(a[\xi]) \ (\forall \xi < \beta)$, and it gives that $\forall x < \beta$: 
+  \begin{enumerate}
+    \item $a[\beta]|_{x} = \{ G(a[t]) \}_{t < x} = \{ G(a[x]|_{t}) \}_{t < x} = \{ a[x](t) \}_{t < x}$.
+    \item $a[\beta](x) = G(a[x]) := G(\{ a[x](t) \}_{t < x})$.
+    \item $a[\beta](x) = G(a[\beta]|_{x})$.
+  \end{enumerate}
+  Hence we conclude that $\beta \in C$. By the Transfinite Induction, it follows that $C = \theta$.
+  
+\end{proof}
+
+
+
+
+
+
+
+\section{Cardinality}
+
+\begin{proposition}
+  \label{proposition 1.3.1}
+  If $|A| \geq \aleph_0$, then $\aleph_0 |A| = |A|$.
+\end{proposition}
+\begin{proof}
+  Let set $\calF$ be 
+  \begin{equation*}
+    \calF = \{ f \in S^{\Z_{\geq 0} \times S}: S \subset A \land f \ \text{is bijction} \}
+  \end{equation*}
+  Notice that when $S = \Z_{\geq 0}$, there exists a bijction $\Z_{\geq 0}^2 \to \Z_{\geq 0}$, thus $\calF \neq \emptyset$. Define a relation on $\calF$ such that $f \preccurlyeq g \Leftrightarrow \Gamma_f \subset \Gamma_g$, which can be easily verified to be a partial ordering on $\calF$. 
+  % Notice that when $S = \Z_{\geq 0}$, there exists a bijection $\Z_{\geq 0}^2 \to \Z_{\geq 0}$, thus $\mathcal{F} \neq \emptyset$. Define a relation on $\mathcal{F}$ such that $f \preccurlyeq g$ if and only if $\Gamma_f \subset \Gamma_g$, which can be easily verified to be a partial ordering on $\mathcal{F}$. 
+  
+  We claim that every chain in $\calF$ has an upper bound. The proof proceeds as follows. Let $\{f_t\}_{t \in T}$ be a chain contained in $\calF$. Define $U = \bigcup_{t \in T} \Gamma_{f_t}$. It can be verified that $U$ is a graph and corresponds to a bijction in $\calF$, which we denote as $f_0$.
+  % We claim that every chain in $\mathcal{F}$ has an upper bound. The proof proceeds as follows: Let ${f_t}{t \in T}$ be a chain contained in $\mathcal{F}$. Define $U = \bigcup{t \in T} \Gamma_{f_t}$. It can be verified that $U$ is a graph and corresponds to a bijection in $\mathcal{F}$, which we denote as $f_0$.
+
+  By Zorn's Lemma, $\calF$ has a maximal element, denoted as $h: \Z_{\geq 0} \times \tilde{S} \to \tilde{S}$. If $\tilde{S} \subsetneq A$, then we choose an element $\gamma \in A \smallsetminus \tilde{S}$, and $s \in \tilde{S}$. We define a bijction $h': \Z_{\geq 0} \times \tilde{S} \sqcup \{ \gamma \} \to \tilde{S} \sqcup \{ \gamma \}$ as follows:
+  % By Zorn's Lemma, $\mathcal{F}$ has a maximal element, denoted as $h: \Z_{\geq 0} \times \tilde{S} \to \tilde{S}$. If $\tilde{S} \subsetneq A$, then we choose an element $\gamma \in A \setminus \tilde{S}$ and $s \in \tilde{S}$. We define a bijection $h': \Z_{\geq 0} \times \tilde{S} \sqcup { \gamma } \to \tilde{S} \sqcup { \gamma }$ as follows:
+  \begin{equation*}
+    h'(n, a) = \left\{
+      \begin{aligned}
+        & \gamma &(n=0 \land a = \gamma) \\
+        & h(s, 2n+1) &(n>0 \land a = \gamma ) \\
+        & h(s, 2n+2) &(a = s) \\
+        & h(a, n) &\text{else}
+      \end{aligned} 
+    \right.
+  \end{equation*}
+  Since $\Gamma_{h'}$ is larger than $\Gamma_h$, which contradicts the assumption that $h$ is maximal element in $\calF$, we conclude that $\tilde{S} = A$.
+  % Since $\Gamma_{h'}$ is larger than $\Gamma_h, which contradicts the assumption that $h$ is the maximal element in $\mathcal{F}$, we conclude that $\tilde{S} = A$.
+\end{proof}
