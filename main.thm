@@ -16,17 +16,41 @@
 \contentsline {proof}{{\textit {Proof.}}{7}{}}{4}{proof.7}%
 \contentsline {proposition}{{Proposition}{1.3.{1}}{}}{5}{theorem.1.3.1}%
 \contentsline {proof}{{\textit {Proof.}}{8}{}}{5}{proof.8}%
+\contentsline {proposition}{{Proposition}{1.4.{1}}{}}{6}{theorem.1.4.1}%
+\contentsline {proof}{{\textit {Proof.}}{9}{}}{6}{proof.9}%
+\contentsline {theorem}{{Theorem}{1.4.{2}}{}}{6}{theorem.1.4.2}%
+\contentsline {theorem}{{Theorem}{1.4.{3}}{}}{6}{theorem.1.4.3}%
 \contentsline {proposition}{{Proposition}{3.1.{1}}{}}{11}{theorem.3.1.1}%
 \contentsline {proposition}{{Proposition}{3.1.{2}}{}}{11}{theorem.3.1.2}%
 \contentsline {theorem}{{Theorem}{3.1.{3}}{}}{11}{theorem.3.1.3}%
-\contentsline {proof}{{\textit {Proof.}}{9}{}}{12}{proof.9}%
+\contentsline {proof}{{\textit {Proof.}}{10}{}}{12}{proof.10}%
 \contentsline {proposition}{{Proposition}{3.1.{4}}{}}{12}{theorem.3.1.4}%
 \contentsline {proposition}{{Proposition}{3.1.{5}}{}}{12}{theorem.3.1.5}%
 \contentsline {definition}{{Definition}{3.2.{1}}{}}{12}{theorem.3.2.1}%
 \contentsline {proposition}{{Proposition}{3.2.{2}}{}}{13}{theorem.3.2.2}%
-\contentsline {proof}{{\textit {Proof.}}{10}{}}{13}{proof.10}%
+\contentsline {proof}{{\textit {Proof.}}{11}{}}{13}{proof.11}%
 \contentsline {corollary}{{Corollary}{3.2.{3}}{}}{14}{theorem.3.2.3}%
 \contentsline {corollary}{{Corollary}{3.2.{4}}{}}{14}{theorem.3.2.4}%
 \contentsline {proposition}{{Proposition}{3.2.{5}}{}}{15}{theorem.3.2.5}%
 \contentsline {proposition}{{Proposition}{3.2.{6}}{}}{16}{theorem.3.2.6}%
-\contentsline {proof}{{\textit {Proof.}}{11}{}}{16}{proof.11}%
+\contentsline {proof}{{\textit {Proof.}}{12}{}}{16}{proof.12}%
+\contentsline {theorem}{{Theorem}{3.2.{7}}{}}{16}{theorem.3.2.7}%
+\contentsline {proof}{{\textit {Proof.}}{13}{}}{17}{proof.13}%
+\contentsline {definition}{{Definition}{3.3.{1}}{}}{18}{theorem.3.3.1}%
+\contentsline {proposition}{{Proposition}{3.3.{2}}{}}{18}{theorem.3.3.2}%
+\contentsline {proposition}{{Proposition}{3.3.{3}}{}}{18}{theorem.3.3.3}%
+\contentsline {proposition}{{Proposition}{3.3.{4}}{}}{18}{theorem.3.3.4}%
+\contentsline {theorem}{{Theorem}{3.3.{5}}{}}{18}{theorem.3.3.5}%
+\contentsline {theorem}{{Theorem}{3.4.{1}}{}}{19}{theorem.3.4.1}%
+\contentsline {proof}{{\textit {Proof.}}{14}{}}{19}{proof.14}%
+\contentsline {theorem}{{Theorem}{3.4.{2}}{}}{19}{theorem.3.4.2}%
+\contentsline {theorem}{{Theorem}{3.4.{3}}{}}{19}{theorem.3.4.3}%
+\contentsline {proof}{{\textit {Proof.}}{15}{}}{19}{proof.15}%
+\contentsline {theorem}{{Theorem}{3.4.{4}}{1st Isomophism Theorem}}{20}{theorem.3.4.4}%
+\contentsline {proof}{{\textit {Proof.}}{16}{}}{20}{proof.16}%
+\contentsline {theorem}{{Theorem}{3.4.{5}}{2nd Isomophism Theorem}}{20}{theorem.3.4.5}%
+\contentsline {proof}{{\textit {Proof.}}{17}{}}{20}{proof.17}%
+\contentsline {theorem}{{Theorem}{3.4.{6}}{}}{21}{theorem.3.4.6}%
+\contentsline {corollary}{{Corollary}{3.4.{7}}{}}{21}{theorem.3.4.7}%
+\contentsline {proof}{{\textit {Proof.}}{18}{}}{21}{proof.18}%
+\contentsline {corollary}{{Corollary}{3.4.{8}}{}}{21}{theorem.3.4.8}%

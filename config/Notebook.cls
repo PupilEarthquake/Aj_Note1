@@ -36,6 +36,12 @@
 \input{config/mycommand.sty}
 \input{config/myarrow.tex}
 
+\newcommand{\openbox}{\leavevmode	% 复制 amsthm 的 QED 符号: 空心方格
+	\hbox to.77778em{%
+		\hfil\vrule
+		\vbox to.675em{\hrule width.6em\vfil\hrule}%
+		\vrule\hfil}}
+
 \AtEndPreamble{
 	\RequirePackage[thmmarks, amsmath, hyperref]{ntheorem}	% 设置定理环境所需
     \hypersetup{
@@ -112,7 +118,7 @@
     \theoremstyle{nonumberplain}
     \theoremheaderfont{}
     \theoremseparator{\enspace}
-    \theoremsymbol{$\ensuremath{\square}$}
+    \theoremsymbol{\openbox}
     \newtheorem{proof}{\textit{Proof.}}
 }
 

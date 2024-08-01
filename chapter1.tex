@@ -341,3 +341,68 @@ given sole konwledge of it's initial value $a(0)$ an the funtion $G$ that prescr
   Since $\Gamma_{h'}$ is larger than $\Gamma_h$, which contradicts the assumption that $h$ is maximal element in $\calF$, we conclude that $\tilde{S} = A$.
   % Since $\Gamma_{h'}$ is larger than $\Gamma_h, which contradicts the assumption that $h$ is the maximal element in $\mathcal{F}$, we conclude that $\tilde{S} = A$.
 \end{proof}
+
+
+
+\section{Mapping}
+
+
+\begin{proposition}
+  The following propositions are equivalent:
+  % \begin{itemize}
+  %   \item $f: X \to Y$ is injection.
+  %   \item $f$ has the left inverse $g$ that satisfies $gf = \idd_{X}$.
+  %   \item $f$ has the left cancellation law, namely $g_1 f = g_2 f \Rightarrow g_1 = g_2$ for $g_i: Y \to Z$.
+  % \end{itemize}
+  \begin{enumerate}
+    \item[1]
+    \begin{enumerate}
+      \item[1.1] $f: X \to Y$ is injection.
+      \item[1.2]  $f$ has the left inverse $g$ that satisfies $gf = \idd_{X}$.
+      \item[1.3] $f$ has the left cancellation law, namely $g_1 f = g_2 f \Rightarrow g_1 = g_2$ for $g_i: Y \to Z$.
+    \end{enumerate}
+    \item[2]
+    \begin{enumerate}
+      \item[2.1] $f: X \to Y$ is surjection.
+      \item[2.2] $f$ has the right inverse $g$ that satisfies $fg = \idd_{Y}$.
+      \item[2.3] $f$ has the right cancellation law, namely $fg_1 = fg_2 \Rightarrow g_1 = g_2$ for $g_i: Z \to X$.  
+    \end{enumerate}
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  see \cite{LWW_AJN} proposition 2.2.6.
+\end{proof}
+
+
+
+
+
+\begin{theorem}
+  \label{theorem equiv1}
+  $(X, \sim)$ is a set $X$ with an equivalence relation $\sim$. $f: X \to Y$ is a mapping satisfies $x_1 \sim x_2 \Rightarrow f(x_1) = f(x_2)$. There exists unique $\overline{f}: X / \sim \to Y$ that makes the following diagram commute:
+  \[
+    \begin{tikzcd}
+      X \arrow[two heads, r, "\pi"] \arrow[d, "f"'] 
+      & X / \sim  \arrow[ld, "\overline{f}"]
+      \\
+      Y
+    \end{tikzcd}
+  \]
+\end{theorem}
+
+
+
+
+\begin{theorem}
+  \label{theorem equiv2}
+  Conctinuing with the conditions of previous theorem, if $x_1 \sim x_2 \Leftrightarrow f(x_1) = f(x_2)$, there exists unique bijection $\overline{f}$ such that:
+  \[
+    \begin{tikzcd}
+      X \arrow[two heads, r, "\pi"] \arrow[d, "f"'] 
+      & X / \sim  \arrow[ld, "\overline{f}"]
+      \\
+      \Im(f)
+    \end{tikzcd}
+  \]
+\end{theorem}

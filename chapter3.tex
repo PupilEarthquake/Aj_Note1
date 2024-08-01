@@ -353,3 +353,497 @@ We define mapping $\varphi$ as:
         \end{bmatrix}
     \end{tikzcd}
 \]
+
+
+
+\begin{theorem}
+    The following diagram commutes:
+    \[
+        \begin{tikzcd}
+            \Hom(\bigoplus_{j \in J}V_j, \bigoplus_{i \in I}W_i) \arrow[r, "\sim"]  \arrow[d, "\calM^{\bs{W}{}}_{\bs{V}{}}"', "\sim"]
+            & \bigoplus^{\Ext}_{(i, j) \in I \times J} \Hom(V_j, W_i) \arrow[d, "\calM^{\bs{W}{i}}_{\bs{V}{j}}", "\sim"']
+            \\
+            \Mat_{m \times n}(F)
+            & \bigoplus^{\Ext}_{(i, j) \in I \times J} \Mat_{m_i \times n_j}(F)  \arrow[l, "\varphi"', "\sim"]
+        \end{tikzcd}
+    \]
+\end{theorem}
+\begin{proof}
+    \begin{equation*}
+        \begin{aligned}
+            T v_{j, \mu} &= \sum_{i=1}^r p_i^W \iota_i^W T \iota_j^V (v_{j, \mu}) \\
+            &= \sum_{i=1}^r T_{i,j} v_{j, \mu} \\
+            &= \left[ \sum_{\rho=1}^{m_1} (\calM^{\bs{W}{1}}_{\bs{V}{j}}(T_{1,j}))_{\rho, \mu} w_{1, \rho} \right] + \cdots + \left[ \sum_{\rho=1}^{m_r} (\calM^{\bs{W}{r}}_{\bs{V}{j}}(T_{r,j}))_{\rho, \mu} w_{r, \rho} \right] \\
+        \end{aligned}
+    \end{equation*}
+    Notice that the following array is exactly the corresponding row of $\calM^{\bs{W}{}}_{\bs{V}{}}(T)$:
+    \begin{equation*}
+        \begin{bmatrix}
+            (\calM^{\bs{W}{1}}_{\bs{V}{j}}(T_{1,j}))_{1, \mu}, (\calM^{\bs{W}{1}}_{\bs{V}{j}}(T_{1,j}))_{2, \mu}, \cdots, (\calM^{\bs{W}{r}}_{\bs{V}{j}}(T_{r,j}))_{m_r, \mu}
+        \end{bmatrix}
+    \end{equation*}
+    Arranging them will form a matrix as:
+    \begin{equation*}
+        \begin{bmatrix}
+            \calM^{\bs{W}{1}}_{\bs{V}{1}}(T_{1,1}) & \cdots & \calM^{\bs{W}{1}}_{\bs{V}{s}}(T_{1,s}) \\
+            \vdots & & \vdots \\
+            \calM^{\bs{W}{r}}_{\bs{V}{1}}(T_{r,1}) & \cdots & \calM^{\bs{W}{r}}_{\bs{V}{s}}(T_{r,s})
+        \end{bmatrix}
+    \end{equation*}
+\end{proof}
+
+
+When the index set sizes of $I, J, K$ are compatible, we can easily obtain the multiplication of blcok marixs, that is:
+\begin{equation*}
+    \calM((ST)_{i, k}) = \calM \left( \sum_{j \in J} S_{i, j} T_{j, k} \right) = \sum_{j \in J} \calM(S_{i, j}) \calM(T_{j, k})
+\end{equation*}
+
+
+
+
+
+
+
+\section{Linear Mapping}
+
+The mapping $\calM$ preserves multiplication, which is represented as:
+\begin{equation*}
+    \calM(\circ(S, T)) = \cdot(\calM(S), \calM(T))
+\end{equation*}
+
+When $V$ is a finite dimentional $F\mbl$vector space, one of the perspectives of $\calM(Tv)$ is to view $v$ as a linear mapping from $F$ to $V$. To be specific, for any $v \in V$ we can define a isomophism as follows:
+\[
+    \begin{tikzcd}[row sep=small]
+        V \arrow[r, "\sim"]
+        & \Hom(F, V) \\
+        v \arrow[mapsto, r]
+        & \left[ f_v: 1 \mapsto v \right] \\
+        f_v(1)
+        & f_v \arrow[mapsto, l]
+    \end{tikzcd}
+\]
+Thus $\calM(Tv) = \calM(T)\calM(v)$, where $\calM(v)$ is exactly the coordinate of $v$ under the basis that we choosen for $V$.
+
+Any $A \in \Mat_{m \times n}(F)$ naturally induces a linear mapping $F^n \to F^m$, defined as:
+\[
+    \begin{tikzcd}[row sep=small]
+        F^n \arrow[r]
+        & F^m
+        \\
+        (x_j)_{j=1}^n  \arrow[mapsto, r]
+        & \left( \sum_{j=1}^n a_{i, j} x_j \right)_{i=1}^m
+    \end{tikzcd}
+\]
+
+
+
+
+
+
+\begin{definition}
+    $T \in \Hom(V, W)$, then $T$ is invertible iff $\exists S \in \Hom(W, V)$, such that $ST = \idd_{V} \land TS=\idd_{W}$.
+\end{definition}
+\begin{proposition}
+    $T$ is invertible as a linear mapping iff $T$ is linear and bijective. 
+\end{proposition}
+
+
+
+
+
+
+\begin{proposition}
+    There exists bijection that:
+    \[
+        \begin{tikzcd}[row sep=small]
+            \{ (v_i)_{i=1}^n: \text{ordered basis} \} \arrow[leftrightarrow, r, "1:1"]
+            & \{ \varphi \in \Hom(F^n, V): \text{isomophic} \} \\
+            (v_i)_{i=1}^n  \arrow[mapsto, r]
+            & \left[\varphi: (x_i)_{i=1}^n \mapsto \sum_{i=1}^n x_i v_i \right] \\
+            (\varphi(e_i))_{i=1}^n
+            & \varphi  \arrow[mapsto, l]
+        \end{tikzcd}
+    \]
+\end{proposition}
+As the isomophism of finite dimentional space and its coordinate space, $\varphi$ very commonly used.
+
+
+
+\begin{proposition}
+    Given finite dimentional $F\mbl$vector scpace $V, W$ and their basis $\bs{V}{}, \bs{W}{}$. $T \in \Hom(V, W)$. Define $\varphi_{\bs{V}{}}$ as the isomophism discussed above. Then the diagram commutes:
+    \[
+        \begin{tikzcd}
+            V \arrow[r, "T"]
+            & W
+            \\
+            F^n \arrow[u, "\varphi_{\bs{V}{}}", "\sim"'] \arrow[r, "\calM^{\bs{W}{}}_{\bs{V}{}}(T)"']
+            & F^m \arrow[u, "\varphi_{\bs{W}{}}"', "\sim"]
+        \end{tikzcd}
+    \]
+\end{proposition}
+If $T = \idd_{V}$ and $W = V$, we also use $P^{\bs{V}{1}}_{\bs{V}{2}}$ to represent $\calM^{\bs{V}{1}}_{\bs{V}{2}}(T)$. It can be verified that 
+\begin{gather*}
+    P^{\bs{V}{1}}_{\bs{V}{2}} P^{\bs{V}{2}}_{\bs{V}{1}} = P^{\bs{V}{2}}_{\bs{V}{1}} P^{\bs{V}{1}}_{\bs{V}{2}} = I_n \\
+    P^{\bs{V}{3}}_{\bs{V}{2}} P^{\bs{V}{2}}_{\bs{V}{1}} = P^{\bs{V}{3}}_{\bs{V}{1}}
+\end{gather*}
+
+
+
+
+
+\begin{theorem}
+    Given $V, W$ and thier ordered basis $\bs{V}{1}, \bs{V}{2}, \bs{W}{1}, \bs{W}{2}$, the following diagram commutes:
+    \[
+        \begin{tikzcd}
+            F^n \arrow[rrr, "\calM^{\bs{W}{2}}_{\bs{V}{2}}(T)"] \arrow[dd, "P^{\bs{V}{2}}_{\bs{V}{1}}"']
+            &
+            &
+            & F^m \arrow[dd, "P^{\bs{W}{2}}_{\bs{W}{1}}"]
+            \\
+            & V \arrow[r, "T"] \arrow[lu, "\varphi_{\bs{V}{2}}"'] \arrow[ld, "\varphi_{\bs{V}{1}}"']
+            & W \arrow[ru, "\bs{V}{2}"]  \arrow[rd, "\bs{W}{1}"]
+            &
+            \\
+            F^n \arrow[rrr, "\calM^{\bs{W}{1}}_{\bs{V}{1}}(T)"']
+            &
+            &
+            & F^m
+        \end{tikzcd}
+    \]
+\end{theorem}
+
+
+
+
+
+
+
+
+
+\section{Quotient Space}
+\begin{theorem}
+    \label{theorem linear0}
+    Suppose $U \subset V$ is a subspace, $T \in \Hom(V, W)$. If $U \subset \Ker T $, there exists unique $\overline{T} \in \Hom(V / U, W)$ which makes the diagram commute:
+    \[
+        \begin{tikzcd}
+            V \arrow[two heads, r, "\pi"] \arrow[d, "T"']
+            & V / \sim_U \arrow[ld, "\overline{T}"]
+            \\
+            W
+        \end{tikzcd}
+    \]
+    Conctinuing with the above conditions. If $\Ker T = U$, then $\overline{T}$ is isomophism that makes the diagram commute:
+    \[
+        \begin{tikzcd}
+            V \arrow[two heads, r, "\pi"] \arrow[d, "T"']
+            & V / \sim_U \arrow[ld, "\overline{T}"]
+            \\
+            \Im T
+        \end{tikzcd}
+    \]
+\end{theorem}
+
+
+\begin{proof}
+    using Theorem \ref{theorem equiv1} and Theorem \ref{theorem equiv2}, and prove that $\overline{T}$ is linear.
+\end{proof}
+
+
+
+
+
+
+
+
+\begin{theorem}
+    Given $V$ with a equivalence relation $\sim$, where $V / \sim$ consists a $F \mbl$vector space, and $q: V \to V/\sim$ is its quotient mapping. Then $v_1 \sim v_2 \Leftarrow v_1 - v_2 \in \Ker q \Leftarrow v_1 \sim_{\Ker q} v_2$, and the $\overline{q}$ derived form previous theorem is actually identity, makes the diagram commute:
+    \[
+        \begin{tikzcd}
+            V \arrow[two heads, r, "\pi"] \arrow[two heads, d, "q"'] 
+            & V / \Ker q \arrow[ld, "\overline{q}"] 
+            \\
+            V / \sim
+        \end{tikzcd}
+    \]
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+\begin{theorem}
+    Suppose $U_1, U_2$ are subspaces of $V_1, V_2$ respectively. $T \in \Hom(V_1, V_2)$ satisfies $T(U_1) \subset U_2$. Then there exists $\overline{T} \in \Hom(V_1 / U_1, V_2 / U_2)$, makes the diagram commute:
+    \[
+        \begin{tikzcd}
+            V_1 \arrow[r, "T"] \arrow[two heads, d, "\pi_1"']
+            & V_2 \arrow[two heads, d, "\pi_2"]
+            \\
+            V_1 / U_1 \arrow[r, "\overline{T}"']
+            & V_2 / U_2
+        \end{tikzcd}
+    \]
+    Furthermore, the following diagram commutes if $T_1(U_1) \subset U_2 \land T_2(U_2) \subset U_3$:
+    \[
+        \begin{tikzcd}
+            V_1 \arrow[r, "T_1"] \arrow[two heads, d, "\pi_1"']
+            & V_2 \arrow[r, "T_2"] \arrow[two heads, d, "\pi_2"]
+            & V_3 \arrow[two heads, d, "\pi_3"]
+            \\
+            V_1 / U_1 \arrow[r, "\overline{T}_1"']
+            & V_2 / U_2 \arrow[r, "\overline{T}_2"']
+            & V_3 / U_3
+        \end{tikzcd}
+    \]
+\end{theorem}
+
+\begin{proof}
+    For the first case, $\pi_2 T$ is a linear mapping. Notice that $v \in \Ker \pi_2 T \Leftrightarrow Tv \in U_2$, thus $v \in U_1 \land T(U_1) \subset U_2 \Rightarrow v \in \Ker \pi_2 T$. We obtain that $U_1 \subset \Ker \pi_2 T$, then applying theorem \ref{theorem linear0}.
+\end{proof}
+
+
+
+
+
+
+
+
+\begin{theorem}[1st Isomophism Theorem]
+    Suppose $V_1, V_2$ are subspace of $V$, there exists isomophism:
+    \[
+        \begin{tikzcd}[row sep=small]
+            V_1 / (V_1 \cap V_2) \arrow[r, "\sim"]
+            & (V_1 + V_2) / V_2 \\
+            v_1 + (V_1 \cap V_2) \arrow[mapsto, r]
+            & v_1 + V_2
+        \end{tikzcd}
+    \]
+\end{theorem}
+
+\begin{proof}
+    $$
+        \begin{tikzcd}
+            V_1 \arrow[hook, r, "\iota_1"] \arrow[rr, bend left, "T"]  \arrow[d, two heads, "\pi_2"']
+            & V_1 + V_2 \arrow[two heads, r, "\pi_1"]
+            & (V_1 + V_2) / V_2
+            \\
+            V_1 / \underbracket{(V_1 \cap V_2)}_{\Ker T} \arrow[rru, "\overline{T}"']
+            &
+            &
+        \end{tikzcd}
+    $$
+\end{proof}
+
+
+
+
+
+\begin{theorem}[2nd Isomophism Theorem]
+    Suppose $U \subset V$ is a subspace, then
+    \begin{enumerate}
+        \item[1] There exists bijection:
+    \end{enumerate}
+    \[
+        \begin{tikzcd}[row sep=small]
+            \left\{ W \subset V: \text{ subspace containing } U \right\} \arrow[leftrightarrow, r, "1:1"]
+            & \left\{ \overline{W} \subset \overline{V}: \text{ subspace} \right\}
+            \\
+            W \arrow[mapsto, r]
+            & \pi(W)
+            \\
+            \pi^{-1}(\overline{W})
+            & \overline{W}  \arrow[mapsto, l]
+        \end{tikzcd}
+    \]
+    \begin{enumerate}
+        \item[2] $W_1 \subset W_2 \Leftrightarrow \overline{W}_1 \subset \overline{W}_2$.
+        \item[3] There exists isomophism:
+    \end{enumerate}
+    \[
+        \begin{tikzcd}[row sep=small]
+            V / W \arrow[r, "\sim"]
+            & \overline{V} / \overline{W}
+            \\
+            v + W \arrow[mapsto, r]
+            & (v + U) + (V / W)
+        \end{tikzcd}
+    \]
+\end{theorem}
+
+\begin{proof}
+    \hfill
+
+    \begin{enumerate}
+        \item[1]
+        \begin{enumerate}
+            \item[1.1] $\pi(W)$ is an element in prescribed set, and the mapping $W \mapsto \pi(W)$ is well defined.
+            \item[1.2] $\pi^{-1}(\overline{W})$ is an element in prescribed set, and mapping $\overline{W} \mapsto \pi^{-1}(\overline{W})$ is well defined.
+            \item[1.3] $W \mapsto \pi(W) \mapsto \pi^{-1}(\pi(W))$ is identity: Obviously $W \subset \pi^{-1}(\pi(W))$. For any $x \in \pi^{-1}(\pi (W))$, we have $\pi(x) \in \pi(W)$. Thus there exists $w \in W$ such that $x + U = w + U$. Hence $x - w \in U \subset W$.
+            \item[1.4] $\overline{W} \mapsto \pi^{-1}(\overline{W}) \mapsto \pi(\pi^{-1} (\overline{W}))$ is identity: Obviously $\pi(\pi^{-1}(\overline{W})) \subset \overline{W}$.  Assume $\overline{x} \in \overline{W}$, by the surjection of $\pi$, there exists $x \in V$ such that $\pi(x) = \overline{x}$, because $\overline{W} \subset \overline{V}$. It implies that $x \in \pi^{-1}(\overline{W})$, thus $\overline{x} = \pi(x) \in \pi(\pi^{-1}(\overline{W}))$.
+        \end{enumerate}
+    \item[2]
+    \begin{enumerate}
+        \item[2.1] $W_1 \subset W_2 \Rightarrow \pi(W_1) \subset \pi(W_2)$.
+        \item[2.2] $\overline{W}_1 \subset \overline{W}_2 \Rightarrow \pi^{-1}(\overline{W}_1) \subset \pi^{-1}(\overline{W}_2)$.  
+    \end{enumerate}
+    \item[3]
+    \end{enumerate}
+    \[
+    \begin{tikzcd}
+        V \arrow[two heads, r, "\pi_1"] \arrow[two heads, d, "\pi"] \arrow[rr, bend left, "T"]
+        & V/U \arrow[two heads, r, "\pi_2"]
+        & (V/U) / (W/U)
+        \\
+        V / \underbracket{\Ker T}_{=V/W}  \arrow[rru, "\overline{T}"']
+    \end{tikzcd}
+    \]
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+\begin{theorem}
+    \label{theorem 3.4.6}
+    Suppose $U \subset V$ is a subspace. $S_0$ is a set of basis of $U$, and $\overline{S}_1$ is a set of basis of $V / U$. Let $g \in \prod_{\overline{a} \in \overline{S}_1} \pi^{-1}(\overline{a})$, and $S_1 = g(\overline{S}_1)$. The following propositions are ture:
+    \begin{enumerate}
+        \item $S_1$ is linearly independent set.
+        \item $\lag S_0 \rag \cap \lag S_1 \rag = \{ 0 \}$.
+        \item $\lag S_0 \sqcup S_1 \rag = \lag S_0 \rag \oplus \lag S_1 \rag = V$.
+        \item $\dim V = \dim U + \dim V/U$.
+    \end{enumerate}
+\end{theorem}
+
+
+
+\begin{corollary}
+    If $V = U \oplus W$, then $W \simeq V / U$.
+\end{corollary}
+\begin{proof}
+    Verify that $\pi|_{W}: w \mapsto w + U$ is bijection directly.
+\end{proof}
+
+
+
+\begin{corollary}
+    For any subspace $U \subset V$, there exists $W$ such that $V = U \oplus W$.
+\end{corollary}
+
+
+
+
+Consider the diagram under the condition that $T(U_1) \subset U_2$:
+\[
+    \begin{tikzcd}
+        V_1  \arrow[r, "T"] \arrow[d, two heads, "\pi_1"']
+        & V_2  \arrow[d ,two heads, "\pi_2"]
+        \\
+        V_1 / U_1  \arrow[r, "\overline{T}"']
+        & V_2 / U_2
+    \end{tikzcd}
+\]
+The other assumtions are listed as follows:
+\begin{enumerate}
+    \item $U_1 = \lag \bs{A}{1} \rag = \lag \alpha_1, \cdots, \alpha_r \rag$.
+    \item $V_1 / U_1 = \lag \bs{A'}{2} \rag = \lag \alpha'_{r+1}, \cdots, \alpha'_{r+n} \rag$.
+    \item $U_2 = \lag \bs{B}{1} \rag = \lag \beta_1, \cdots, \beta_s \rag$.
+    \item $V_2 / U_2 = \lag \bs{B'}{2} \rag = \lag \beta'_{s+1}, \cdots, \beta'_{s+m} \rag$.
+    \item Applying Theorem \ref{theorem 3.4.6}, we obtain the conplement space of $U_i$ and thier basis, namely $W_1 = \lag \bs{A}{2} \rag = \lag \alpha_{r+1}, \cdots, \alpha_{r+n} \rag$, $W_2 = \lag \bs{B}{2} \rag = \lag \beta_{s+1}, \cdots, \beta_{s+m} \rag$.
+\end{enumerate}
+Under the decomposition of $V_1 = U_1 \oplus W_1$ and $V_2 = U_2 \oplus W_2$, $\Hom(V_1, V_2)$ is decomposited, where its element $T$ has the equivalent form:
+\[
+    \begin{bmatrix}
+        T_{11} & T_{12} \\
+        T_{21} & T_{22}
+    \end{bmatrix}
+\]
+We possess to prove that:
+\begin{enumerate}
+    \item $T_{21} = \calO$.
+    \item $T_{11} = T|_{U_1}$.
+    \item $\calM(T_{22}) = \calM(\overline{T})$.
+\end{enumerate}
+
+The 1st and 2nd proposition are easy to verify. As for the 3rd one, notice that:
+\[
+    \begin{tikzcd}
+        V_1 / U_1  \arrow[r, "\overline{T}"]
+        & V_2 / U_2 
+        \\
+        W_1 \arrow[r, "\sigma_2^{-1} \overline{T} \sigma_1"'] \arrow[u, "\sigma_1 = \pi_1 |_{W_1}"]
+        & W_2 \arrow[u, "\sigma_2 = \pi_2 |_{W_2}"']
+    \end{tikzcd}
+\]
+Suppose $w_1 \in W_1$, then we have 
+\[ 
+    w_1 \xmapsto[]{\sigma_1} w_1 + U_1 \xmapsto[]{\overline{T}} Tw_1 + U_2 \xmapsto[]{\sigma_2^{-1}} p_2^{V_2}Tw_1 = p_2^{V_2}T \iota_{2}^{V_1}w_1 = T_{22} w_1
+\]
+Thus $\sigma_2^{-1} \overline{T} \sigma_1 = T_{22}$. The rest work we need to do is to demonstrate that $\calM(\sigma_2^{-1})= I_{m}, \calM(\sigma_{1}) = I_n$ and $\calM(T_{22}) = \calM(\sigma_2^{-1}) \calM(\overline{T}) \calM(\sigma_{1}) = \calM(\overline{T})$.
+
+In conclusion, the matix of $T$ under the prescribed basis has the form
+\[
+    \begin{bmatrix}
+        \calM(T|_{U_1}) & * \\
+        0 & \calM(\overline{T})
+    \end{bmatrix}
+\]
+
+
+
+
+% \newpage
+
+% \begin{example}
+%     设$V, W$是$F\mbl$向量空间, $B: V \times W \to F$是双线性映射. 记$B$的左根为$L=\{ v \in V: B(v, \cdot) = \calO_{W} \}$, 右根为$R=\{ w \in W: B(\cdot, w) = \calO_{V} \}$. 容易证明$L, R$分别为$V, W$的子空间. 称$B$非退化的, 如果其左根和右根都是零空间. 证明: $B$\textbf{自然地}诱导出非退化的$\overline{B}: (V/L) \times (W / R) \to F$, 由下式给出:
+%     \[
+%         (v + L, w + R) \mapsto B(v , w)
+%     \]
+% \end{example}
+% \begin{proof}
+%     首先我验证了该映射Well defined, 因为
+%     $$
+%         (v_1 + L, w_1 + R) = (v_2 + L, w_2 + R) \Leftrightarrow v_1 - v_2 \in L \land w_1 - w_2 \in R
+%     $$
+%     从而有
+%     $$
+%         \begin{aligned}
+%             B(v_1, w_1) - B(v_2, w_2) &= B(v_1, w_1) - B(v_1, w_2) + B(v_1, w_2) - B(v_2, w_2)\\
+%             & = B(v_1, w_1 - w_2) + B(v_1 - v_2, w_2) \\
+%             & = 0
+%         \end{aligned}
+%     $$
+%     这表明$\overline{B}(v_1 + L, w_1 + R) = \overline{B}(v_2 + L, w_2 + R)$.
+
+%     然后验证了其是非退化的, 论证如下:
+%     $$
+%         \begin{aligned}
+%             &\forall w + R \in W / R \Rightarrow \overline{B}(v + L, w + R) = 0 \\
+%             \Leftrightarrow & \forall w \in W \Rightarrow B(v, w) = 0\\
+%             \Leftrightarrow & v \in L \\
+%             \Leftrightarrow & v + L = 0_{V/L}
+%         \end{aligned}
+%     $$
+% \end{proof}
+
+% \textcolor{red}{我的问题在于: 为什么说该映射是自然的?} (以下是我的一次错误尝试, 仅做阐述思路用)我尝试过使用线性映射及其商映射来解释, 即定义$V \times W$上的等价关系:
+% \[
+%     (v_1, w_1) \sim (v_2, w_2) \Leftrightarrow v_1 - v_2 \in L \land w_1 - w_2 \in R
+% \]
+% 我希望这一定义能导出$(v, w)$的等价类是$(v + L, w+R)$, 但事实并非如此:
+% $$
+%     \begin{aligned}
+%         [(v, w)]_{\sim} &= \{ (x, y): x - v \in L \land y - w \in R \} \\
+%         &= (v+L) \times (w + R) \subset V \times W
+%     \end{aligned}
+% $$
+% 另外, $B$也不是$V \times W$上的线性映射, 因此无法使用$U \subset \Ker T$所导出的商空间上的映射$v + U \mapsto Tv$.
