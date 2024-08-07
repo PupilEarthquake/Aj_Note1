@@ -1,9 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{Notebook}[2025A]
+\RequirePackage{kvoptions}
+\RequirePackage{etoolbox}
 
 \LoadClass{book}
 
-\RequirePackage{etoolbox}
 \RequirePackage{fontspec}				% XeLaTeX
 \RequirePackage[CJKchecksingle]{xeCJK}	% XeCJK
 \RequirePackage{CJKnumb}				% 使用 CJK 数字
@@ -42,13 +43,29 @@
 		\vbox to.675em{\hrule width.6em\vfil\hrule}%
 		\vrule\hfil}}
 
+
+% \g@addto@macro\frontmatter{
+%     \pagestyle{empty}%	清空页面风格
+% 	\renewcommand{\thepage}{C\arabic{page}}
+%     \input{config/titlepage.tex}
+%     \pagestyle{fancy}		% 复原页面风格为 fancy
+% 	\pagenumbering{roman}	% 页码复原为小写罗马字母
+
+%     \setcounter{page}{1}
+% 	\thispagestyle{empty}
+% 	\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+%     \tableofcontents
+% }
+
+
 \AtEndPreamble{
 	\RequirePackage[thmmarks, amsmath, hyperref]{ntheorem}	% 设置定理环境所需
     \hypersetup{
 			colorlinks = true,
 			linkcolor = blue,
 			citecolor = blue,
-			urlcolor = teal}  % 设置链接颜色
+			urlcolor = blue}  % 设置链接颜色
 
     \RequirePackage{geometry}  % 设置版面
     \geometry{

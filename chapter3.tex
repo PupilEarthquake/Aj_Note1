@@ -54,22 +54,24 @@ $V$ is $F$\mbox{-}vector space, $S \subset V$:
 \end{theorem}
 
 \begin{proof}
-    Zorn's Lemma and Axiom Choise are equivalent propositions. We use Zorn's Lemma in this proof directly. 
+    Zorn's Lemma and Axiom of Choise are equivalent propositions. We use Zorn's Lemma in this proof directly. 
 
-    (1) Let $S$ be a linearly independent set ($S = \emptyset$ is allowed). We define set $P$ as 
+    (1) Let $S$ be a linearly independent set (it is permissible for$S = \emptyset$). Define set $P$ as 
     \[
         P = \{ T \subset V: S \subset T \land T \ \text{is linearly independent set} \}
     \]
-    $P$, together with the $\subset$, forms a partially ordered set. Suppose $T'$ is a chain contained in $P$, let $T_0 = \bigcup_{t \in T'} t$, it can be verified that $T_0$ is linearly independent set. Thus we have established that every chain in $P$ has an upper bound. Applying Zonr's Lemma we get $P$ has a maximal element, which is indeed the basis of $V$.
+    $P$, together with the subset relation $\subset$, forms a partially ordered set. Suppose $T'$ is a chain contained in $P$, let $T_0 = \bigcup_{t \in T'} t$, it can be verified that $T_0$ is linearly independent set. Thus we have established that every chain in $P$ has an upper bound. Applying Zonr's Lemma we get $P$ contains an maximal element, which is precisely the basis of $V$.
 
-    (2) Suppose $B, B'$ are two sets of basis for $V$. We first consider the case of $|B| < \aleph_0$. We denote $B$ as $\{ \beta_1, \cdots, \beta_n \}$. Then $|B'|$ must smaller than $n$ since $B' \subset \lag \beta_1, \cdots, \beta_n \rag$ and $B'$ is linearly independent. If not, asusming that $|B'| > n$. There exists $n+1$ elements in $B'$ that also belong to $\lag \beta_1, \cdots, \beta_n \rag$, which implies these elements are dependent, contradicting the facts that $B'$ is linearly independent set. Using the same method, we obtain that $|B| \leq |B'|$.
+    (2) Suppose $B, B'$ are two sets of basis for $V$. We first consider the case where $|B| < \aleph_0$ and denote $B = \{ \beta_1, \cdots, \beta_n \}$.
+    Since $B' \subset \lag \beta_1, \cdots, \beta_n \rag$ and $B'$ is linearly independent,  $|B'|$ must smaller than $n$. To see this, suppose for contradiction that $|B'| > n$. Then there would exists $n+1$ elements in $B'$ that also belong to $\lag \beta_1, \cdots, \beta_n \rag$, implying that these elements are linearly dependent. By a similar argument, we obtain $|B| \leq |B'|$.
+    % Observe that $|B'|$ must smaller than $n$ since $B' \subset \lag \beta_1, \cdots, \beta_n \rag$ and $B'$ is linearly independent. If not, asusming that $|B'| > n$. There exists $n+1$ elements in $B'$ that also belong to $\lag \beta_1, \cdots, \beta_n \rag$, which implies these elements are dependent, contradicting the facts that $B'$ is linearly independent set. Using the same method, we obtain that $|B| \leq |B'|$.
 
-    Now let $|B| \geq \aleph_0$, by the discussion above, we immediatly get $|B'| \geq \aleph_0$ as well. For any $\alpha \in B$, there exists a finite set $B'_{\alpha}$ that $\alpha \in \lag B'_{\alpha} \rag$. Let $A$ be $\bigcup_{\alpha \in B} B'_{\alpha}$. It can be verified that $V = \lag A \rag$. We asser that $A = B'$. If not, there exists $\alpha' \in B' \smallsetminus A$. Notice that $\alpha' \in \lag A \rag$, thus we have $\alpha' = \sum_{x \in A} k_x x$, where the equition $\alpha' - \sum_{x \in A} k_x x = 0$ is a nontrival linear relationship on set $B'$, contradicts the property of independence. According to proposition \ref{proposition 1.3.1}, we get:
+    Now let $|B| \geq \aleph_0$, by the discussion above, we immediatly get $|B'| \geq \aleph_0$ as well. For any $\alpha \in B$, there exists a finite set $B'_{\alpha}$ that $\alpha \in \lag B'_{\alpha} \rag$. Define $A = \bigcup_{\alpha \in B} B'_{\alpha}$. It can be verified that $V = \lag A \rag$. We asser that $A = B'$. If not, there exists $\alpha' \in B' \smallsetminus A$. Notice that $\alpha' \in \lag A \rag$, so we have $\alpha' = \sum_{x \in A} k_x x$, where the equition $\alpha' - \sum_{x \in A} k_x x = 0$ is a non-trival linear relationship among the elements of $B'$, which contradicts the property of the independence of $B'$. According to proposition \ref{proposition 1.3.1}, we get:
     $$
         |B'| = \left| \bigcup_{\alpha \in B} B'_{\alpha} \right| \leq \left| \bigsqcup_{\alpha \in B} B'_{\alpha} \right| \leq \left| B \times \Z_{\geq 0} \right| = |B|
     $$
 
-    (3) $(\Rightarrow)$: It is easy to verify that $T(S) \subset W$ is linearly independent and spans $W$. On the other hand, $T^{-1}$ is also a isomophism, then proof of the reverse direction is clear.
+    (3) $(\Rightarrow)$: It is straitforward to verify that $T(S) \subset W$ is linearly independent and spans $W$. Furthermore, $T^{-1}$ is also a isomophism, then proof of the reverse direction follows immediatly.
 \end{proof}
 
 
@@ -103,7 +105,7 @@ $V$ is $F$\mbox{-}vector space, $S \subset V$:
 \section{Direct Sum}
 
 \begin{definition}
-    Let $(V_i)_{i \in I}$ be a series of $F$ \mbl vector space:
+    Let $(V_i)_{i \in I}$ be a series of $F \mbl$vector space:
     \begin{enumerate}
         \item $\prod_{i \in I} V_i := \left\{ \left[f: I \to \bigcup_{i \in I} V_i\right]: f(i) \in V_i \right\}$.
         \item $\bigoplus^{\Ext}_{i \in I} V_i := \left\{ (v_i)_{i\in I} \in \prod_{i \in I} V_i : \text{finite many } v_i \neq 0 \right\}$
@@ -149,7 +151,10 @@ It can be verified that $\sigma$ is a well defined linear mapping, and is surjec
             & \Leftrightarrow \left( \sum_{i \in I} a_i = 0 \Rightarrow (a_i)_{i \in I} = 0\right)
         \end{aligned} 
    \]
-   We can extract the equivalence of the 1st, 3rd and 4th propositions from the above formula. Next, we prove the equivalence of the 1st and 2nd propositions. Assuming that $\sigma$ is injective, and that $\gamma \in V_i \cap \sum_{j \in I \smallsetminus \{i\}} V_j$. It follows that $\gamma - \sum_{j \in I \smallsetminus \{i\}} v_j = 0$, thus $\gamma = 0$. For re the reverse direction, suppose that $\sum_{i \in I} v_i = 0$, we want to demonstrate that $v_i = 0$. For any $i$, we have $v_i + \sum_{j \in I \smallsetminus \{i\}} v_j \in V_i \cap \sum_{j \in I \smallsetminus \{i\}} V_j$, which implies that $v_i = 0$.
+   We can extract the equivalence of the 1st, 3rd and 4th propositions from the above formula. Subsequently, we proceed to prove the equivalence between the 1st and 2nd propositions. Assuming that $\sigma$ is injective, and that $\gamma \in V_i \cap \sum_{j \in I \smallsetminus \{i\}} V_j$. It follows that $\gamma - \sum_{j \in I \smallsetminus \{i\}} v_j = 0$, thereby concluding that $\gamma = 0$. 
+   For the converse, suppose that $\sum_{i \in I} v_i = 0$. Our goal is to show that $v_i = 0$. For any $i$, observe that $v_i + \sum_{j \in I \smallsetminus \{i\}} v_j \in V_i \cap \sum_{j \in I \smallsetminus \{i\}} V_j$, which implies that $v_i = 0$.
+
+   
 
    In the case of $V_i$ is finite dimentional and $I$ is finite. We have
     \begin{align*}
@@ -171,7 +176,7 @@ When $\sigma$ is isomophism, we define the series of functions as follows:
     \item $p_i : \bigoplus^{\Ext}_{j \in I} V_j \to V_i:  (v_j)_{j \in I} \mapsto v_i$.
     \item $\tilde{p}_i = p_i \sigma^{-1} : \bigoplus_{j \in I}V_j \to V_i$
 \end{itemize}
-And the diagram commutes:
+The diagram commutes:
 
 \begin{center}
     \begin{tikzcd}
@@ -236,7 +241,7 @@ where
 \[
     T' : (v_j)_{j \in J} \mapsto \left( \sum_{j \in J} p_i^{W} T \iota_j^{V} v_j \right)_{i \in I}.
 \]
-Next, we get a closer look of the transformation of $T$.
+% Subsequently, we get a closer look of the transformation of $T$.
 
 
 % If $U \subset V$ is a subspace, clearly $U = \bigoplus_{i\in I} (V_i \cap U) = \bigoplus_{i \in I} U_i$. $U_i$ is the subspace of $V$, so we can define it's external direct sum $\bigoplus^{\Ext}_{i\in I} U_i$, which can be verified is a subspace of $\bigoplus^{\Ext}_{i \in I} V_i$. 
@@ -251,7 +256,8 @@ Next, we get a closer look of the transformation of $T$.
 % 剩下的只需证明两个不同子空间的交是零空间. 但是我无法证明$(V_i + U) / U \cap (V_j + U) / U = \{ 0 + U \}$.
 
 
-We first prove the following proposition under the `external perspective' that $\iota_i$ is the embedding $V_i \hookrightarrow \bigoplus^{\Ext}_{j \in J} V_j$ and $p_i$ is the corresponding projection.
+% We first prove the following proposition 
+Under the `external perspective' that $\iota_i$ is the embedding $V_i \hookrightarrow \bigoplus^{\Ext}_{j \in J} V_j$ and $p_i$ is the corresponding projection, the following proposition is true:
 
 
 \begin{proposition}
@@ -340,7 +346,7 @@ Finlly, we use the above isomophism to derive the definition of block matrixs an
     \item $n_1 + \cdots + n_s = n$ and $m_1 + \cdots + m_r = m$.
     \item $\bs{V}{1}, \cdots, \bs{V}{s}$ arranged in order form a basis $\bs{V}{}$ for $V$, and similarly for $W$, yielding a basis $\bs{W}{}$. 
 \end{itemize}
-We define mapping $\varphi$ as:
+Define mapping $\varphi$ as:
 \[
     \begin{tikzcd}[row sep=small]
         \bigoplus_{\substack{1 \leq i \leq r \\ 1 \leq j \leq s}}\Mat_{m_i \times n_j}(F) \arrow[r, "\varphi"]
@@ -360,8 +366,8 @@ We define mapping $\varphi$ as:
     The following diagram commutes:
     \[
         \begin{tikzcd}
-            \Hom(\bigoplus_{j \in J}V_j, \bigoplus_{i \in I}W_i) \arrow[r, "\sim"]  \arrow[d, "\calM^{\bs{W}{}}_{\bs{V}{}}"', "\sim"]
-            & \bigoplus^{\Ext}_{(i, j) \in I \times J} \Hom(V_j, W_i) \arrow[d, "\calM^{\bs{W}{i}}_{\bs{V}{j}}", "\sim"']
+            \Hom(\bigoplus_{j \in J}V_j, \bigoplus_{i \in I}W_i) \arrow[r, "\sim"]  \arrow[d, "\calM^{\bss{W}{}}_{\bss{V}{}}"', "\sim"]
+            & \bigoplus^{\Ext}_{(i, j) \in I \times J} \Hom(V_j, W_i) \arrow[d, "\calM^{\bss{W}{i}}_{\bss{V}{j}}", "\sim"']
             \\
             \Mat_{m \times n}(F)
             & \bigoplus^{\Ext}_{(i, j) \in I \times J} \Mat_{m_i \times n_j}(F)  \arrow[l, "\varphi"', "\sim"]
@@ -373,21 +379,21 @@ We define mapping $\varphi$ as:
         \begin{aligned}
             T v_{j, \mu} &= \sum_{i=1}^r p_i^W \iota_i^W T \iota_j^V (v_{j, \mu}) \\
             &= \sum_{i=1}^r T_{i,j} v_{j, \mu} \\
-            &= \left[ \sum_{\rho=1}^{m_1} (\calM^{\bs{W}{1}}_{\bs{V}{j}}(T_{1,j}))_{\rho, \mu} w_{1, \rho} \right] + \cdots + \left[ \sum_{\rho=1}^{m_r} (\calM^{\bs{W}{r}}_{\bs{V}{j}}(T_{r,j}))_{\rho, \mu} w_{r, \rho} \right] \\
+            &= \left[ \sum_{\rho=1}^{m_1} (\calM^{\bss{W}{1}}_{\bss{V}{j}}(T_{1,j}))_{\rho, \mu} w_{1, \rho} \right] + \cdots + \left[ \sum_{\rho=1}^{m_r} (\calM^{\bss{W}{r}}_{\bss{V}{j}}(T_{r,j}))_{\rho, \mu} w_{r, \rho} \right] \\
         \end{aligned}
     \end{equation*}
     Notice that the following array is exactly the corresponding row of $\calM^{\bs{W}{}}_{\bs{V}{}}(T)$:
     \begin{equation*}
         \begin{bmatrix}
-            (\calM^{\bs{W}{1}}_{\bs{V}{j}}(T_{1,j}))_{1, \mu}, (\calM^{\bs{W}{1}}_{\bs{V}{j}}(T_{1,j}))_{2, \mu}, \cdots, (\calM^{\bs{W}{r}}_{\bs{V}{j}}(T_{r,j}))_{m_r, \mu}
+            (\calM^{\bss{W}{1}}_{\bss{V}{j}}(T_{1,j}))_{1, \mu}, (\calM^{\bss{W}{1}}_{\bss{V}{j}}(T_{1,j}))_{2, \mu}, \cdots, (\calM^{\bss{W}{r}}_{\bss{V}{j}}(T_{r,j}))_{m_r, \mu}
         \end{bmatrix}
     \end{equation*}
     Arranging them will form a matrix as:
     \begin{equation*}
         \begin{bmatrix}
-            \calM^{\bs{W}{1}}_{\bs{V}{1}}(T_{1,1}) & \cdots & \calM^{\bs{W}{1}}_{\bs{V}{s}}(T_{1,s}) \\
+            \calM^{\bss{W}{1}}_{\bss{V}{1}}(T_{1,1}) & \cdots & \calM^{\bss{W}{1}}_{\bss{V}{s}}(T_{1,s}) \\
             \vdots & & \vdots \\
-            \calM^{\bs{W}{r}}_{\bs{V}{1}}(T_{r,1}) & \cdots & \calM^{\bs{W}{r}}_{\bs{V}{s}}(T_{r,s})
+            \calM^{\bss{W}{r}}_{\bss{V}{1}}(T_{r,1}) & \cdots & \calM^{\bss{W}{r}}_{\bss{V}{s}}(T_{r,s})
         \end{bmatrix}
     \end{equation*}
 \end{proof}
@@ -411,30 +417,79 @@ The mapping $\calM$ preserves multiplication, which is represented as:
     \calM(\circ(S, T)) = \cdot(\calM(S), \calM(T))
 \end{equation*}
 
-When $V$ is a finite dimentional $F\mbl$vector space, one of the perspectives of $\calM(Tv)$ is to view $v$ as a linear mapping from $F$ to $V$. To be specific, for any $v \in V$ we can define a isomophism as follows:
-\[
-    \begin{tikzcd}[row sep=small]
-        V \arrow[r, "\sim"]
-        & \Hom(F, V) \\
-        v \arrow[mapsto, r]
-        & \left[ f_v: 1 \mapsto v \right] \\
-        f_v(1)
-        & f_v \arrow[mapsto, l]
-    \end{tikzcd}
-\]
-Thus $\calM(Tv) = \calM(T)\calM(v)$, where $\calM(v)$ is exactly the coordinate of $v$ under the basis that we choosen for $V$.
+% When $V$ is a finite dimentional $F\mbl$vector space, one of the perspectives of $\calM(Tv)$ is to view $v$ as a linear mapping from $F$ to $V$. To be specific, for any $v \in V$ we can define a isomophism as follows:
+% \[
+%     \begin{tikzcd}[row sep=small]
+%         V \arrow[r, "\sim"]
+%         & \Hom(F, V) \\
+%         v \arrow[mapsto, r]
+%         & \left[ f_v: 1 \mapsto v \right] \\
+%         f_v(1)
+%         & f_v \arrow[mapsto, l]
+%     \end{tikzcd}
+% \]
+% Thus $\calM(Tv) = \calM(T)\calM(v)$, where $\calM(v)$ is exactly the coordinate of $v$ under the basis that we choosen for $V$.
 
-Any $A \in \Mat_{m \times n}(F)$ naturally induces a linear mapping $F^n \to F^m$, defined as:
+% Any $A \in \Mat_{m \times n}(F)$ naturally induces a linear mapping $F^n \to F^m$, defined as:
+% \[
+%     \begin{tikzcd}[row sep=small]
+%         F^n \arrow[r]
+%         & F^m
+%         \\
+%         (x_j)_{j=1}^n  \arrow[mapsto, r]
+%         & \left( \sum_{j=1}^n a_{i, j} x_j \right)_{i=1}^m
+%     \end{tikzcd}
+% \]
+
+The isomophism of the vector sapce at both ends of a linear mapping makes a copy of the mapping, represented as the diagram:
 \[
-    \begin{tikzcd}[row sep=small]
-        F^n \arrow[r]
-        & F^m
+    \begin{tikzcd}
+        V_1  \arrow[d, "\sim"', sloped]  \arrow[r, "T"]
+        & W_1 \arrow[d, "\sim", sloped]
         \\
-        (x_j)_{j=1}^n  \arrow[mapsto, r]
-        & \left( \sum_{j=1}^n a_{i, j} x_j \right)_{i=1}^m
+        V_2  \arrow[r, "T'"']
+        & W_2
     \end{tikzcd}
 \]
 
+Here are some common cases:
+\begin{enumerate}
+    \item[1.] $V, W$ are two vector spaces, $T \in \Hom(V, W)$. Under the isomophism that $V \simeq \Hom(F, V): v \mapsto [k \mapsto k \cdot v]$ the following diagram commutes, where $T \circ$ maps $f_v$ to $T \circ f_v$:
+\end{enumerate}
+\[
+    \begin{tikzcd}
+        V  \arrow[r, "T"] \arrow[d, "\sim"', sloped]
+        & W \arrow[d, "\sim", sloped]
+        \\
+        \Hom(F, V)  \arrow[r, "T \circ"]
+        & \Hom(F, W)
+    \end{tikzcd}
+\]
+\begin{enumerate}
+    \item[2.] Conctinuing the above definitions, under the isomophism between $\Hom(F, V)$ and $\Mat_{n \times 1}(F)$, the diagram commutes, where $A\cdot$ maps $x$ to $A \cdot x$:
+\end{enumerate}
+\[
+    \begin{tikzcd}
+        V  \arrow[r, "T"] \arrow[d, "\sim"', sloped]
+        & W \arrow[d, "\sim", sloped]
+        \\
+        \Mat_{n \times 1}(F)  \arrow[r, "A \cdot"]
+        & \Mat_{m \times 1}(F)
+    \end{tikzcd}
+\]
+
+\begin{enumerate}
+    \item[3.] Given basis $\bs{V}{}$ and $\bs{W}{}$ of $V, W$, let $\varphi_{\bss{V}{}}$ be the isomophism of $V$ and $F^n$. The diagram commutes, where $A$ maps $(x_i)_{i=1}^n$ to $(\sum_{j=1}^n a_{i,j} x_j)_{i=1}^m$:
+\end{enumerate}
+\[
+    \begin{tikzcd}
+        V  \arrow[r, "T"] \arrow[d, "\sim"', sloped]
+        & W \arrow[d, "\sim", sloped]
+        \\
+        F^n  \arrow[r, "A"]
+        & F^m
+    \end{tikzcd}
+\]
 
 
 
@@ -470,21 +525,21 @@ As the isomophism of finite dimentional space and its coordinate space, $\varphi
 
 
 \begin{proposition}
-    Given finite dimentional $F\mbl$vector scpace $V, W$ and their basis $\bs{V}{}, \bs{W}{}$. $T \in \Hom(V, W)$. Define $\varphi_{\bs{V}{}}$ as the isomophism discussed above. Then the diagram commutes:
+    Given finite dimentional $F\mbl$vector scpace $V, W$ and their basis $\bs{V}{}, \bs{W}{}$. $T \in \Hom(V, W)$. Define $\varphi_{\bss{V}{}}$ as the isomophism discussed above. Then the diagram commutes:
     \[
         \begin{tikzcd}
             V \arrow[r, "T"]
             & W
             \\
-            F^n \arrow[u, "\varphi_{\bs{V}{}}", "\sim"'] \arrow[r, "\calM^{\bs{W}{}}_{\bs{V}{}}(T)"']
-            & F^m \arrow[u, "\varphi_{\bs{W}{}}"', "\sim"]
+            F^n \arrow[u, "\varphi_{\bss{V}{}}"] \arrow[r, "\calM^{\bss{W}{}}_{\bss{V}{}}(T)"']
+            & F^m \arrow[u, "\varphi_{\bss{W}{}}"']
         \end{tikzcd}
     \]
 \end{proposition}
-If $T = \idd_{V}$ and $W = V$, we also use $P^{\bs{V}{1}}_{\bs{V}{2}}$ to represent $\calM^{\bs{V}{1}}_{\bs{V}{2}}(T)$. It can be verified that 
+If $T = \idd_{V}$ and $W = V$, we also use $P^{\bss{V}{1}}_{\bss{V}{2}}$ to represent $\calM^{\bss{V}{1}}_{\bss{V}{2}}(T)$. It can be verified that 
 \begin{gather*}
-    P^{\bs{V}{1}}_{\bs{V}{2}} P^{\bs{V}{2}}_{\bs{V}{1}} = P^{\bs{V}{2}}_{\bs{V}{1}} P^{\bs{V}{1}}_{\bs{V}{2}} = I_n \\
-    P^{\bs{V}{3}}_{\bs{V}{2}} P^{\bs{V}{2}}_{\bs{V}{1}} = P^{\bs{V}{3}}_{\bs{V}{1}}
+    P^{\bss{V}{1}}_{\bss{V}{2}} P^{\bss{V}{2}}_{\bss{V}{1}} = P^{\bss{V}{2}}_{\bss{V}{1}} P^{\bss{V}{1}}_{\bss{V}{2}} = I_n \\
+    P^{\bss{V}{3}}_{\bss{V}{2}} P^{\bss{V}{2}}_{\bss{V}{1}} = P^{\bss{V}{3}}_{\bss{V}{1}}
 \end{gather*}
 
 
@@ -495,16 +550,16 @@ If $T = \idd_{V}$ and $W = V$, we also use $P^{\bs{V}{1}}_{\bs{V}{2}}$ to repres
     Given $V, W$ and thier ordered basis $\bs{V}{1}, \bs{V}{2}, \bs{W}{1}, \bs{W}{2}$, the following diagram commutes:
     \[
         \begin{tikzcd}
-            F^n \arrow[rrr, "\calM^{\bs{W}{2}}_{\bs{V}{2}}(T)"] \arrow[dd, "P^{\bs{V}{2}}_{\bs{V}{1}}"']
+            F^n \arrow[rrr, "\calM^{\bss{W}{2}}_{\bss{V}{2}}(T)"] \arrow[dd, "P^{\bss{V}{2}}_{\bss{V}{1}}"']
             &
             &
-            & F^m \arrow[dd, "P^{\bs{W}{2}}_{\bs{W}{1}}"]
+            & F^m \arrow[dd, "P^{\bss{W}{2}}_{\bss{W}{1}}"]
             \\
-            & V \arrow[r, "T"] \arrow[lu, "\varphi_{\bs{V}{2}}"'] \arrow[ld, "\varphi_{\bs{V}{1}}"']
-            & W \arrow[ru, "\bs{V}{2}"]  \arrow[rd, "\bs{W}{1}"]
+            & V \arrow[r, "T"] \arrow[lu, "\varphi_{\bss{V}{2}}"'] \arrow[ld, "\varphi_{\bss{V}{1}}"']
+            & W \arrow[ru, "\bss{V}{2}"]  \arrow[rd, "\bss{W}{1}"]
             &
             \\
-            F^n \arrow[rrr, "\calM^{\bs{W}{1}}_{\bs{V}{1}}(T)"']
+            F^n \arrow[rrr, "\calM^{\bss{W}{1}}_{\bss{V}{1}}(T)"']
             &
             &
             & F^m
@@ -522,7 +577,7 @@ If $T = \idd_{V}$ and $W = V$, we also use $P^{\bs{V}{1}}_{\bs{V}{2}}$ to repres
 
 \section{Quotient Space}
 \begin{theorem}
-    \label{theorem linear0}
+    \label{theorem 3.4.1}
     Suppose $U \subset V$ is a subspace, $T \in \Hom(V, W)$. If $U \subset \Ker T $, there exists unique $\overline{T} \in \Hom(V / U, W)$ which makes the diagram commute:
     \[
         \begin{tikzcd}
@@ -536,7 +591,7 @@ If $T = \idd_{V}$ and $W = V$, we also use $P^{\bs{V}{1}}_{\bs{V}{2}}$ to repres
     \[
         \begin{tikzcd}
             V \arrow[two heads, r, "\pi"] \arrow[d, "T"']
-            & V / \sim_U \arrow[ld, "\overline{T}"]
+            & V / \sim_U \arrow[ld, "\overline{T}"] \arrow[ld, phantom, "\sim"', sloped, yshift=0.7ex]
             \\
             \Im T
         \end{tikzcd}
@@ -556,7 +611,7 @@ If $T = \idd_{V}$ and $W = V$, we also use $P^{\bs{V}{1}}_{\bs{V}{2}}$ to repres
 
 
 \begin{theorem}
-    Given $V$ with a equivalence relation $\sim$, where $V / \sim$ consists a $F \mbl$vector space, and $q: V \to V/\sim$ is its quotient mapping. Then $v_1 \sim v_2 \Leftarrow v_1 - v_2 \in \Ker q \Leftarrow v_1 \sim_{\Ker q} v_2$, and the $\overline{q}$ derived form previous theorem is actually identity, makes the diagram commute:
+    Given a vector space $V$ endowed with a equivalence relation $\sim$, where $V / \sim$ forms a $F \mbl$vector space, and $q: V \to V/\sim$ is its quotient mapping. Then $v_1 \sim v_2 \Leftarrow v_1 - v_2 \in \Ker q \Leftarrow v_1 \sim_{\Ker q} v_2$. The mapping $\overline{q}$ derived form theorem\ref{theorem 3.4.1} is actually identity, thereby ensuring the commutativity of the diagram below:
     \[
         \begin{tikzcd}
             V \arrow[two heads, r, "\pi"] \arrow[two heads, d, "q"'] 
@@ -602,7 +657,7 @@ If $T = \idd_{V}$ and $W = V$, we also use $P^{\bs{V}{1}}_{\bs{V}{2}}$ to repres
 \end{theorem}
 
 \begin{proof}
-    For the first case, $\pi_2 T$ is a linear mapping. Notice that $v \in \Ker \pi_2 T \Leftrightarrow Tv \in U_2$, thus $v \in U_1 \land T(U_1) \subset U_2 \Rightarrow v \in \Ker \pi_2 T$. We obtain that $U_1 \subset \Ker \pi_2 T$, then applying theorem \ref{theorem linear0}.
+    For the first case, $\pi_2 T$ is a linear mapping. Notice that $v \in \Ker \pi_2 T \Leftrightarrow Tv \in U_2$, thus $v \in U_1 \land T(U_1) \subset U_2 \Rightarrow v \in \Ker \pi_2 T$. Therefore $U_1 \subset \Ker \pi_2 T$, so we could apply theorem \ref{theorem 3.4.1}.
 \end{proof}
 
 
@@ -683,7 +738,7 @@ If $T = \idd_{V}$ and $W = V$, we also use $P^{\bs{V}{1}}_{\bs{V}{2}}$ to repres
             \item[1.1] $\pi(W)$ is an element in prescribed set, and the mapping $W \mapsto \pi(W)$ is well defined.
             \item[1.2] $\pi^{-1}(\overline{W})$ is an element in prescribed set, and mapping $\overline{W} \mapsto \pi^{-1}(\overline{W})$ is well defined.
             \item[1.3] $W \mapsto \pi(W) \mapsto \pi^{-1}(\pi(W))$ is identity: Obviously $W \subset \pi^{-1}(\pi(W))$. For any $x \in \pi^{-1}(\pi (W))$, we have $\pi(x) \in \pi(W)$. Thus there exists $w \in W$ such that $x + U = w + U$. Hence $x - w \in U \subset W$.
-            \item[1.4] $\overline{W} \mapsto \pi^{-1}(\overline{W}) \mapsto \pi(\pi^{-1} (\overline{W}))$ is identity: Obviously $\pi(\pi^{-1}(\overline{W})) \subset \overline{W}$.  Assume $\overline{x} \in \overline{W}$, by the surjection of $\pi$, there exists $x \in V$ such that $\pi(x) = \overline{x}$, because $\overline{W} \subset \overline{V}$. It implies that $x \in \pi^{-1}(\overline{W})$, thus $\overline{x} = \pi(x) \in \pi(\pi^{-1}(\overline{W}))$.
+            \item[1.4] $\overline{W} \mapsto \pi^{-1}(\overline{W}) \mapsto \pi(\pi^{-1} (\overline{W}))$ is identity: Obviously $\pi(\pi^{-1}(\overline{W})) \subset \overline{W}$.  Assume $\overline{x} \in \overline{W}$, by the surjection of $\pi$, there exists $x \in V$ such that $\pi(x) = \overline{x}$, because of that $\overline{W} \subset \overline{V}$. It implies $x \in \pi^{-1}(\overline{W})$, thus $\overline{x} = \pi(x) \in \pi(\pi^{-1}(\overline{W}))$.
         \end{enumerate}
     \item[2]
     \begin{enumerate}
@@ -760,21 +815,21 @@ The other assumtions are listed as follows:
     \item $V_2 / U_2 = \lag \bs{B'}{2} \rag = \lag \beta'_{s+1}, \cdots, \beta'_{s+m} \rag$.
     \item Applying Theorem \ref{theorem 3.4.6}, we obtain the conplement space of $U_i$ and thier basis, namely $W_1 = \lag \bs{A}{2} \rag = \lag \alpha_{r+1}, \cdots, \alpha_{r+n} \rag$, $W_2 = \lag \bs{B}{2} \rag = \lag \beta_{s+1}, \cdots, \beta_{s+m} \rag$.
 \end{enumerate}
-Under the decomposition of $V_1 = U_1 \oplus W_1$ and $V_2 = U_2 \oplus W_2$, $\Hom(V_1, V_2)$ is decomposited, where its element $T$ has the equivalent form:
+Under the decomposition of $V_1 = U_1 \oplus W_1$ and $V_2 = U_2 \oplus W_2$, $\Hom(V_1, V_2)$ undergoes a decomposition, where each of its element $T$ admits an equivalent form:
 \[
     \begin{bmatrix}
         T_{11} & T_{12} \\
         T_{21} & T_{22}
     \end{bmatrix}
 \]
-We possess to prove that:
+Subsequently, we proceed to prove the following propositions:
 \begin{enumerate}
     \item $T_{21} = \calO$.
     \item $T_{11} = T|_{U_1}$.
     \item $\calM(T_{22}) = \calM(\overline{T})$.
 \end{enumerate}
 
-The 1st and 2nd proposition are easy to verify. As for the 3rd one, notice that:
+The 1st and 2nd proposition are easy to verify. Regarding the 3rd one, our inital conclusion is that the subsequent diagram commutes:
 \[
     \begin{tikzcd}
         V_1 / U_1  \arrow[r, "\overline{T}"]
@@ -788,9 +843,9 @@ Suppose $w_1 \in W_1$, then we have
 \[ 
     w_1 \xmapsto[]{\sigma_1} w_1 + U_1 \xmapsto[]{\overline{T}} Tw_1 + U_2 \xmapsto[]{\sigma_2^{-1}} p_2^{V_2}Tw_1 = p_2^{V_2}T \iota_{2}^{V_1}w_1 = T_{22} w_1
 \]
-Thus $\sigma_2^{-1} \overline{T} \sigma_1 = T_{22}$. The rest work we need to do is to demonstrate that $\calM(\sigma_2^{-1})= I_{m}, \calM(\sigma_{1}) = I_n$ and $\calM(T_{22}) = \calM(\sigma_2^{-1}) \calM(\overline{T}) \calM(\sigma_{1}) = \calM(\overline{T})$.
+Thus $\sigma_2^{-1} \overline{T} \sigma_1 = T_{22}$. The rest work we need to do is to demonstrate that $\calM(\sigma_2^{-1})= I_{m}, \calM(\sigma_{1}) = I_n$ and $\calM(T_{22}) = \calM(\sigma_2^{-1}) \calM(\overline{T}) \calM(\sigma_{1}) = \calM(\overline{T})$, which is straitforward to prove.
 
-In conclusion, the matix of $T$ under the prescribed basis has the form
+Consequently, the matix of $T$ under the prescribed basis has the form
 \[
     \begin{bmatrix}
         \calM(T|_{U_1}) & * \\
@@ -798,52 +853,3 @@ In conclusion, the matix of $T$ under the prescribed basis has the form
     \end{bmatrix}
 \]
 
-
-
-
-% \newpage
-
-% \begin{example}
-%     设$V, W$是$F\mbl$向量空间, $B: V \times W \to F$是双线性映射. 记$B$的左根为$L=\{ v \in V: B(v, \cdot) = \calO_{W} \}$, 右根为$R=\{ w \in W: B(\cdot, w) = \calO_{V} \}$. 容易证明$L, R$分别为$V, W$的子空间. 称$B$非退化的, 如果其左根和右根都是零空间. 证明: $B$\textbf{自然地}诱导出非退化的$\overline{B}: (V/L) \times (W / R) \to F$, 由下式给出:
-%     \[
-%         (v + L, w + R) \mapsto B(v , w)
-%     \]
-% \end{example}
-% \begin{proof}
-%     首先我验证了该映射Well defined, 因为
-%     $$
-%         (v_1 + L, w_1 + R) = (v_2 + L, w_2 + R) \Leftrightarrow v_1 - v_2 \in L \land w_1 - w_2 \in R
-%     $$
-%     从而有
-%     $$
-%         \begin{aligned}
-%             B(v_1, w_1) - B(v_2, w_2) &= B(v_1, w_1) - B(v_1, w_2) + B(v_1, w_2) - B(v_2, w_2)\\
-%             & = B(v_1, w_1 - w_2) + B(v_1 - v_2, w_2) \\
-%             & = 0
-%         \end{aligned}
-%     $$
-%     这表明$\overline{B}(v_1 + L, w_1 + R) = \overline{B}(v_2 + L, w_2 + R)$.
-
-%     然后验证了其是非退化的, 论证如下:
-%     $$
-%         \begin{aligned}
-%             &\forall w + R \in W / R \Rightarrow \overline{B}(v + L, w + R) = 0 \\
-%             \Leftrightarrow & \forall w \in W \Rightarrow B(v, w) = 0\\
-%             \Leftrightarrow & v \in L \\
-%             \Leftrightarrow & v + L = 0_{V/L}
-%         \end{aligned}
-%     $$
-% \end{proof}
-
-% \textcolor{red}{我的问题在于: 为什么说该映射是自然的?} (以下是我的一次错误尝试, 仅做阐述思路用)我尝试过使用线性映射及其商映射来解释, 即定义$V \times W$上的等价关系:
-% \[
-%     (v_1, w_1) \sim (v_2, w_2) \Leftrightarrow v_1 - v_2 \in L \land w_1 - w_2 \in R
-% \]
-% 我希望这一定义能导出$(v, w)$的等价类是$(v + L, w+R)$, 但事实并非如此:
-% $$
-%     \begin{aligned}
-%         [(v, w)]_{\sim} &= \{ (x, y): x - v \in L \land y - w \in R \} \\
-%         &= (v+L) \times (w + R) \subset V \times W
-%     \end{aligned}
-% $$
-% 另外, $B$也不是$V \times W$上的线性映射, 因此无法使用$U \subset \Ker T$所导出的商空间上的映射$v + U \mapsto Tv$.

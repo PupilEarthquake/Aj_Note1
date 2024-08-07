@@ -43,7 +43,7 @@ Other conclusions:
 
 
 
-\subsection{Proofs}
+\noindent{\large\textbf{Proof}}
 
 % \textbf{A1}. Let $p$ be a prime element, suppose $a | p$, then $p | ab$. If $p | a$, we have $p \sim a$. On the other hand, if $p | b$, then $p = hpa$. Due to there is no zero divisor in ID, we conclude that $pa = 1$, which implies $a \sim 1$.
 
@@ -82,4 +82,179 @@ Other conclusions:
     \item[\textbf{B4}.] $(\Rightarrow)$ is similar to  \textbf{B2}. Next we prove the $(\Leftarrow)$ direction (\cite{LWW_AJN} Proposition 6.3.2). Suppose $R$ is UFD , $p \in R$ is irreducible, and $p | ab$ where $a = q_1 \cdots q_m, \ b = r_1\cdots r_n$. Therefore $\frac{ab}{p}$ can be decomposited as $s_1 \cdots s_t$. Thus $q_1 \cdots q_m r_1\cdots r_n = ab = s_1 \cdots s_t p$. By the uniqueness of decomposition, it follows that $p \sim q_i \lor p \sim r_i$. 
     \item[\textbf{B5}.] Suppose $a = \prod_{i \geq 1} p_i^{n_i}, \ b = \prod_{i\geq 1} p_i^{m_i}$. Let $g_0 = \prod_{i \geq 1} p_i^{\min\{ n_i, m_i \}}$. Recall the definition of gcd in PID that $\langle a_1 , \cdots, a_n \rangle = \gcd(a_1, \cdots, a_n) R = gR$. It directs us toward the proof of $g_0 \sim g$. Pursuant to \cite{LWW_AJN} Proposition 2.7.3, we have $g_0|a \land g_0 | b \Leftrightarrow (\forall x \in \langle a, b \rangle \Rightarrow g_0 | a ) \Leftrightarrow g_0 | g$. To prove the reverse direction, notice that $g | a \land g | b$, which implies that $g = \prod_{i\geq 1} p_i^{t_i}$ and $t_i \leq \min\{ n_i, m_i \}$. We conclude that $g | g_0$.
 \end{enumerate}
+
+
+
+\section{Unique factorization domain}
+\begin{definition}
+    $R$ is UFD iff (i) each non-zero element in $R$ can be decomposited into the multiplication of finite many irreducible elements; (ii) this decomposition is Unique in the sense of equivalence that $a \sim b \Leftrightarrow a \in bR^{\times}$.
+\end{definition}
+
+
+\begin{corollary}
+    $p$ is an irreducible element, then every element in $p R^{\times}$ is irreducible.
+\end{corollary}
+
+
+Define $P = \{ p \in R: \text{irreducible element} \}$. The equivalence relationship was defined as $a \sim b \Leftrightarrow a \in b R^{\times}$. We hope to decompose $P$ into the disjoint union of equivalence classes, and select a subset consisting of representative elements. To archieve this, the first step is choose an function $g \in \prod (P / \sim)$. Then $\Im g$ is what we want.
+
+
+\begin{proposition}
+    Suppose $\Im g = \{ p_a \}_{a \in A}$. $R$ is UFD. Then $\forall a \in R^*$ can be decomposited as:
+    \[
+        \underbracket{e}_{\in R^{\times}} \prod_{a \in A} \underbracket{p_a^{n_a}}_{\text{fm } n_a \neq 0 } 
+    \]
+\end{proposition}
+
+\begin{proof}
+    By definition of UFD, we obtain that $a = q_1^{n_1} \cdots q_s^{n_s}$, where $q_i \in [p_i]_{\sim}$. Thus $a = e_1^{n_1} \cdots e_s^{n_s} p_1^{n_1} \cdots p_s^{n_s}$.
+\end{proof}
+
+
+
+Suppose $R$ is a ring, and $a_1, \cdots, a_s \in R$. In principle, the greatest common divisor of $a_1, \cdots, a_s$ are define as an element $d$ which satisfies the following properties: (i) $d$ is a common factor; (ii) for any common factor $l$ it holds that $l | d$. For other spacial rings, the gcd has different definitions. Below is an example in UFD:
+
+
+
+\begin{definition}
+    $a_1 , \cdots, a_s \in R^*$, each of them can be decomposited to $e_i \prod_{a \in A} p_a^{n_{ai}}$. Then
+    \[
+        \gcd(a_1, \cdots, a_s) := \prod_{a \in A} p_a^{\min\{ n_{a1}, \cdots, n_{as} \}}
+    \]
+    (This definition ensures it's output is $1$ when the inputs are mutual prime.)
+\end{definition}
+
+
+
+
+
+Using the newly definition of gcd, it can be verified that:
+\begin{proposition}
+    If $a_1 , \cdots, a_s \in R^*$, then:
+    \begin{enumerate}
+        \item $\forall i,\ \gcd(a_1, \cdots, a_s) | a_i$.
+        \item $\forall i \ (d | a_i) \Rightarrow d | \gcd(a_1, \cdots, a_s)$.
+    \end{enumerate}
+    Additionally, if $r \in R$ satisfies the following properties:
+    \begin{enumerate}
+        \item $\forall i,\ r | a_i$.
+        \item $\forall i \ (d | a_i) \Rightarrow d | r$.
+    \end{enumerate}
+    then $r \in \gcd(a_1, \cdots, a_s) R^{\times}$. In other words, the set that consisting of all gcd of $a_1, \cdots, a_s$ is $\gcd(a_1, \cdots, a_s) R^{\times}$.
+\end{proposition}
+
+
+
+
+
+\begin{corollary}
+    Suppose $a = u \prod_{i=1}^s p_i^{n_i}, b = v \prod_{i=1}^{s} p_i^{m_i}$, then
+    \[
+        a | b \Leftrightarrow \forall i\ ( n_i \leq m_i) 
+    \]
+\end{corollary}
+\begin{proof}
+    Without losing generality, suppose for the contradiction that $n_1 > m_1$, and it leads to a contradiction:
+    \begin{align*}
+        a | b &\Leftrightarrow \exists h \in R\ (ah = b) \\
+        & \Rightarrow p_{i}^{m_1} \left( u h p_1^{n_1 - m_1} p_2^{n_2} \cdots p_s^{n_s} - v p_2^{m_2} \cdots p_s^{m_s} \right) = 0\\
+        &\Rightarrow u h p_1^{n_1 - m_1} p_2^{n_2} \cdots p_s^{n_s} =  v p_2^{m_2} \cdots p_s^{m_s} \\
+        & \text{(By the definition of UFD )} \Rightarrow n_1 = m_1
+    \end{align*}
+
+    For the reverse direction, suppose $\forall i \ (n_i \leq m_i)$. It follows that:
+    \[
+        u \prod_{i=1}^s p_i^{n_i} \cdot u^{-1} v \prod_{i=1}^s p_{i}^{m_1 - n_i} = v \prod_{i=1}^{s} p_i^{m_i}
+    \]
+\end{proof}
+
+
+\begin{proposition}
+    $R$ is UFD, then each irreducible element is prime element.
+\end{proposition}
+
+
+
+
+
+
+
+\textbf{All subsequent} $R$ \textbf{, if not otherwise specified, is UFD}.
+
+
+\begin{definition}
+    $R[X]^* \ni f = a_n X^n + \cdots + a_0$, and $d$ is one of the gcds of $a_n, \cdots, a_0$, then:
+    \[
+        f \text{is primitive polynomial} \Leftrightarrow d \sim 1
+    \]
+\end{definition}
+
+
+
+\begin{definition}
+    $R[X]^* \ni f = a_n X^n + \cdots + a_0$, then:
+    \[
+        c(f) := \gcd(a_n, \cdots, a_0)
+    \]
+\end{definition}
+
+
+
+
+\begin{proposition}
+    \label{proposition 2.2.10}
+    For any $f \in R[X]^*$:
+    \begin{enumerate}
+        \item $f = df_0$, where $d \in R^*$ and $f_0$ is primitive polynomial.
+        \item If $f = d_1 f_1 = d_2 f_2$, then $d_1 \sim d_2 $in $R$ and $f_1 \sim f_2 $ in $R[X]$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    (1)
+    \[
+        f = c(f) \sum_{i=0}^n \frac{a_i}{c(f)} X^i \land \gcd\left( \frac{a_0}{c(f)}, \cdots, \frac{a_n}{c(f)} \right) = 1
+    \]
+
+    (2)
+    Suppose
+    \[
+        a_1\left( \sum_{i=0}^{n} c_i X^i \right) = a_2\left( \sum_{i=0}^{n} d_i X^i \right)
+    \]
+    where $\frac{a_2}{a_1}  = \frac{p}{q} \land \gcd(p, q) = 1$, and both polynomials are primitive. It is equivalent to:
+    \begin{align*}
+        & q \left( \sum_{i=0}^{n} c_i X^i \right) =  p \left( \sum_{i=0}^{n} d_i X^i \right) \\
+        & \Rightarrow \forall i ,\ q c_i = p d_i \\
+        & \Rightarrow \forall i,\ q | d_i \land p | c_i \\
+        & \Rightarrow p\sim 1 \land q \sim 1
+    \end{align*}
+\end{proof}
+
+
+\begin{proposition}
+    $R$ is UFD, and $F$ is its fraction filed, then for $f_1, f_2 \in R[X]^*$, its holds that:
+    \[
+        f_1 \sim f_2 \text{ on } R[X] \Leftrightarrow  f_1 \sim f_2 \text{ on } F[X]
+    \]
+\end{proposition}
+\begin{proof}
+    See \cite{Qiu_MA} p.156. $(\Rightarrow)$: Obvious. $(\Leftarrow)$: similar to Proposition\ref{proposition 2.2.10}.
+\end{proof}
+
+
+
+
+
+\begin{lemma}
+    $f_1, f_2 \in R[X]$ are primitive polynomials, then $f_1f_2$ is primitive polynomial.
+\end{lemma}
+\begin{proof}
+    See \cite{LWW_AJN} Lemma 6.9.4.
+\end{proof}
+
+
+
+
+
+
+
 
