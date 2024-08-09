@@ -85,6 +85,134 @@ Other conclusions:
 
 
 
+
+
+
+
+
+
+\section{Some properties of ring}
+
+
+Several isomophism theorems can copy the results of linear space, see Section \ref{section 3.4}.
+
+
+\begin{proposition}
+    \label{proposition 2.2.1}
+    For any ring $R$, there exists unique homomorphism $\sigma: \Z \to R$ that maps $1$ into $1_R$.
+\end{proposition}
+
+
+
+\begin{definition}
+    Continuing with the conditions above, $\Ker \sigma \subset \Z$ is an ideal. By the propertie of PID, there exists unique number $\character R \in \Z \land \character R \geq 0$ such that: 
+    \[
+        \Ker \sigma = (\character R) \Z
+    \]
+\end{definition}
+
+
+
+
+\begin{proposition}
+    $R_0$ is a subring of $R$, then $\character(R_0) = \character(R)$.
+\end{proposition}
+
+
+
+\begin{proposition}
+    $R$ is an ID, then:
+    \begin{enumerate}
+        \item $\character(R) = 0 \Rightarrow \Q \hookrightarrow R$.
+        \item $\character(R) = p > 0 \Rightarrow \F_p \hookrightarrow R$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    (1): By Proposition \ref{proposition 2.2.1}, observe that $\Z \xhookrightarrow[]{\sigma} R$, and then apply Proposition \ref{proposition 2.2.5}. 
+
+    (2): It holds that $\Z / \Ker \sigma = \Z / p\Z = \F_p \simeq \Im \sigma = R$.
+\end{proof}
+
+
+
+
+
+
+\begin{proposition}
+    \label{proposition 2.2.5}
+    Suppose $R$ is ID, $R'$ is CR. $\varphi: R \to R'$ is a ring homomorphism, which satisfies $\varphi(R^*) \subset (R')^{\times}$. Then there exists unique $\Phi: \Frac(R) \to R'$ that maps $[f, g]$ to $\varphi(f)\varphi(g)^{-1}$, in other words, the following diagram commutes:
+    \[
+        \begin{tikzcd}
+            R \arrow[r, "\varphi"]  \arrow[hook, d, "\iota"]
+            & R'
+            \\
+            \Frac(R)  \arrow[ru, "\Phi"']
+        \end{tikzcd}
+    \]
+\end{proposition}
+\begin{proof}
+    Define mapping $\psi: \Ratio(R) \to R'$ as follows: $(a, b) \mapsto \varphi(a) \varphi(b)^{-1}$. It can be verified that (i) $\psi$ is well defined; (ii) $\psi$ is ring homomorphism; (iii) $(a, b) \sim (c, d) \Leftrightarrow ad = bc \Rightarrow \psi(a, b) = \psi(c, d)$. Applying Theorem \ref{theorem equiv1}, there exists unique mapping $\Phi: \Ratio(R) / \sim \to R'$ that maps $[a, b]$ to $\varphi(a)\varphi(b)^{-1}$. It straitfoward to verify it is a ring homomorphism.
+\end{proof}
+
+
+
+\begin{corollary}
+    The ID $R$ embeded into field $F$, where each element can be represented as $\tau(a) \tau(b)^{-1}$. There exists unique ring isomorphism $\Phi: \Frac(R) \to F$ that maps $[a, b]$ to $\tau(a)\tau(b)^{-1}$, which is equivalent to the diagram:
+    \[
+        \begin{tikzcd}
+            R \arrow[hook, r, "\tau"]  \arrow[hook, d, "\iota"]
+            & F
+            \\
+            \Frac(R)  \arrow[ru, "\Phi"']  \arrow[ru, phantom, sloped, yshift=0.7ex, "\sim"]
+        \end{tikzcd}
+    \]
+\end{corollary}
+
+
+
+
+
+\begin{proposition}
+    $R$ is ID, then
+    \[
+        \Frac(R)(X) \simeq \Frac(R[X])
+    \]
+\end{proposition}
+\begin{proof}
+    \[
+        \begin{tikzcd}
+            R[X]  \arrow[r, hook]  \arrow[rr, bend left, hook, "\tau"]  \arrow[d, hook, "\iota"']
+            & \Frac(R)[X]  \arrow[r, hook]
+            & \Frac(R)(X)
+            \\
+            \Frac(R[X])  \arrow[rru, "\Phi"']  \arrow[rru, phantom, sloped, yshift=0.7ex, "\sim"]
+        \end{tikzcd}
+    \]
+    The noly thing that need to clarify is that every element in $\Frac(R)(X)$ can be denoted as $\tau(a)\tau(b)^{-1}$ where $a, b \in R[X]$, and it is straitforward:
+    \[
+        \frac{
+            \sum_{i=0}^{n} \frac{a_i}{b_i} X^i
+        }{
+            \sum_{j=0}^{m} \frac{c_j}{d_j} X^j
+        }=
+        \frac{
+            \prod_{j=0}^{m} d_j \sum_{i=0}^{n} a'_iX^i
+        }{
+            \prod_{i=0}^{n} b_i \sum_{j=0}^{m} c'_iX^i
+        }
+    \]
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
 \section{Unique factorization domain}
 \begin{definition}
     $R$ is UFD iff (i) each non-zero element in $R$ can be decomposited into the multiplication of finite many irreducible elements; (ii) this decomposition is Unique in the sense of equivalence that $a \sim b \Leftrightarrow a \in bR^{\times}$.
@@ -185,7 +313,7 @@ Using the newly definition of gcd, it can be verified that:
 \begin{definition}
     $R[X]^* \ni f = a_n X^n + \cdots + a_0$, and $d$ is one of the gcds of $a_n, \cdots, a_0$, then:
     \[
-        f \text{is primitive polynomial} \Leftrightarrow d \sim 1
+        f \text{ is primitive polynomial} \Leftrightarrow d \sim 1
     \]
 \end{definition}
 
@@ -202,7 +330,7 @@ Using the newly definition of gcd, it can be verified that:
 
 
 \begin{proposition}
-    \label{proposition 2.2.10}
+    \label{proposition 2.3.10}
     For any $f \in R[X]^*$:
     \begin{enumerate}
         \item $f = df_0$, where $d \in R^*$ and $f_0$ is primitive polynomial.
@@ -231,13 +359,14 @@ Using the newly definition of gcd, it can be verified that:
 
 
 \begin{proposition}
+    \label{proposition 2.3.11}
     $R$ is UFD, and $F$ is its fraction filed, then for $f_1, f_2 \in R[X]^*$, its holds that:
     \[
         f_1 \sim f_2 \text{ on } R[X] \Leftrightarrow  f_1 \sim f_2 \text{ on } F[X]
     \]
 \end{proposition}
 \begin{proof}
-    See \cite{Qiu_MA} p.156. $(\Rightarrow)$: Obvious. $(\Leftarrow)$: similar to Proposition\ref{proposition 2.2.10}.
+    See \cite{Qiu_MA} p.156. $(\Rightarrow)$: Obvious. $(\Leftarrow)$: similar to Proposition \ref{proposition 2.3.10}.
 \end{proof}
 
 
@@ -256,5 +385,97 @@ Using the newly definition of gcd, it can be verified that:
 
 
 
+\begin{proposition}
+    \label{proposition 2.3.13}
+    Suppose $f \in R[X]$ where $\deg f > 0$ and is primitive polynomial. The following propositions are equivalent:
+    \begin{enumerate}
+        \item[1.] $f$ is reducible in $F[X]$.
+        \item[2.] $f = f_1 f_2$ in $R[X]$ where $\deg f_i > 0$ and each $f_i$ is primitive polynomial.
+    \end{enumerate}
+    subsequently, the following propositionsa are equivalent:
+    \begin{enumerate}
+        \item[i.] $f$ is irreducible in $F[X]$.
+        \item[ii.] There does not exists $f_1, f_2 \in R[X]$ where $\deg f_i > 0$ and is primitive polynomial, such that $f = f_1 f_2$. 
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    $(1) \Rightarrow (2)$: $f = g_1 g_2 \in F[X]$ where $g_i \in F[X]^{\times}$. Notice that $F[X]^{\times} = F^{\times} = F^*$ and $g_i \notin f F^*$, which implies that $0< \deg g_i < \deg f$. Apply Proposition \ref{proposition 2.3.10}, we have $f = k_1 k_2 \underbracket{g'_1 g'_2}_{\text{pp in } R[X]}$. Then by Proposition \ref{proposition 2.3.11}, $f = eg'_1 g'_2 = g_1 g_2$.
+
+    $(2) \Rightarrow (1)$: Trival.
+
+    $(i) \Leftrightarrow (ii)$: Inverse negative proposition of $(1) \Leftrightarrow (2)$.
+\end{proof}
 
 
+
+
+
+
+
+\begin{corollary}
+    primitive polynomial $f \in R[X]$ and $\deg f > 0$, the following propositions are equivalent:
+    \begin{enumerate}
+        \item $f$ is irreducible in $R[X]$.
+        \item $f$ is irreducible in $F[X]$.
+    \end{enumerate}
+\end{corollary}
+\begin{proof}
+    $(2) \Rightarrow (1)$: Suppose $f \in R[X]$ is reducible, so $f = f_1 f_2$ where $f_i \notin R[X]^{\times} \cup f R^{\times} \cup \{ 0_{R} \}$. Notice that if $f_1 \in R^* \smallsetminus R^{\times}$ then $f$ is not primitive polynomial. If $\deg f_1 = \deg f$. this implies that $\deg f_2 = 0$, which leads to a contradiction. In conclusion, $0 < \deg f_i < \deg f$. It follows that $f$ is reducible in $F[X]$.
+
+    $(1) \Rightarrow (2)$: Assuming that $f$ is reducible in $F[X]$. Applying Proposition \ref{proposition 2.3.13}, it immediatly follows that $f$ is reducible in $R[X]$.
+\end{proof}
+
+
+
+
+
+
+
+\begin{corollary}
+    Irreducible element in $R[X]$ can be devided into two classes:
+    \begin{itemize}
+        \item $\deg f = 0$: f is irreducible element in $R$.
+        \item $\deg f > 0$: element that satisfies with the condition of Proposition \ref{proposition 2.3.13} (ii).
+    \end{itemize}
+\end{corollary}
+
+
+
+
+
+
+$f \in R[X]$ can be denoted as:
+\[
+    f = p_1^{e_1} \cdots p_s^{e_s}
+\]
+where each $p_i$ is irreducible element of $R[X]$. It follows that:
+\[
+    f' = \sum_{i=1}^{s} e_i p_i^{e_i - 1} p'_i \prod_{j \neq i} p_{j}^{e_j}
+\]
+Further more:
+\begin{align*}
+    p_i | f' & \Leftrightarrow p_i | e_i p_i^{e_i - 1} p'_i \prod_{j \neq i} p_j^{e_j} \\
+    & \Leftrightarrow p_i | e_i p_i^{e_i - 1} p'_i \ (\text{This holds true when } e_i 1_R = 0 \lor p'_i = 0) \\
+    & \Leftrightarrow (p'_i = 0) \lor (p'_i \neq 0 \land e_i \geq 2)
+\end{align*}
+Thus we obtain that $p_i \nmid f' \Leftrightarrow p'_i \neq 0 \land e_i = 1$. Notice that
+\[
+    \gcd(f, f') = 1 \Leftrightarrow
+    \left\{ 
+        \begin{aligned}
+            &f' \neq 0 \\
+            &p'_i \nmid f'
+        \end{aligned}
+    \right.
+\]
+Consequently, we have:
+\[
+    \gcd(f, f') = 1 \Leftrightarrow
+    \left\{ 
+        \begin{aligned}
+            &f' \neq 0 \\
+            &p'_i \neq 0 \land e_i = 1
+        \end{aligned}
+    \right.
+\]
+This indicates that when $p'_i \neq 0$, $f$ has no repeated roots iff $\gcd(f, f') = 1$. In particular, if $f$ split over $R$, $p'_i \neq 0$ natually holds, then $f$ has no repeated roots iff $\gcd(f, f') = 1$.
