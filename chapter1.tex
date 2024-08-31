@@ -1,14 +1,181 @@
 \chapter{Set Theory}
 
-\section{Ordinal}
+
+
+\section{ZFC System}
+
+We ackonwledge the ZFC axiomatic system, and consider that the elements of a set are still sets. 
+
 
 \begin{proposition}
-  If $\alpha$ is an ordinal, then $\alpha \notin \alpha$.
+  If the axiom of regularity is accepted, namely:
+  \[
+    \forall A \neq \emptyset \ \exists a \in A \ (\forall a' \in A \Rightarrow a' \notin a)
+  \]
+  which is equivalent to:
+  \[
+    \forall A \neq \emptyset \ \exists a \in A \ (a \cap A = \emptyset)
+  \]
+  The following propositions are true:
+  \begin{enumerate}
+    \item $\forall A \ (A \notin A)$.
+    \item $x_1 \in x_2 \Rightarrow x_1 \neq x_2$.
+    \item $\nexists \{ x_i \}_{i \geq 0}$ such that $x_1 \ni x_2 \ni \cdots$
+  \end{enumerate}
+\end{proposition}
+
+
+
+
+
+\begin{corollary}
+  $A_0$ is a transitive set, then
+  \[
+    A_n \in A_{n-1} \in \cdots \in A_0 \Rightarrow (\forall 1 \leq k \leq n) \  A_k \in A_0
+  \]
+\end{corollary}
+
+
+
+
+\section{Mapping}
+
+
+\begin{proposition}
+  The following propositions are equivalent:
+  % \begin{itemize}
+  %   \item $f: X \to Y$ is injection.
+  %   \item $f$ has the left inverse $g$ that satisfies $gf = \idd_{X}$.
+  %   \item $f$ has the left cancellation law, namely $g_1 f = g_2 f \Rightarrow g_1 = g_2$ for $g_i: Y \to Z$.
+  % \end{itemize}
+  \begin{enumerate}
+    \item[1]
+    \begin{enumerate}
+      \item[1.1] $f: X \to Y$ is injection.
+      \item[1.2]  $f$ has the left inverse $g$ that satisfies $gf = \idd_{X}$.
+      \item[1.3] $f$ has the left cancellation law, namely $g_1 f = g_2 f \Rightarrow g_1 = g_2$ for $g_i: Y \to Z$.
+    \end{enumerate}
+    \item[2]
+    \begin{enumerate}
+      \item[2.1] $f: X \to Y$ is surjection.
+      \item[2.2] $f$ has the right inverse $g$ that satisfies $fg = \idd_{Y}$.
+      \item[2.3] $f$ has the right cancellation law, namely $fg_1 = fg_2 \Rightarrow g_1 = g_2$ for $g_i: Z \to X$.  
+    \end{enumerate}
+  \end{enumerate}
 \end{proposition}
 
 \begin{proof}
-  $\alpha$ is an ordinal if it is a transitive set and is well-ordered with respect to $\in$. Assume that $\alpha \in \alpha$ holds, then $\alpha$ is an element of itself. This lead to the contradiction $\alpha < \alpha$, which violate the property of tot-ordering that states $\alpha \leq \alpha \wedge \alpha \leq \alpha \Rightarrow \alpha = \alpha$.
+  see \cite{LWW_AJN} proposition 2.2.6.
 \end{proof}
+
+
+
+
+
+
+
+
+\begin{proposition}
+  For mapping $f: X \to Y$, it holds that:
+  \begin{enumerate}
+    \item[Gnr]
+    \begin{enumerate}
+      \item[G.1.] $f(\bigcup_{i \in I} U_i) = \bigcup_{i \in I} f(U_i)$.
+      \item[G.2.] $f(\bigcap_{i \in I} U_i) \subset \bigcap_{i \in I} f(U_i)$.
+      \item[G.3.] $f(X \smallsetminus U) \supset f(X) \smallsetminus f(U)$.
+    \end{enumerate}
+    \item[Inj]
+    \begin{enumerate}
+      \item[I.1.] $f(\bigsqcup_{i\in I} U_i) = \bigsqcup_{i \in I} f(U_i)$.
+      \item[I.2.] $f(\bigcap_{i \in I} U_i) = \bigcap_{i \in I} f(U_i)$.
+      \item[I.3.] $f(X \smallsetminus U) = f(X) \smallsetminus f(U)$
+    \end{enumerate}
+    \item[Ivs]
+    \begin{enumerate}
+      \item[R.1.] $f^{-1}(\bigcup_{i \in I} V_i) = \bigcup_{i \in I} f^{-1}(V_i)$.
+      \item[R.2.]  $f^{-1}(\bigcap_{i \in I} V_i) = \bigcap_{i \in I} f^{-1}(V_i)$.
+      \item[R.3.]  $\forall V_1, V_2 \subset Y, \ f^{-1}(V_1 \smallsetminus V_2) = f^{-1}(V_1) \smallsetminus f^{-1}(V_2)$.
+    \end{enumerate}
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  \begin{enumerate}
+    \item[Gnr]
+    \begin{enumerate}
+      \item[G.1.] Trivial.
+      \item[G.2.] Trivial.
+      \item[G.3.] Trivial.
+    \end{enumerate}
+    \item[Inj]
+    \begin{enumerate}
+      \item[I.1.] We now prove that $\bigcap_{i \in I} f(U_i) \subset f(\bigcap_{i \in I}U_i)$. Suppose $y \in \bigcap_{i \in I} f(U_i)$, there exists $x \in X$ so that $y = f(x)$. If $x \notin \bigcap_{i \in I} U_i$, there must exists $U_k$ that makes $x \notin U_k$. By properties of injection, we have $y = f(x) \notin f(U_k)$, it follows that $f(x) \notin \bigcap_{i \in I} f(U_i)$.
+      \item[I.2.] When $U_1 \cap U_2 = \emptyset$, $f(U_1 \cap U_2) = \emptyset$.
+      \item[I.3.] Assume $y \in f(X \smallsetminus U)$, then there exists $ x \in X \smallsetminus U$ such that $y = f(x)$. Oberve that if $y \in f(U)$, then $\exists u \in U\ (f(u) = f(x))$, which contradicts the propertie of injection.
+    \end{enumerate}
+    \item[Ivs]
+    \begin{enumerate}
+      \item[R.1.] Trivial.
+      \item[R.2.] Trivial.
+      \item[R.3.] $x \in f^{-1}(V_1 \smallsetminus V_2) \Leftrightarrow f(x) \in V_1 \smallsetminus V_2 \Leftrightarrow f(x) \in V_1 \land f(x) \notin V_2 \Leftrightarrow x \in f^{-1}(V_1) \land x \notin f^{-1}(V_2)$.
+    \end{enumerate}
+  \end{enumerate}
+\end{proof}
+
+
+
+\begin{corollary}
+  $y_1 \neq y_2 \Rightarrow f^{-1}(y_1) \cap f^{-1}(y_2) = \emptyset$.
+\end{corollary}
+
+
+
+
+
+
+
+\begin{theorem}
+  \label{Mapping_Quotient_1}
+  $(X, \sim)$ is a set $X$ endowed with an equivalence relation $\sim$. $f: X \to Y$ is a mapping satisfies $x_1 \sim x_2 \Rightarrow f(x_1) = f(x_2)$. There exists unique mapping $\overline{f}: X / \sim \to Y$ that makes the following diagram commute:
+  \[
+    \begin{tikzcd}
+      X \arrow[two heads, r, "\pi"] \arrow[d, "f"'] 
+      & X / \sim  \arrow[ld, "\overline{f}"]
+      \\
+      Y
+    \end{tikzcd}
+  \]
+\end{theorem}
+
+
+
+
+\begin{theorem}
+  \label{Mapping_Quotient_2}
+  Conctinuing with the conditions of previous theorem, if $x_1 \sim x_2 \Leftrightarrow f(x_1) = f(x_2)$, there exists unique bijection $\overline{f}$ such that:
+  \[
+    \begin{tikzcd}
+      X \arrow[two heads, r, "\pi"] \arrow[d, "f"'] 
+      & X / \sim  \arrow[ld, "\overline{f}"]
+      \\
+      \Im(f)
+    \end{tikzcd}
+  \]
+\end{theorem}
+
+
+
+
+
+\section{Ordinal}
+
+% \begin{proposition}
+%   If $\alpha$ is an ordinal, then $\alpha \notin \alpha$.
+% \end{proposition}
+
+% \begin{proof}
+%   $\alpha$ is an ordinal if it is a transitive set and is well-ordered with respect to $\in$. Assume that $\alpha \in \alpha$ holds, then $\alpha$ is an element of itself. This lead to the contradiction $\alpha < \alpha$, which violate the property of tot-ordering that states $\alpha \leq \alpha \wedge \alpha \leq \alpha \Rightarrow \alpha = \alpha$.
+% \end{proof}
 
 
 % AI 
@@ -16,7 +183,7 @@
 
 
 
-
+Since $A \notin A$, the following corollary is true:
 
 \begin{corollary}
   If $\alpha$ is an ordinal, $\alpha + 1 := \alpha \cup \{ \alpha \}$ is actually $\alpha \sqcup \{ \alpha \}$.
@@ -27,8 +194,10 @@
 
 
 
+
 \begin{lemma}
-  \label{lemma 1.1.3}
+
+  \label{Ordinal_Tot_ordering}
   % 这个lemma表明类On具有全序.
   (This lemma suggests that $\On$ possesses a total-ordering.)
   % This lemma suggests that $\On$ possesses a total ordering.
@@ -39,15 +208,15 @@
   \end{enumerate}
 \end{lemma}
 \begin{proof}
-  (2): Let $\gamma$ be the minimal element of $(\beta \smallsetminus \alpha, \leq)$. It is clear that $\gamma \in \beta \smallsetminus \alpha$. We assert that $\alpha = \{ x \in \beta : x < \gamma \}$, where the latter is nothing more than $\gamma$. Here is the proof: Firstly, suppose $y \in \{ x \in \beta : x < \gamma \} = \gamma$. If $y \notin \alpha$, then $y < \gamma \wedge y \in \beta \smallsetminus \alpha$, thus making $y$ the minimal element and contradicts our assumption. Therefore we established that $\gamma \subset \alpha$. Secondly, notice that $\gamma, \ \alpha$ are elements that comply with the well-ordering of $\beta$, and $\gamma \notin \alpha$, thus $\gamma \geq \alpha$. 
-  % Let $\gamma$ be the minimal element of $(\beta \smallsetminus \alpha, \leq)$. It is clear that $\gamma \in \beta \smallsetminus \alpha$. We assert that $\alpha = \{ x \in \beta : x < \gamma\}$, which is essentially equivalent to $\gamma$. Here is the proof: Firstly, suppose $y$ belongs to $\{ x  \in  \beta : x <  \gamma\} =  \gamma$. If $y$ does not belong to $\alpha$, then $y <  \gamma$ and $y$ belongs to $\beta  \smallsetminus  	α$, thus making $y$ the minimal element. Therefore, we have established that  	$\gamma ⊆ α$. Secondly, it should be noted that both  	$\gamma$ and  	$\alpha$ are elements that comply with the well-ordering of  	β and   	γ ∉ α. Consequently, we can conclude that   	γ ≥ α.
-  %下面只考虑alpha < gamma 的情况 
-  We only consider the case of $\alpha < \gamma$: due to the transitivity, $\forall x \in \alpha ,\ x\in \alpha \wedge \alpha \in \gamma \Rightarrow x \in \alpha \subset \gamma \Rightarrow x \in \gamma$, therefore $\alpha \subset \gamma$.
-  % We only consider the case where $\alpha < \gamma$: due to transitivity, for all $x \in \alpha$, if $x \in \alpha$ and $\alpha \in \gamma$, then $x \in \alpha \subset \gamma \Rightarrow x \in \gamma$, therefore $\alpha \subset \gamma.
+  (2): Let $\gamma$ be the minimal element of $(\beta \smallsetminus \alpha, \leq)$. By properties of well-ordered set, there holds that $\gamma \in \beta \smallsetminus \alpha$. We assert $\alpha = \{ x \in \beta : x < \gamma \}$, where the latter is nothing more than $\gamma$. The proof is as follows:
+  \begin{enumerate}
+    \item $\forall x \in \gamma \Rightarrow x \in \alpha$, otherwise $x \in \beta \smallsetminus \alpha$ is smaller than $\gamma$.
+    \item $\forall x \in \alpha$, we first eliminate $x = \gamma$. Subsequently we have $x \subset \alpha$, which implies that $\gamma \notin x$.
+  \end{enumerate}
 
   (3): Let $\gamma = \alpha \cap \beta$, 
   % 我们断言gamma=alpha 和 gamma = beta 必居其一
-  we assert that either $\gamma = \alpha$ or $\gamma = \beta$ must be true since $\gamma \in \alpha \wedge \gamma \in \beta \Rightarrow \gamma \in \gamma$.
+  we assert that either $\gamma = \alpha$ or $\gamma = \beta$ must be true.
 \end{proof}
 
 
@@ -58,31 +227,31 @@
 
 
 \begin{corollary}
-    \label{corollary 1.1.4}
+    \label{Ordinal_Minimal_Element}
     Suppose $C$ is a class of ordinals, then $\bigcap C$ is an ordinal, and $\bigcap C \in C$. % 这个推论表明任何序数组成的类有极小元, 因此On具有良序
-    (This corollary implies that every class of ordinals has a minimal element, and therefore $\On$ is well-ordered.)
+    (This corollary implies that every class of ordinals has a minimal element.)
 \end{corollary}
 
 \begin{proof}
   % 根据分离公理模式可知cap C是一个集合
-  (step1) Firstly, we prove that $\bigcap C \in C$ is an ordinal. Let $\gamma$ be $\bigcap C$. According to the Axiom schema of separation, $\bigcap C$ is a set. Choosing a $c_0 \in C$, then we have:
-  \begin{align*}
-    \textrm{for any arbitrary}\ x \in \gamma &\Leftrightarrow x \in c  \ (\forall c \in C) \\
-    & \Rightarrow \gamma \subset c_0  \\
-    & \Rightarrow \gamma \ \textrm{is well ordered}
-  \end{align*}
-  As for the transitivity, the proof is as follows:
-  \begin{align*}
-    \textrm{for any arbitrary}\ x \in \gamma &\Leftrightarrow x \in c \ (\forall c \in C) \\
-    & \Rightarrow x \subset c \ (\forall c \in C) \\
-    & \Rightarrow x \subset \gamma
-  \end{align*}
-  
-  % Let $\gamma$ be $\bigcap C$, then $\gamma \in c \ \forall c \in C$, where each $c$ is an ordinal, a transitive set, thus $\gamma \subset c \ \exists c \in C$, one can see that $\gamma$ is well-ordered. 
-  
-  % $\forall \beta \in \gamma$, to prove $\beta \subset \gamma$, it is equivalent to show $\forall x \in \beta \Rightarrow x \in \gamma$, notice that $\exists c \in C (\beta \in \gamma \in c)$, by transitivation, $\forall x \in \beta \Rightarrow x \in \beta \wedge \beta \in \gamma \Rightarrow x \in \gamma$. 
-
-  (step2) Next, we prove that $\bigcap C \in C$. Assume that $\gamma \notin C$, $\forall x \in \gamma \Rightarrow x \in c \ (\forall x \in C)$, thus $\gamma \subset c \ \forall c \in C$, we also have $\gamma \neq c \ (\forall c \in C)$ because $\gamma \notin C$. Combine these two conclusions clause (2) of \ref{lemma 1.1.3}, we get $\gamma \in c \ (\forall c \in C)$. This implies $\gamma \in \bigcap C = \gamma$, which is impossible.
+  Firstly, we demonstrate that $\bigcap C \in C$ is an ordinal. Let $\gamma$ be $\bigcap C$. Invoking the Axiom schema of separation, $\bigcap C = \{ x\in c_0: c_0 \in C \land \forall c \in C \ (x \in c) \}$ forms a set. It follows that $\gamma \subset c_0$. Then we have:
+  \[
+      \forall x, y \in \gamma \Leftrightarrow x, y \in c_0
+  \]
+  This implies every element in $\gamma$ is comparable. Furthermore, we observe that every non-empty subset of $\gamma$ possesses a minimal element, since:
+  \[
+      \forall u \subset \gamma \Rightarrow u \subset c_0 
+  \]
+  and $c_0$ beging an ordianl guarentees the existance of a minimal element in $u$.
+  Regarding the transitivity, we note that:
+  \[
+    \forall x \in \gamma \Leftrightarrow \forall c \in C \ (x \in c) \Leftrightarrow \forall c \in C \ (x \subset c)
+  \]
+  Therefore:
+  \[
+    t \in x \Rightarrow \forall c \in C \ (t \in c) \Leftrightarrow t \in \gamma
+  \]
+  Finally, to prove $\bigcap C \in C$, we assume for contradict that $\gamma \notin C$. Then for any $c \in C$, we have $\gamma \in c$. However, this leads to the contradiction that $\gamma \in \gamma$.
 \end{proof}
 
 
@@ -93,19 +262,19 @@
 \begin{corollary}
   $\alpha \sqcup \{ \alpha \} = \inf \{ \beta: \beta > \alpha \}:= \bigcap \{ \beta: \beta > \alpha \}$.
 \end{corollary}
-\begin{proof}
-  \begin{align*}
-    \forall x \in \alpha \sqcup \{ \alpha \} &\Rightarrow x \in \alpha \vee x = \alpha \\
-    & \Rightarrow (\forall \beta > \alpha \Rightarrow \beta > x) \\
-    & \Rightarrow x \in \bigcap \{ \beta: \beta > \alpha \}
-  \end{align*}
 
-  To prove the reverse containment, pursuant to lemma \ref{lemma 1.1.3} we have $\forall x \in \On \wedge x \notin \alpha \sqcup \{ \alpha \} \Rightarrow a \in x \Rightarrow x \in \{\beta: \beta > \alpha \}$. We now verify that $x \notin \bigcap \{ \beta: \beta > \alpha \}$. Let $\gamma$ be $\bigcap \{ \beta: \beta > \alpha \}$, and assume that $x \in \gamma$. If $x = \gamma$, it makes $x = \gamma \in \gamma$. If $x \neq \gamma$, 
-  % 根据推论1.1.4的讨论得知, gamma是C中的极小元, 且x是C中不等于gamma的元素, 故gamma < x
-  as discussed in \ref{corollary 1.1.4}, let $\gamma$ be the minimal element of set $ \{ \beta: \beta > \alpha \}$.Suppose $x$ is an element belongs to the same class but distinct from $\gamma$. The only posibility is that $\gamma \in x$, which leads to the contradiction.
+\begin{proof}
+  Firstly, we observe that:
+  \[
+    x \in \alpha \sqcup \{ \alpha \} \Rightarrow x \in \alpha \vee x = \alpha \Rightarrow x \in \bigcap \{ \beta: \beta > \alpha \}
+  \]
+  To establish the reverse containment, let $\gamma = \bigcap \{ \beta: \beta > \alpha \}$, it follows that $\gamma > \alpha$ and $\forall \beta > \alpha \Rightarrow \gamma \subset \beta$. Consequently, we have $\alpha < \gamma \leq \alpha \sqcup \{ \alpha \}$, which is equivalent to stating that $\alpha \subsetneq \gamma \subset \alpha \sqcup \{ \alpha \}$. The only posibility that satisfies this condition is $\gamma=\alpha \sqcup \{ \alpha \}$.
+  % To prove the reverse containment, pursuant to lemma \ref{Ordinal_Tot_ordering} we have $\forall x \in \On \wedge x \notin \alpha \sqcup \{ \alpha \} \Rightarrow a \in x \Rightarrow x \in \{\beta: \beta > \alpha \}$. We now verify that $x \notin \bigcap \{ \beta: \beta > \alpha \}$. Let $\gamma$ be $\bigcap \{ \beta: \beta > \alpha \}$, and assume that $x \in \gamma$. If $x = \gamma$, it makes $x = \gamma \in \gamma$. If $x \neq \gamma$, 
+  % % 根据推论1.1.4的讨论得知, gamma是C中的极小元, 且x是C中不等于gamma的元素, 故gamma < x
+  % as discussed in \ref{Ordinal_Minimal_Element}, let $\gamma$ be the minimal element of set $ \{ \beta: \beta > \alpha \}$.Suppose $x$ is an element belongs to the same class but distinct from $\gamma$. The only posibility is that $\gamma \in x$, which leads to the contradiction.
 
   % 在基础数学的语境下，对您提供的段落进行规范和专业的改写如下：
-  % As established in Corollary 1.1.4, let \(\gamma\) denote the minimal element of the set \(\{\beta : \beta > \alpha\}\). Suppose \(x\) is an element of the same equivalence class as \(\gamma\) but distinct from \(\gamma\). The only possibility that remains consistent with the given conditions is that \(\gamma\) is an element of \(x\), i.e., \(\gamma \in x\). However, this inclusion leads to a contradiction.
+  % As established in Ordinal_Minimal_Element, let \(\gamma\) denote the minimal element of the set \(\{\beta : \beta > \alpha\}\). Suppose \(x\) is an element of the same equivalence class as \(\gamma\) but distinct from \(\gamma\). The only possibility that remains consistent with the given conditions is that \(\gamma\) is an element of \(x\), i.e., \(\gamma \in x\). However, this inclusion leads to a contradiction.
 
 \end{proof}
 
@@ -132,9 +301,55 @@
 
 
 
-\begin{proposition}
-  $\alpha$ is not a successor if and only if $\forall x \in \alpha \Rightarrow x+1 \in \alpha$.
-\end{proposition}
+% \begin{proposition}
+%   $\alpha$ is not a successor if and only if $\forall x \in \alpha \Rightarrow x+1 \in \alpha$.
+% \end{proposition}
+
+
+\begin{corollary}
+  Suppose $\alpha$ is an limit ordinal, the following are equivalent:
+  \begin{enumerate}
+    \item $\forall \beta < \alpha \Rightarrow \beta + 1 < \alpha$.
+    \item  $\alpha = \bigcup \{ \beta: \beta < \alpha \}$.
+  \end{enumerate}
+\end{corollary}
+
+\begin{proof}
+  $(1) \Rightarrow (2)$: A useful conclusion for any kind of ordinal is as follows:
+  \[
+    \alpha \supset \bigcup \{ \beta : \beta < \alpha \}
+  \]
+  Regarding limit ordinals, we proceed to prove the reverse containment:
+  \[
+    x \in \alpha \Rightarrow x + 1 \in \alpha \Rightarrow x \in x+1 \subset \bigcup \{ \beta : \beta < \alpha \}
+  \]
+\end{proof}
+
+
+
+
+
+
+
+We utilize Transfinite Recursion to define the various operations on ordinals, such as addition, multiplication and exponentiation (see \cite{LWW_AJM} p.18). For instance, addition is defined recursively as follows:
+
+Define $G$ as:
+\[
+  G(X) = 
+  \left\{
+    \begin{aligned}
+      & \alpha  & (X = 0)  \\
+      & a(\gamma) \sqcup \{ a(\gamma) \}  & \left( X = \{ (x, a(x)): x < \beta \land \beta = \gamma + 1 \} \right) \\
+      & \bigcup_{\gamma < \beta} a(\gamma)  & \left( X = \{ (x, a(x)): x < \beta \land \beta \text{ is limit ordinal} \} \right) \\
+      & \Omega  & (\text{else})
+    \end{aligned} 
+  \right.
+\]
+Then let $a + (\cdot)$ be a $\theta\mbl$sequence defined as:
+\[
+    \alpha + \beta := G(\{ (x, \alpha + x) \}_{x < \beta})
+\]
+By Transfinite Recursion, we can conclude that $a + (\cdot)$ is well-defined on $\bmrm{On}$.
 
 
 
@@ -250,6 +465,7 @@ given sole konwledge of it's initial value $a(0)$ an the funtion $G$ that prescr
 
 
 \begin{theorem}[Transfinite Recursion]
+  \label{Ordinal_Transfinite_Recursion}
   For any ordinal $\theta$, there exists a unique $\theta \mbox{-} sequence \ a$ such that for all ordinals $\alpha < \theta$, we have $a(\alpha) = G(a|_{\alpha})$. In particular, there exists a unique function $a: \On \to \bm{\mathrm{V}}$ so that for any ordinal $\alpha, \ a(\alpha) = G(a|_{\alpha})$.
 \end{theorem}
 
@@ -309,7 +525,103 @@ given sole konwledge of it's initial value $a(0)$ an the funtion $G$ that prescr
 
 
 
-\section{Cardinality}
+\section{Cardinal}
+
+
+\begin{definition}
+  $X$ is a set, $|X|$ is defined as its equipotence class. 
+\end{definition}
+
+
+
+
+
+\begin{theorem}[Schröder–Bernstein]
+  $|X| \leq |Y| \land |Y| \leq |X| \Rightarrow |X| = |Y|$.
+\end{theorem}
+
+\begin{proof}
+  Suppose there holds that $X \xhookrightarrow[]{f} Y \xhookrightarrow[]{g} X$. And notice the following diagram commutes:
+  \[
+    \begin{tikzcd}
+      X  \arrow[hook, r, "f"] \arrow[d, "\idd_X"']
+      & Y  \arrow[d, "g"]
+      \\
+      X_0  \arrow[r, hook, "f'"']
+      & Y_0
+    \end{tikzcd}
+  \]
+  where $Y_0 = \Im(g)$. Our purpose is to build a bijction on $X_0 \to Y_0$. To archieve this, define $X_n, Y_n$ recursively: $X_{n+1} = f'(X_n), Y_{n+1} = f'(Y_n)$. Then we obtain a chain like:
+  \[
+    X_0 \supset Y_0 \supset X_1 \supset Y_1 \supset \cdots
+  \]
+  It can be verified that:
+  \[
+    X_0 = \left( \bigsqcup_{n \geq 0} (X_n \smallsetminus Y_n) \right) \sqcup \left( \bigsqcup_{n\geq 0} (Y_n \smallsetminus X_{n+1}) \sqcup \left( \bigcap_{n \geq 0} X_n \right) \right) =: U \sqcup V
+  \]
+  By the propertie of injection, we also have:
+  \[
+    X_n \smallsetminus Y_n \xrightarrow[f']{1:1} X_{n+1} \smallsetminus Y_{n+1}
+  \]
+  Define $\phi: X_0 \to Y_0$ as:
+  \[
+    \phi(x) = 
+    \left\{
+      \begin{aligned}
+        &f'(x)  & (x \in U) \\
+        &x & (x \in V)
+      \end{aligned} 
+    \right.
+  \]
+  It trival to show that $\phi$ is well defined. We proceed to prove it's injection: The only case need to specify is that $x \in U \land y \in V$. To show this, notice that $\phi(x) \in U$ and $\phi(x) \in V$. Moreover, $\phi$ is surjection since:
+  \begin{itemize}
+    \item $\phi$ is injection $\Rightarrow \phi(X \sqcup Y) = \phi(X) \sqcup \phi(Y)$.
+    \item $\phi(V) = \idd(V) = V$.
+    \item $\phi(U) = f'(U) = \bigsqcup_{n \geq 0} (X_{n+1} \smallsetminus Y_{n+1})$.
+    \item $\phi(U \sqcup V) = Y_0$.
+  \end{itemize}
+\end{proof}
+
+
+
+
+
+
+\begin{definition}
+  $\kappa \in \bmrm{On}$ is a cardinal iff $\forall \lambda < \kappa \Rightarrow |\lambda| < |\kappa|$.
+\end{definition}
+
+By Well-ordering Theorem, every set $X$ has a equipotent ordinal $\alpha$. Define $C = \{ \alpha \in \bmrm{On}: |\alpha| = |X| \}$, and let $\alpha_X = \inf C$, it can be verified that $\alpha_X$ is a cardinal.
+
+
+\begin{proposition}
+  The following propositions are true:
+  \begin{enumerate}
+    \item $|X| = |Y| \Leftrightarrow \alpha_X = \alpha_Y$.
+    \item $|X| < |Y| \Leftrightarrow \alpha_X < \alpha_Y$.
+    \item $|X| \leq |Y| \Leftrightarrow \alpha_X \leq \alpha_Y$
+  \end{enumerate}
+\end{proposition}
+
+
+
+
+
+
+
+\begin{proposition}
+  For any non-zero cardinals $0 < \kappa \leq \lambda$, in which $\lambda$ is infinite cardinal. Then:
+  \begin{enumerate}
+    \item $\kappa + \lambda = \kappa \cdot \lambda = \max\{ \lambda, \kappa \}$.
+    \item If $2 \leq \kappa < \lambda$, then $\kappa^{\lambda} = 2^{\lambda}$.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  See \cite{LWW_AJM} Corollary 1.4.9.
+\end{proof}
+
+
+
 
 \begin{proposition}
   \label{proposition 1.3.1}
@@ -344,65 +656,118 @@ given sole konwledge of it's initial value $a(0)$ an the funtion $G$ that prescr
 
 
 
-\section{Mapping}
 
 
-\begin{proposition}
-  The following propositions are equivalent:
-  % \begin{itemize}
-  %   \item $f: X \to Y$ is injection.
-  %   \item $f$ has the left inverse $g$ that satisfies $gf = \idd_{X}$.
-  %   \item $f$ has the left cancellation law, namely $g_1 f = g_2 f \Rightarrow g_1 = g_2$ for $g_i: Y \to Z$.
-  % \end{itemize}
+
+
+
+
+
+
+\section{Grothendieck Universe}
+
+\begin{definition}
+  A universe is a set $\calU$ that satisfies the following properties:
   \begin{enumerate}
-    \item[1]
-    \begin{enumerate}
-      \item[1.1] $f: X \to Y$ is injection.
-      \item[1.2]  $f$ has the left inverse $g$ that satisfies $gf = \idd_{X}$.
-      \item[1.3] $f$ has the left cancellation law, namely $g_1 f = g_2 f \Rightarrow g_1 = g_2$ for $g_i: Y \to Z$.
-    \end{enumerate}
-    \item[2]
-    \begin{enumerate}
-      \item[2.1] $f: X \to Y$ is surjection.
-      \item[2.2] $f$ has the right inverse $g$ that satisfies $fg = \idd_{Y}$.
-      \item[2.3] $f$ has the right cancellation law, namely $fg_1 = fg_2 \Rightarrow g_1 = g_2$ for $g_i: Z \to X$.  
-    \end{enumerate}
+    \item[U.1.] $\calU$ is a transitive set, namely $\forall u \in \calU \Rightarrow u \subset \calU$.
+    \item[U.2.] $u, v \in \calU \Rightarrow \{ u, v \} \in \calU$. (Quite alike paring axiom)
+    \item[U.3.] $u \in \calU \Rightarrow P(u) \in \calU$.
+    \item[U.4.] $I \in \calU, \ \forall i \in I\ u_i \in \calU$, then $\bigcup_{i \in I}u_i \in \calU$.
+    \item[U.5.] $\Z_{\geq 0} \in \calU$. (This implies that $\emptyset \in \calU$).
   \end{enumerate}
-\end{proposition}
+\end{definition}
 
+\begin{corollary}
+  Suppose $\calU$ is a universe:
+  \begin{enumerate}
+    \item $u \subset v \in \calU \Rightarrow u \in \calU$.
+    \item $u \in \calU \Rightarrow \bigcup u \in \calU$.
+    \item $u , v \in \calU \Rightarrow u \times v \in \calU$.
+    \item $I \in \calU, \ \forall i \in I\ u_i \in \calU$, then $\prod_{i \in I}u_i \in \calU$.
+  \end{enumerate}
+\end{corollary}
 \begin{proof}
-  see \cite{LWW_AJN} proposition 2.2.6.
+  (1)  $v \in \calU \Rightarrow P(v) \in \calU$. Using axiom U.3., we have $u \in P(v) \in \calU$. Using axiom U.1., $u \in \calU$. 
+
+  (2) By axiom U.1., $\forall x \in u \Rightarrow x \in \calU$. Then applying axiom U.4., we obtain $\bigcup u = \bigcup_{x \in u} x \in \calU$.
+
+  (3) Recall the definition of set product, it follows that:
+  \[
+    u \times v := \{ \{ \mu, \{ \mu, \xi \} \} \in P(P(u \cup v)): \mu \in u \land \xi \in v \}
+  \]
+  Thus $u \times v \subset P(P(u \cup v))$. Invoking the 2nd proof, the rest steps are as follows:
+  \[
+    u \cup v \in \calU \Rightarrow P(u \cup v) \in \calU \Rightarrow P(P(u \times v)) \in \calU \Rightarrow u\times v \in \calU
+  \]
+
+  (4) Observe that $\bigcup_{i \in I}u_i \in \calU \Rightarrow \bigcup_{i \in I}u_i \times I \in \calU$, and that
+  \[
+    \prod_{i\in I} u_i \subset (\bigcup_{i \in I}u_i)^I \subset P(\bigcup_{i \in I}u_i \times I)
+  \]
+  The remains of the proof are trivial.
 \end{proof}
 
 
 
 
+\begin{definition}
+  The cumulative hierachy of set is recursively constructed in the following way:
+  \begin{gather*}
+    V_0 := \emptyset \\
+    V_{\alpha + 1} = P(V_{\alpha}) \\
+    V_{\alpha} := \bigcup_{\beta < \alpha} V_{\beta} \ (\alpha \text{ is a limit ordinal})
+  \end{gather*}
+\end{definition}
+
+\begin{corollary}
+  \hfill
+
+  \begin{enumerate}
+    \item Each $V_{\alpha}$ is transitive set.
+    \item $\alpha \subset V_{\alpha}$.
+    \item $\alpha < \beta \Rightarrow V_{\alpha} \subset V_{\beta}$.
+  \end{enumerate}
+\end{corollary}
+
+\begin{proof}
+  (1) Define $C$ be the class of ordinals that makes $V_{\alpha}$ a transitive set. An initial result is $0 \in C$. Furthermore, assume that $V_{\alpha}$ is transitive. For any $x \in V_{\alpha+1} = P(V_{\alpha})$, we have $x \subset V_{\alpha}$. $\forall t \in x \Rightarrow t \in V_{\alpha} \Rightarrow t \subset V_{\alpha} \Rightarrow t \in P(V_{\alpha})$, thus $x \subset V_{\alpha+1}$. Therefore we obtain that $\alpha \in C \Rightarrow \alpha + 1\in C$. When $\alpha$ is a limit ordinal, it is easy to verify $\forall \beta < \alpha , \beta \in C \Rightarrow \alpha \in C$. Consequently, applying Transfinite Induction, we have $C = \bmrm{On}$. 
+
+  (2) Define $C = \{ \alpha: \alpha \subset \in V_{\alpha}  \}$, and it follows that $0 \in C$. If $\alpha \in C$, then $\alpha \sqcup \{ \alpha \} \subset P(\alpha) \subset P(V_{\alpha})$. When $\alpha$ is a limit ordinal, $\alpha = \bigcup_{\beta < \alpha} \beta \subset \bigcup_{\beta < \alpha} V_{\beta}$.
+
+
+  (3) Define $C = \{ \beta: V_{\alpha} \subset V_{\alpha+\beta} \}$. The result is that $C = \bmrm{On}$.
+\end{proof}
+
+
+
 
 \begin{theorem}
-  \label{theorem equiv1}
-  $(X, \sim)$ is a set $X$ endowed with an equivalence relation $\sim$. $f: X \to Y$ is a mapping satisfies $x_1 \sim x_2 \Rightarrow f(x_1) = f(x_2)$. There exists unique mapping $\overline{f}: X / \sim \to Y$ that makes the following diagram commute:
-  \[
-    \begin{tikzcd}
-      X \arrow[two heads, r, "\pi"] \arrow[d, "f"'] 
-      & X / \sim  \arrow[ld, "\overline{f}"]
-      \\
-      Y
-    \end{tikzcd}
-  \]
+  Every set is contained within a $V_{\alpha}$, where $\alpha$ is an ordianl. 
 \end{theorem}
 
 
 
 
-\begin{theorem}
-  \label{theorem equiv2}
-  Conctinuing with the conditions of previous theorem, if $x_1 \sim x_2 \Leftrightarrow f(x_1) = f(x_2)$, there exists unique bijection $\overline{f}$ such that:
-  \[
-    \begin{tikzcd}
-      X \arrow[two heads, r, "\pi"] \arrow[d, "f"'] 
-      & X / \sim  \arrow[ld, "\overline{f}"]
-      \\
-      \Im(f)
-    \end{tikzcd}
-  \]
-\end{theorem}
+\begin{definition}
+  $\alpha$ is a regular cardinal iff:
+  \begin{enumerate}
+    \item[RC.1.] $\alpha \geq \aleph_0$.
+    \item[RC.2.] There does not exsits a limit ordinal $\beta$ such that $\beta < \alpha$ and a strictly increasing sequence of ordinals $\{ a_{\xi}: \xi < \beta \}$ such that $\sup \{ a_{\xi}: \xi < \beta \} = \alpha$.
+  \end{enumerate}
+\end{definition}
+
+
+
+
+\begin{definition}
+  A cardinal $\kappa$ is a strongly inaccessible cardinal iff:
+  \begin{enumerate}
+    \item[SI.1.] $\kappa > \omega$.
+    \item[SI.2.] $\kappa$ is a regular cardinal.
+    \item[SI.3.] $\forall \lambda \in \bmrm{On},\  \lambda < \kappa \Rightarrow 2^{\lambda} < \kappa$.  
+  \end{enumerate}
+\end{definition}
+
+
+
+Grothendieck Universe are equivalent to strongly inaccessible cardinals (\cite{GU_WIKI}),

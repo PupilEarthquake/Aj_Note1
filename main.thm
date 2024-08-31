@@ -1,88 +1,118 @@
 \contentsline {proposition}{{Proposition}{1.1.{1}}{}}{1}{theorem.1.1.1}%
-\contentsline {proof}{{\textit {Proof.}}{1}{}}{1}{proof.1}%
 \contentsline {corollary}{{Corollary}{1.1.{2}}{}}{1}{theorem.1.1.2}%
-\contentsline {lemma}{{Lemma}{1.1.{3}}{}}{1}{theorem.1.1.3}%
-\contentsline {proof}{{\textit {Proof.}}{2}{}}{1}{proof.2}%
-\contentsline {corollary}{{Corollary}{1.1.{4}}{}}{1}{theorem.1.1.4}%
-\contentsline {proof}{{\textit {Proof.}}{3}{}}{1}{proof.3}%
-\contentsline {corollary}{{Corollary}{1.1.{5}}{}}{2}{theorem.1.1.5}%
-\contentsline {proof}{{\textit {Proof.}}{4}{}}{2}{proof.4}%
-\contentsline {corollary}{{Corollary}{1.1.{6}}{}}{2}{theorem.1.1.6}%
-\contentsline {proof}{{\textit {Proof.}}{5}{}}{2}{proof.5}%
-\contentsline {proposition}{{Proposition}{1.1.{7}}{}}{2}{theorem.1.1.7}%
-\contentsline {theorem}{{Theorem}{1.2.{1}}{Transfinite Induction}}{3}{theorem.1.2.1}%
-\contentsline {proof}{{\textit {Proof.}}{6}{}}{3}{proof.6}%
-\contentsline {theorem}{{Theorem}{1.2.{2}}{Transfinite Recursion}}{4}{theorem.1.2.2}%
+\contentsline {proposition}{{Proposition}{1.2.{1}}{}}{1}{theorem.1.2.1}%
+\contentsline {proof}{{\textit {Proof.}}{1}{}}{2}{proof.1}%
+\contentsline {proposition}{{Proposition}{1.2.{2}}{}}{2}{theorem.1.2.2}%
+\contentsline {proof}{{\textit {Proof.}}{2}{}}{2}{proof.2}%
+\contentsline {corollary}{{Corollary}{1.2.{3}}{}}{2}{theorem.1.2.3}%
+\contentsline {theorem}{{Theorem}{1.2.{4}}{}}{2}{theorem.1.2.4}%
+\contentsline {theorem}{{Theorem}{1.2.{5}}{}}{3}{theorem.1.2.5}%
+\contentsline {corollary}{{Corollary}{1.3.{1}}{}}{3}{theorem.1.3.1}%
+\contentsline {lemma}{{Lemma}{1.3.{2}}{}}{3}{theorem.1.3.2}%
+\contentsline {proof}{{\textit {Proof.}}{3}{}}{3}{proof.3}%
+\contentsline {corollary}{{Corollary}{1.3.{3}}{}}{3}{theorem.1.3.3}%
+\contentsline {proof}{{\textit {Proof.}}{4}{}}{3}{proof.4}%
+\contentsline {corollary}{{Corollary}{1.3.{4}}{}}{4}{theorem.1.3.4}%
+\contentsline {proof}{{\textit {Proof.}}{5}{}}{4}{proof.5}%
+\contentsline {corollary}{{Corollary}{1.3.{5}}{}}{4}{theorem.1.3.5}%
+\contentsline {proof}{{\textit {Proof.}}{6}{}}{4}{proof.6}%
+\contentsline {corollary}{{Corollary}{1.3.{6}}{}}{4}{theorem.1.3.6}%
 \contentsline {proof}{{\textit {Proof.}}{7}{}}{4}{proof.7}%
-\contentsline {proposition}{{Proposition}{1.3.{1}}{}}{5}{theorem.1.3.1}%
-\contentsline {proof}{{\textit {Proof.}}{8}{}}{5}{proof.8}%
-\contentsline {proposition}{{Proposition}{1.4.{1}}{}}{6}{theorem.1.4.1}%
-\contentsline {proof}{{\textit {Proof.}}{9}{}}{6}{proof.9}%
-\contentsline {theorem}{{Theorem}{1.4.{2}}{}}{6}{theorem.1.4.2}%
-\contentsline {theorem}{{Theorem}{1.4.{3}}{}}{6}{theorem.1.4.3}%
-\contentsline {proposition}{{Proposition}{2.2.{1}}{}}{9}{theorem.2.2.1}%
-\contentsline {definition}{{Definition}{2.2.{2}}{}}{9}{theorem.2.2.2}%
-\contentsline {proposition}{{Proposition}{2.2.{3}}{}}{9}{theorem.2.2.3}%
-\contentsline {proposition}{{Proposition}{2.2.{4}}{}}{9}{theorem.2.2.4}%
-\contentsline {proof}{{\textit {Proof.}}{10}{}}{9}{proof.10}%
-\contentsline {proposition}{{Proposition}{2.2.{5}}{}}{9}{theorem.2.2.5}%
-\contentsline {proof}{{\textit {Proof.}}{11}{}}{10}{proof.11}%
-\contentsline {corollary}{{Corollary}{2.2.{6}}{}}{10}{theorem.2.2.6}%
-\contentsline {proposition}{{Proposition}{2.2.{7}}{}}{10}{theorem.2.2.7}%
-\contentsline {proof}{{\textit {Proof.}}{12}{}}{10}{proof.12}%
-\contentsline {definition}{{Definition}{2.3.{1}}{}}{10}{theorem.2.3.1}%
-\contentsline {corollary}{{Corollary}{2.3.{2}}{}}{10}{theorem.2.3.2}%
-\contentsline {proposition}{{Proposition}{2.3.{3}}{}}{11}{theorem.2.3.3}%
-\contentsline {proof}{{\textit {Proof.}}{13}{}}{11}{proof.13}%
-\contentsline {definition}{{Definition}{2.3.{4}}{}}{11}{theorem.2.3.4}%
-\contentsline {proposition}{{Proposition}{2.3.{5}}{}}{11}{theorem.2.3.5}%
-\contentsline {corollary}{{Corollary}{2.3.{6}}{}}{11}{theorem.2.3.6}%
-\contentsline {proof}{{\textit {Proof.}}{14}{}}{11}{proof.14}%
-\contentsline {proposition}{{Proposition}{2.3.{7}}{}}{12}{theorem.2.3.7}%
-\contentsline {definition}{{Definition}{2.3.{8}}{}}{12}{theorem.2.3.8}%
-\contentsline {definition}{{Definition}{2.3.{9}}{}}{12}{theorem.2.3.9}%
-\contentsline {proposition}{{Proposition}{2.3.{10}}{}}{12}{theorem.2.3.10}%
-\contentsline {proof}{{\textit {Proof.}}{15}{}}{12}{proof.15}%
-\contentsline {proposition}{{Proposition}{2.3.{11}}{}}{12}{theorem.2.3.11}%
-\contentsline {proof}{{\textit {Proof.}}{16}{}}{12}{proof.16}%
-\contentsline {lemma}{{Lemma}{2.3.{12}}{}}{12}{theorem.2.3.12}%
-\contentsline {proof}{{\textit {Proof.}}{17}{}}{12}{proof.17}%
-\contentsline {proposition}{{Proposition}{2.3.{13}}{}}{12}{theorem.2.3.13}%
-\contentsline {proof}{{\textit {Proof.}}{18}{}}{13}{proof.18}%
-\contentsline {corollary}{{Corollary}{2.3.{14}}{}}{13}{theorem.2.3.14}%
-\contentsline {proof}{{\textit {Proof.}}{19}{}}{13}{proof.19}%
-\contentsline {corollary}{{Corollary}{2.3.{15}}{}}{13}{theorem.2.3.15}%
-\contentsline {proposition}{{Proposition}{3.1.{1}}{}}{15}{theorem.3.1.1}%
-\contentsline {proposition}{{Proposition}{3.1.{2}}{}}{15}{theorem.3.1.2}%
-\contentsline {theorem}{{Theorem}{3.1.{3}}{}}{15}{theorem.3.1.3}%
-\contentsline {proof}{{\textit {Proof.}}{20}{}}{16}{proof.20}%
-\contentsline {proposition}{{Proposition}{3.1.{4}}{}}{16}{theorem.3.1.4}%
-\contentsline {proposition}{{Proposition}{3.1.{5}}{}}{16}{theorem.3.1.5}%
-\contentsline {definition}{{Definition}{3.2.{1}}{}}{16}{theorem.3.2.1}%
-\contentsline {proposition}{{Proposition}{3.2.{2}}{}}{17}{theorem.3.2.2}%
-\contentsline {proof}{{\textit {Proof.}}{21}{}}{17}{proof.21}%
-\contentsline {corollary}{{Corollary}{3.2.{3}}{}}{18}{theorem.3.2.3}%
-\contentsline {corollary}{{Corollary}{3.2.{4}}{}}{18}{theorem.3.2.4}%
-\contentsline {proposition}{{Proposition}{3.2.{5}}{}}{19}{theorem.3.2.5}%
-\contentsline {proposition}{{Proposition}{3.2.{6}}{}}{20}{theorem.3.2.6}%
-\contentsline {proof}{{\textit {Proof.}}{22}{}}{20}{proof.22}%
-\contentsline {theorem}{{Theorem}{3.2.{7}}{}}{20}{theorem.3.2.7}%
-\contentsline {proof}{{\textit {Proof.}}{23}{}}{21}{proof.23}%
-\contentsline {definition}{{Definition}{3.3.{1}}{}}{22}{theorem.3.3.1}%
-\contentsline {proposition}{{Proposition}{3.3.{2}}{}}{22}{theorem.3.3.2}%
-\contentsline {proposition}{{Proposition}{3.3.{3}}{}}{22}{theorem.3.3.3}%
-\contentsline {proposition}{{Proposition}{3.3.{4}}{}}{22}{theorem.3.3.4}%
-\contentsline {theorem}{{Theorem}{3.3.{5}}{}}{23}{theorem.3.3.5}%
-\contentsline {theorem}{{Theorem}{3.4.{1}}{}}{23}{theorem.3.4.1}%
-\contentsline {proof}{{\textit {Proof.}}{24}{}}{23}{proof.24}%
-\contentsline {theorem}{{Theorem}{3.4.{2}}{}}{23}{theorem.3.4.2}%
-\contentsline {theorem}{{Theorem}{3.4.{3}}{}}{23}{theorem.3.4.3}%
-\contentsline {proof}{{\textit {Proof.}}{25}{}}{24}{proof.25}%
-\contentsline {theorem}{{Theorem}{3.4.{4}}{1st Isomophism Theorem}}{24}{theorem.3.4.4}%
-\contentsline {proof}{{\textit {Proof.}}{26}{}}{24}{proof.26}%
-\contentsline {theorem}{{Theorem}{3.4.{5}}{2nd Isomophism Theorem}}{24}{theorem.3.4.5}%
-\contentsline {proof}{{\textit {Proof.}}{27}{}}{25}{proof.27}%
-\contentsline {theorem}{{Theorem}{3.4.{6}}{}}{25}{theorem.3.4.6}%
-\contentsline {corollary}{{Corollary}{3.4.{7}}{}}{26}{theorem.3.4.7}%
-\contentsline {proof}{{\textit {Proof.}}{28}{}}{26}{proof.28}%
-\contentsline {corollary}{{Corollary}{3.4.{8}}{}}{26}{theorem.3.4.8}%
+\contentsline {theorem}{{Theorem}{1.4.{1}}{Transfinite Induction}}{5}{theorem.1.4.1}%
+\contentsline {proof}{{\textit {Proof.}}{8}{}}{6}{proof.8}%
+\contentsline {theorem}{{Theorem}{1.4.{2}}{Transfinite Recursion}}{7}{theorem.1.4.2}%
+\contentsline {proof}{{\textit {Proof.}}{9}{}}{7}{proof.9}%
+\contentsline {definition}{{Definition}{1.5.{1}}{}}{7}{theorem.1.5.1}%
+\contentsline {theorem}{{Theorem}{1.5.{2}}{Schröder–Bernstein}}{8}{theorem.1.5.2}%
+\contentsline {proof}{{\textit {Proof.}}{10}{}}{8}{proof.10}%
+\contentsline {definition}{{Definition}{1.5.{3}}{}}{8}{theorem.1.5.3}%
+\contentsline {proposition}{{Proposition}{1.5.{4}}{}}{8}{theorem.1.5.4}%
+\contentsline {proposition}{{Proposition}{1.5.{5}}{}}{9}{theorem.1.5.5}%
+\contentsline {proof}{{\textit {Proof.}}{11}{}}{9}{proof.11}%
+\contentsline {proposition}{{Proposition}{1.5.{6}}{}}{9}{theorem.1.5.6}%
+\contentsline {proof}{{\textit {Proof.}}{12}{}}{9}{proof.12}%
+\contentsline {definition}{{Definition}{1.6.{1}}{}}{9}{theorem.1.6.1}%
+\contentsline {corollary}{{Corollary}{1.6.{2}}{}}{9}{theorem.1.6.2}%
+\contentsline {proof}{{\textit {Proof.}}{13}{}}{10}{proof.13}%
+\contentsline {definition}{{Definition}{1.6.{3}}{}}{10}{theorem.1.6.3}%
+\contentsline {corollary}{{Corollary}{1.6.{4}}{}}{10}{theorem.1.6.4}%
+\contentsline {proof}{{\textit {Proof.}}{14}{}}{10}{proof.14}%
+\contentsline {theorem}{{Theorem}{1.6.{5}}{}}{11}{theorem.1.6.5}%
+\contentsline {definition}{{Definition}{1.6.{6}}{}}{11}{theorem.1.6.6}%
+\contentsline {definition}{{Definition}{1.6.{7}}{}}{11}{theorem.1.6.7}%
+\contentsline {proposition}{{Proposition}{2.2.{1}}{}}{15}{theorem.2.2.1}%
+\contentsline {definition}{{Definition}{2.2.{2}}{}}{15}{theorem.2.2.2}%
+\contentsline {proposition}{{Proposition}{2.2.{3}}{}}{15}{theorem.2.2.3}%
+\contentsline {proposition}{{Proposition}{2.2.{4}}{}}{15}{theorem.2.2.4}%
+\contentsline {proof}{{\textit {Proof.}}{15}{}}{15}{proof.15}%
+\contentsline {proposition}{{Proposition}{2.2.{5}}{}}{15}{theorem.2.2.5}%
+\contentsline {proposition}{{Proposition}{2.2.{6}}{}}{16}{theorem.2.2.6}%
+\contentsline {proof}{{\textit {Proof.}}{16}{}}{16}{proof.16}%
+\contentsline {corollary}{{Corollary}{2.2.{7}}{}}{16}{theorem.2.2.7}%
+\contentsline {proposition}{{Proposition}{2.2.{8}}{}}{16}{theorem.2.2.8}%
+\contentsline {proof}{{\textit {Proof.}}{17}{}}{16}{proof.17}%
+\contentsline {proposition}{{Proposition}{2.2.{9}}{}}{16}{theorem.2.2.9}%
+\contentsline {corollary}{{Corollary}{2.2.{10}}{}}{17}{theorem.2.2.10}%
+\contentsline {theorem}{{Theorem}{2.2.{11}}{}}{17}{theorem.2.2.11}%
+\contentsline {definition}{{Definition}{2.3.{1}}{}}{17}{theorem.2.3.1}%
+\contentsline {corollary}{{Corollary}{2.3.{2}}{}}{17}{theorem.2.3.2}%
+\contentsline {proposition}{{Proposition}{2.3.{3}}{}}{17}{theorem.2.3.3}%
+\contentsline {proof}{{\textit {Proof.}}{18}{}}{17}{proof.18}%
+\contentsline {definition}{{Definition}{2.3.{4}}{}}{17}{theorem.2.3.4}%
+\contentsline {proposition}{{Proposition}{2.3.{5}}{}}{18}{theorem.2.3.5}%
+\contentsline {corollary}{{Corollary}{2.3.{6}}{}}{18}{theorem.2.3.6}%
+\contentsline {proof}{{\textit {Proof.}}{19}{}}{18}{proof.19}%
+\contentsline {proposition}{{Proposition}{2.3.{7}}{}}{18}{theorem.2.3.7}%
+\contentsline {definition}{{Definition}{2.3.{8}}{}}{18}{theorem.2.3.8}%
+\contentsline {definition}{{Definition}{2.3.{9}}{}}{18}{theorem.2.3.9}%
+\contentsline {proposition}{{Proposition}{2.3.{10}}{}}{18}{theorem.2.3.10}%
+\contentsline {proof}{{\textit {Proof.}}{20}{}}{19}{proof.20}%
+\contentsline {proposition}{{Proposition}{2.3.{11}}{}}{19}{theorem.2.3.11}%
+\contentsline {proof}{{\textit {Proof.}}{21}{}}{19}{proof.21}%
+\contentsline {lemma}{{Lemma}{2.3.{12}}{}}{19}{theorem.2.3.12}%
+\contentsline {proof}{{\textit {Proof.}}{22}{}}{19}{proof.22}%
+\contentsline {proposition}{{Proposition}{2.3.{13}}{}}{19}{theorem.2.3.13}%
+\contentsline {proof}{{\textit {Proof.}}{23}{}}{19}{proof.23}%
+\contentsline {corollary}{{Corollary}{2.3.{14}}{}}{20}{theorem.2.3.14}%
+\contentsline {proof}{{\textit {Proof.}}{24}{}}{20}{proof.24}%
+\contentsline {corollary}{{Corollary}{2.3.{15}}{}}{20}{theorem.2.3.15}%
+\contentsline {theorem}{{Theorem}{2.4.{1}}{Chinese Remainder Theorem}}{21}{theorem.2.4.1}%
+\contentsline {proof}{{\textit {Proof.}}{25}{}}{21}{proof.25}%
+\contentsline {proposition}{{Proposition}{2.4.{2}}{}}{21}{theorem.2.4.2}%
+\contentsline {proof}{{\textit {Proof.}}{26}{}}{21}{proof.26}%
+\contentsline {proposition}{{Proposition}{2.4.{3}}{}}{21}{theorem.2.4.3}%
+\contentsline {proof}{{\textit {Proof.}}{27}{}}{21}{proof.27}%
+\contentsline {proposition}{{Proposition}{3.1.{1}}{}}{23}{theorem.3.1.1}%
+\contentsline {proposition}{{Proposition}{3.1.{2}}{}}{23}{theorem.3.1.2}%
+\contentsline {theorem}{{Theorem}{3.1.{3}}{}}{23}{theorem.3.1.3}%
+\contentsline {proof}{{\textit {Proof.}}{28}{}}{24}{proof.28}%
+\contentsline {proposition}{{Proposition}{3.1.{4}}{}}{24}{theorem.3.1.4}%
+\contentsline {proposition}{{Proposition}{3.1.{5}}{}}{24}{theorem.3.1.5}%
+\contentsline {definition}{{Definition}{3.2.{1}}{}}{24}{theorem.3.2.1}%
+\contentsline {proposition}{{Proposition}{3.2.{2}}{}}{25}{theorem.3.2.2}%
+\contentsline {proof}{{\textit {Proof.}}{29}{}}{25}{proof.29}%
+\contentsline {corollary}{{Corollary}{3.2.{3}}{}}{26}{theorem.3.2.3}%
+\contentsline {corollary}{{Corollary}{3.2.{4}}{}}{26}{theorem.3.2.4}%
+\contentsline {proposition}{{Proposition}{3.2.{5}}{}}{27}{theorem.3.2.5}%
+\contentsline {proposition}{{Proposition}{3.2.{6}}{}}{28}{theorem.3.2.6}%
+\contentsline {proof}{{\textit {Proof.}}{30}{}}{28}{proof.30}%
+\contentsline {theorem}{{Theorem}{3.2.{7}}{}}{28}{theorem.3.2.7}%
+\contentsline {proof}{{\textit {Proof.}}{31}{}}{29}{proof.31}%
+\contentsline {definition}{{Definition}{3.3.{1}}{}}{30}{theorem.3.3.1}%
+\contentsline {proposition}{{Proposition}{3.3.{2}}{}}{30}{theorem.3.3.2}%
+\contentsline {proposition}{{Proposition}{3.3.{3}}{}}{30}{theorem.3.3.3}%
+\contentsline {proposition}{{Proposition}{3.3.{4}}{}}{30}{theorem.3.3.4}%
+\contentsline {theorem}{{Theorem}{3.3.{5}}{}}{31}{theorem.3.3.5}%
+\contentsline {theorem}{{Theorem}{3.4.{1}}{}}{31}{theorem.3.4.1}%
+\contentsline {proof}{{\textit {Proof.}}{32}{}}{31}{proof.32}%
+\contentsline {theorem}{{Theorem}{3.4.{2}}{}}{31}{theorem.3.4.2}%
+\contentsline {theorem}{{Theorem}{3.4.{3}}{}}{31}{theorem.3.4.3}%
+\contentsline {proof}{{\textit {Proof.}}{33}{}}{32}{proof.33}%
+\contentsline {theorem}{{Theorem}{3.4.{4}}{1st Isomophism Theorem}}{32}{theorem.3.4.4}%
+\contentsline {proof}{{\textit {Proof.}}{34}{}}{32}{proof.34}%
+\contentsline {theorem}{{Theorem}{3.4.{5}}{2nd Isomophism Theorem}}{32}{theorem.3.4.5}%
+\contentsline {proof}{{\textit {Proof.}}{35}{}}{33}{proof.35}%
+\contentsline {theorem}{{Theorem}{3.4.{6}}{}}{33}{theorem.3.4.6}%
+\contentsline {corollary}{{Corollary}{3.4.{7}}{}}{34}{theorem.3.4.7}%
+\contentsline {proof}{{\textit {Proof.}}{36}{}}{34}{proof.36}%
+\contentsline {corollary}{{Corollary}{3.4.{8}}{}}{34}{theorem.3.4.8}%

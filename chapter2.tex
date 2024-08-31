@@ -137,6 +137,24 @@ Several isomophism theorems can copy the results of linear space, see Section \r
 
 
 
+\begin{proposition}
+    \hfill
+
+    \begin{enumerate}
+        \item $R$ is a filed iff $R$ has only ordinary ideals.
+        \item Any ring homomorphism defined on $F$, a field, is injective.
+    \end{enumerate}
+\end{proposition}
+
+
+
+
+
+
+
+
+
+
 
 \begin{proposition}
     \label{proposition 2.2.5}
@@ -202,6 +220,52 @@ Several isomophism theorems can copy the results of linear space, see Section \r
         }
     \]
 \end{proof}
+
+
+
+
+\begin{proposition}
+    For any ring $L$, given homomorphism $F \xhookrightarrow[]{\xi} L$, we can endow $L$ a $F\mbl$vector space structure. This is done by defining addition as the addition in $L$, and scalar multiplication as $k \cdot x := \xi(k) x$.
+\end{proposition}
+
+
+Suppose $F$ is a filed, $f \in F[X]$. define $\iota$ as follows:
+\[
+    \begin{tikzcd}[row sep=small]
+        \iota: F  \arrow[r] 
+        & F[X] / (f)
+        \\
+        a  \arrow[r, mapsto]
+        & a + (f)
+    \end{tikzcd}
+\]
+Clearly $\iota$ is injective. 
+
+
+\begin{corollary}
+    Endowed with $\iota$, $F[X] / (f)$ becomes a $F\mbl$vector space.
+\end{corollary}
+
+
+
+
+
+
+\begin{theorem}
+    Suupose $\xi: F \to L$ is a ring homomorphism, and $\Psi$ is a substitution mapping:
+        \[ 
+            \begin{tikzcd}[row sep=small]
+                \Psi: F[X]  \arrow[r]
+                & L
+                \\
+                \sum_{i=0}^{n} a_i X^i \arrow[r, mapsto]
+                & 
+                \sum_{i=0}^{n} \xi(a_i) \beta^i
+            \end{tikzcd}
+        \]
+    Then there exists a unique $\psi \in \Hom_{\cate{Vect}(F)}(F[X] / (f), L)$
+\end{theorem}
+
 
 
 
@@ -479,3 +543,60 @@ Consequently, we have:
     \right.
 \]
 This indicates that when $p'_i \neq 0$, $f$ has no repeated roots iff $\gcd(f, f') = 1$. In particular, if $f$ split over $R$, $p'_i \neq 0$ natually holds, then $f$ has no repeated roots iff $\gcd(f, f') = 1$.
+
+
+
+\section{Principle ideal domain}
+
+
+\begin{theorem}[Chinese Remainder Theorem]
+    Suppose $R$ is an ID, $a_1, \cdots, a_n \in R^*$ are pairwise coprime, $a = a_1 \cdots a_n$. There exists a ring isomorphism:
+    \[
+        \begin{tikzcd}[row sep = small]
+            \varphi: R / (a)  \arrow[r]
+            & \prod_{i=1}^{n} R / (a_i) 
+            \\
+            r + (a)  \arrow[mapsto, r]
+            & (r + (a_i))^n_{i=1}
+        \end{tikzcd}
+    \]
+\end{theorem}
+
+\begin{proof}
+    The well-definedness and injectivity is easy to prove. Below is the proof of surjectivity. First, consider the case of $n=2$. Since $\gcd(a_1, a_2) = 1$, there exists $x_1 \in (a_1), x_2 \in (a_2)$ such that $x_1 + x_2 = 1$. For any $r_1, r_2 \in R$, $r_1 x_1 + r_1 x_2 = r_1$ and $r_2 x_1 + r_2 x_2 + r_2$ hold. It can be verified that $\varphi(r_1 x_2 + r_2 x_1 + (a)) = (r_1 + (a_1), r_2 + (a_2))$.
+
+    For the case that $n \geq 3$, note that:
+    \[
+        R / (a) \xrightarrow[]{\sim} R / (a_1\cdots a_{n-1}) \times R / (a_n) \xrightarrow[]{\sim} \cdots
+    \]
+\end{proof}
+
+
+
+
+
+
+\begin{proposition}
+    In PID, for any $r_1, \cdots, r_n \in R$:
+    \[
+        \lag r_1, \cdots, r_n \rag = \gcd(r_1, \cdots, r_n) R
+    \]
+\end{proposition}
+\begin{proof}
+    \[
+        \forall i \ d | r_i \Leftrightarrow \forall x \in  \lag r_1, \cdots, r_n \rag \  ( d | x ) \Leftrightarrow \forall x \in gR \  (d | x)
+    \]
+\end{proof}
+
+
+
+\begin{proposition}
+    \[
+        \bigcap_{i=1}^n (r_i) = (\lcm(r_1, \cdots, r_n))
+    \]
+\end{proposition}
+\begin{proof}
+    \[
+        \forall i \ (r_i | d) \Leftrightarrow d \in \bigcap_{i=1}^n (r_i) \Leftrightarrow d \in (m)
+    \]
+\end{proof}

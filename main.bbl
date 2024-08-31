@@ -17,6 +17,27 @@
 \endgroup
 
 \datalist[entry]{anyt/global//global/global}
+  \entry{GU_WIKI}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=W}{%
+         family={WikiPedia},
+         familyi={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{W1}
+    \strng{fullhash}{W1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Wik24}
+    \field{labelyear}{2024}
+    \field{labeldatesource}{}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{howpublished}{Website}
+    \field{title}{Grothendieck universe}
+    \field{year}{2024}
+  \endentry
+
   \entry{Qiu_MA}{book}{}
     \name{author}{1}{}{%
       {{hash=�}{%
@@ -38,6 +59,29 @@
     \field{sortinithash}{�}
     \field{title}{近世代数}
     \field{year}{2015}
+  \endentry
+
+  \entry{LWW_AJM}{book}{}
+    \name{author}{1}{}{%
+      {{hash=�}{%
+         family={李文威},
+         familyi={�\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {北京大学出版社}%
+    }
+    \strng{namehash}{�1}
+    \strng{fullhash}{�1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{李19}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{�}
+    \field{sortinithash}{�}
+    \field{title}{代数学方法}
+    \field{year}{2019}
   \endentry
 
   \entry{LWW_AJN}{book}{}
